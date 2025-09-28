@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.hrm.employee.model" default-lazy="false">
+    <class name="com.artonis.clinic.appointment.model.Appointment" table="his3appointment">
+        <id name="id" type="long">
+            <generator class="assigned" />
+        </id>
+        <property name="patient_id" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="cash_id" type="long"/>
+        <property name="doctorCost" type="double"/>
+        <property name="discount" type="double"/>
+        <property name="returnCost" type="double"/>
+        <property name="insurance_id" type="long"/>
+        <property name="cashDate" type="com.artonis.core.base.core.Date"/>
+        <property name="description" type="string"/>
+        <property name="insurancePercent" type="double"/>
+        <property name="visitDate" type="com.artonis.core.base.core.Date"/>
+        <property name="readyVisitDate" type="com.artonis.core.base.core.Date"/>
+    </class>
+	<class name="com.artonis.clinic.appointment.model.AppointmentPermission" table="his3appointmentPermission">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="userId" type="long"/>
+	</class>
+	<class name="com.artonis.clinic.appointment.model.AppointmentPermissionItem" table="his3appointmentPermissionItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="appointmentPermissionId" type="long"/>
+		<property name="doctorId" type="long"/>
+		<property name="allowType" type="int"/>
+	</class>
+	
+	<class name="com.artonis.clinic.appointment.model.HourTemplate" table="his3hourTemplate">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	
+	<class name="com.artonis.clinic.appointment.model.HourTemplateTime" table="his3hourTemplateTime">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="hourTemplateId" type="long"/>
+		<property name="time" type="int"/>
+		<property name="internetTurn" type="int"/>
+		<property name="telephonyTurn" type="int"/>
+	</class>
+</hibernate-mapping>

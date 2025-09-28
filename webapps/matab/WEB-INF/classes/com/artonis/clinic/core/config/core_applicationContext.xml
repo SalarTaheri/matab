@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none"> 
+    <bean id="appointmentConfigService" class="com.artonis.clinic.core.service.impl.AppointmentConfigServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="appointmentConfigDao" class="com.artonis.clinic.core.dao.impl.AppointmentConfigDaoImpl">
+    </bean>
+    
+    <bean id="appointmentMongoTurnService" class="com.artonis.clinic.core.service.impl.AppointmentMongoTurnServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="appointmentMongoTurnDao" class="com.artonis.clinic.core.dao.impl.AppointmentMongoTurnDaoImpl">
+    </bean>
+    
+    <bean id="appointmentVisitConfigService" class="com.artonis.clinic.core.service.impl.AppointmentVisitConfigServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="appointmentVisitConfigDao" class="com.artonis.clinic.core.dao.impl.AppointmentVisitConfigDaoImpl">
+    </bean>
+    
+	<!-- DepartmentService -->
+	<bean id="departmentService" class="com.artonis.clinic.core.service.impl.DepartmentServiceImpl"> 
+		<property name="dao" ref="departmentDao" /> 
+	</bean>
+	<bean id="departmentDao" class="com.artonis.clinic.core.dao.impl.DepartmentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+    <bean id="doctorAppointmentCalendarService" class="com.artonis.clinic.core.service.impl.DoctorAppointmentCalendarServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="doctorAppointmentCalendarDao" class="com.artonis.clinic.core.dao.impl.DoctorAppointmentCalendarDaoImpl">
+    </bean> 
+    
+	<!-- EmployeeContractItemService -->
+	<bean id="employeeContractItemService" class="com.artonis.clinic.core.service.impl.EmployeeContractItemServiceImpl"> 
+		<property name="dao" ref="employeeContractItemDao" /> 
+	</bean>
+	<bean id="employeeContractItemDao" class="com.artonis.clinic.core.dao.impl.EmployeeContractItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- FactorDepartmentService -->
+	<bean id="factorDepartmentService" class="com.artonis.clinic.core.service.impl.FactorDepartmentServiceImpl"> 
+		<property name="dao" ref="factorDepartmentDao" /> 
+	</bean>
+	<bean id="factorDepartmentDao" class="com.artonis.clinic.core.dao.impl.FactorDepartmentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- FactorPaymentService -->
+	<bean id="factorPaymentService" class="com.artonis.clinic.core.service.impl.FactorPaymentServiceImpl"> 
+		<property name="dao" ref="factorPaymentDao" /> 
+	</bean>
+	<bean id="factorPaymentDao" class="com.artonis.clinic.core.dao.impl.FactorPaymentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- FactorService -->
+	<bean id="factorService" class="com.artonis.clinic.core.service.impl.FactorServiceImpl"> 
+		<property name="dao" ref="factorDao" /> 
+	</bean>
+	<bean id="factorDao" class="com.artonis.clinic.core.dao.impl.FactorDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- FinanceRegistrationItemLogService -->
+	<bean id="financeRegistrationItemLogService" class="com.artonis.clinic.core.service.impl.FinanceRegistrationItemLogServiceImpl"> 
+		<property name="dao" ref="financeRegistrationItemLogDao" /> 
+	</bean>
+	<bean id="financeRegistrationItemLogDao" class="com.artonis.clinic.core.dao.impl.FinanceRegistrationItemLogDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- FinanceRegistrationItemService -->
+	<bean id="financeRegistrationItemService" class="com.artonis.clinic.core.service.impl.FinanceRegistrationItemServiceImpl"> 
+		<property name="dao" ref="financeRegistrationItemDao" /> 
+	</bean>
+	<bean id="financeRegistrationItemDao" class="com.artonis.clinic.core.dao.impl.FinanceRegistrationItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- FinanceRegistrationService -->
+	<bean id="financeRegistrationService" class="com.artonis.clinic.core.service.impl.FinanceRegistrationServiceImpl"> 
+		<property name="dao" ref="financeRegistrationDao" /> 
+	</bean>
+	<bean id="financeRegistrationDao" class="com.artonis.clinic.core.dao.impl.FinanceRegistrationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+    <!-- GroupStateService -->
+	<bean id="groupStateService" class="com.artonis.clinic.core.service.impl.GroupStateServiceImpl">
+		<property name="dao" ref="groupStateDao" />
+	</bean>
+	<bean id="groupStateDao" class="com.artonis.clinic.core.dao.impl.GroupStateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- InsuranceOrganizationService -->
+	<bean id="insuranceOrganizationService" class="com.artonis.clinic.core.service.impl.InsuranceOrganizationServiceImpl"> 
+		<property name="dao" ref="insuranceOrganizationDao" /> 
+	</bean>
+	<bean id="insuranceOrganizationDao" class="com.artonis.clinic.core.dao.impl.InsuranceOrganizationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- KaService -->
+	<bean id="kaService" class="com.artonis.clinic.core.service.impl.KaServiceImpl"> 
+		<property name="dao" ref="kaDao" /> 
+	</bean>
+	<bean id="kaDao" class="com.artonis.clinic.core.dao.impl.KaDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- MedicalTestService -->
+	<bean id="medicalTestService" class="com.artonis.clinic.core.service.impl.MedicalTestServiceImpl"> 
+		<property name="dao" ref="medicalTestDao" /> 
+	</bean>
+	<bean id="medicalTestDao" class="com.artonis.clinic.core.dao.impl.MedicalTestDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+    <!-- MedicalTestVisitQueueService -->
+	<bean id="medicalTestVisitQueueService" class="com.artonis.clinic.core.service.impl.MedicalTestVisitQueueServiceImpl">
+		<property name="dao" ref="medicalTestVisitQueueDao" />
+	</bean>
+	<bean id="medicalTestVisitQueueDao" class="com.artonis.clinic.core.dao.impl.MedicalTestVisitQueueDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+    <bean id="patientAppointmentService" class="com.artonis.clinic.core.service.impl.PatientAppointmentServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="patientAppointmentDao" class="com.artonis.clinic.core.dao.impl.PatientAppointmentDaoImpl">
+    </bean>
+    
+    <!-- PatientrService -->
+	<bean id="patientrService" class="com.artonis.clinic.core.service.impl.PatientrServiceImpl"> 
+		<property name="dao" ref="patientrDao" /> 
+	</bean>
+	<bean id="patientrDao" class="com.artonis.clinic.core.dao.impl.PatientrDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- ProficiencyService -->
+	<bean id="proficiencyService" class="com.artonis.clinic.core.service.impl.ProficiencyServiceImpl"> 
+		<property name="dao" ref="proficiencyDao" /> 
+		<property name="proficiencyHisPartnerDao" ref="proficiencyHisPartnerDao" />
+	</bean>
+	<bean id="proficiencyDao" class="com.artonis.clinic.core.dao.impl.ProficiencyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="proficiencyHisPartnerDao" class="com.artonis.clinic.core.dao.impl.ProficiencyHisPartnerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactorySecondDatabase" />
+	</bean>
+
+	<!-- ProficiencyServiceItemService -->
+	<bean id="proficiencyServiceItemService" class="com.artonis.clinic.core.service.impl.ProficiencyServiceItemServiceImpl"> 
+		<property name="dao" ref="proficiencyServiceItemDao" /> 
+	</bean>
+	<bean id="proficiencyServiceItemDao" class="com.artonis.clinic.core.dao.impl.ProficiencyServiceItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ServiceItemCostEquipmentService -->
+	<bean id="serviceItemCostEquipmentService" class="com.artonis.clinic.core.service.impl.ServiceItemCostEquipmentServiceImpl"> 
+		<property name="dao" ref="serviceItemCostEquipmentDao" /> 
+	</bean>
+	<bean id="serviceItemCostEquipmentDao" class="com.artonis.clinic.core.dao.impl.ServiceItemCostEquipmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ServiceItemCostGroupService -->
+	<bean id="serviceItemCostGroupService" class="com.artonis.clinic.core.service.impl.ServiceItemCostGroupServiceImpl"> 
+		<property name="dao" ref="serviceItemCostGroupDao" /> 
+	</bean>
+	<bean id="serviceItemCostGroupDao" class="com.artonis.clinic.core.dao.impl.ServiceItemCostGroupDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- ServiceItemCostInsuranceService -->
+	<bean id="serviceItemCostInsuranceService" class="com.artonis.clinic.core.service.impl.ServiceItemCostInsuranceServiceImpl"> 
+		<property name="dao" ref="serviceItemCostInsuranceDao" /> 
+	</bean>
+	<bean id="serviceItemCostInsuranceDao" class="com.artonis.clinic.core.dao.impl.ServiceItemCostInsuranceDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ServiceItemCostOperationService -->
+	<bean id="serviceItemCostOperationService" class="com.artonis.clinic.core.service.impl.ServiceItemCostOperationServiceImpl"> 
+		<property name="dao" ref="serviceItemCostOperationDao" /> 
+	</bean>
+	<bean id="serviceItemCostOperationDao" class="com.artonis.clinic.core.dao.impl.ServiceItemCostOperationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- ServiceItemCostService -->
+	<bean id="serviceItemCostService" class="com.artonis.clinic.core.service.impl.ServiceItemCostServiceImpl"> 
+		<property name="dao" ref="serviceItemCostDao" /> 
+	</bean>
+	<bean id="serviceItemCostDao" class="com.artonis.clinic.core.dao.impl.ServiceItemCostDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ServiceItemService -->
+	<bean id="serviceItemService" class="com.artonis.clinic.core.service.impl.ServiceItemServiceImpl"> 
+		<property name="dao" ref="serviceItemDao" /> 
+	</bean>
+	<bean id="serviceItemDao" class="com.artonis.clinic.core.dao.impl.ServiceItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ServiceService -->
+	<bean id="serviceService" class="com.artonis.clinic.core.service.impl.ServiceServiceImpl"> 
+		<property name="dao" ref="serviceDao" /> 
+	</bean>
+	<bean id="serviceDao" class="com.artonis.clinic.core.dao.impl.ServiceDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- StateService -->
+	<bean id="stateService" class="com.artonis.clinic.core.service.impl.StateServiceImpl"> 
+		<property name="dao" ref="stateDao" /> 
+	</bean>
+	<bean id="stateDao" class="com.artonis.clinic.core.dao.impl.StateDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- SurgeryService -->
+	<bean id="surgeryService" class="com.artonis.clinic.core.service.impl.SurgeryServiceImpl"> 
+		<property name="dao" ref="surgeryDao" /> 
+	</bean>
+	<bean id="surgeryDao" class="com.artonis.clinic.core.dao.impl.SurgeryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+    <bean id="timeInDayService" class="com.artonis.clinic.core.service.impl.TimeInDayServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="timeInDayDao" class="com.artonis.clinic.core.dao.impl.TimeInDayDaoImpl">
+    </bean>
+    
+    <bean id="timeTemplateService" class="com.artonis.clinic.core.service.impl.TimeTemplateServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="timeTemplateDao" class="com.artonis.clinic.core.dao.impl.TimeTemplateDaoImpl">
+    </bean>
+    
+	<!-- UserDepartmentService -->
+	<bean id="userDepartmentService" class="com.artonis.clinic.core.service.impl.UserDepartmentServiceImpl"> 
+		<property name="dao" ref="userDepartmentDao" /> 
+	</bean>
+	<bean id="userDepartmentDao" class="com.artonis.clinic.core.dao.impl.UserDepartmentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- VisitQueueService -->
+	<bean id="visitQueueService" class="com.artonis.clinic.core.service.impl.VisitQueueServiceImpl"> 
+		<property name="dao" ref="visitQueueDao" /> 
+		<property name="visitQueueHisPartnerDao" ref="visitQueueHisPartnerDao" />
+	</bean>
+	<bean id="visitQueueDao" class="com.artonis.clinic.core.dao.impl.VisitQueueDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="visitQueueHisPartnerDao" class="com.artonis.clinic.core.dao.impl.VisitQueueHisPartnerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactorySecondDatabase" />
+	</bean>
+
+	<!-- VisitQueueUserLogService -->
+	<bean id="visitQueueUserLogService" class="com.artonis.clinic.core.service.impl.VisitQueueUserLogServiceImpl"> 
+		<property name="dao" ref="visitQueueUserLogDao" /> 
+	</bean>
+	<bean id="visitQueueUserLogDao" class="com.artonis.clinic.core.dao.impl.VisitQueueUserLogDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+    <bean id="dayTemplateService" class="com.artonis.clinic.core.service.impl.DayTemplateServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="dayTemplateDao" class="com.artonis.clinic.core.dao.impl.DayTemplateDaoImpl">
+    </bean>
+    
+    <bean id="weekTemplateService" class="com.artonis.clinic.core.service.impl.WeekTemplateServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="weekTemplateDao" class="com.artonis.clinic.core.dao.impl.WeekTemplateDaoImpl">
+    </bean>
+    
+	<bean id="patientAppointmentLogService" class="com.artonis.clinic.core.service.impl.PatientAppointmentLogServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="patientAppointmentLogDao" class="com.artonis.clinic.core.dao.impl.PatientAppointmentLogDaoImpl">
+    </bean>
+    
+	<!-- FinanceRegistrationItemDetailedService -->
+	<bean id="financeRegistrationItemDetailedService" class="com.artonis.clinic.core.service.impl.FinanceRegistrationItemDetailedServiceImpl"> 
+		<property name="dao" ref="financeRegistrationItemDetailedDao" /> 
+	</bean>
+	<bean id="financeRegistrationItemDetailedDao" class="com.artonis.clinic.core.dao.impl.FinanceRegistrationItemDetailedDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 
+	<!-- insuranceItemService -->
+	<bean id="insuranceItemService" class="com.artonis.clinic.core.service.impl.InsuranceItemServiceImpl"> 
+		<property name="dao" ref="insuranceItemDao" /> 
+	</bean>
+	<bean id="insuranceItemDao" class="com.artonis.clinic.core.dao.impl.InsuranceItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- insuranceBookletTypeService -->
+	<bean id="insuranceBookletTypeService" class="com.artonis.clinic.core.service.impl.InsuranceBookletTypeServiceImpl"> 
+		<property name="dao" ref="insuranceBookletTypeDao" /> 
+	</bean>
+	<bean id="insuranceBookletTypeDao" class="com.artonis.clinic.core.dao.impl.InsuranceBookletTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- insuranceSexTypeService -->
+	<bean id="insuranceSexTypeService" class="com.artonis.clinic.core.service.impl.InsuranceSexTypeServiceImpl"> 
+		<property name="dao" ref="insuranceSexTypeDao" /> 
+	</bean>
+	<bean id="insuranceSexTypeDao" class="com.artonis.clinic.core.dao.impl.InsuranceSexTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InsuranceProficiencyService -->
+	<bean id="insuranceProficiencyService" class="com.artonis.clinic.core.service.impl.InsuranceProficiencyServiceImpl">
+		<property name="dao" ref="insuranceProficiencyDao" />
+	</bean>
+	<bean id="insuranceProficiencyDao" class="com.artonis.clinic.core.dao.impl.InsuranceProficiencyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InsuranceDoctorTypeService -->
+	<bean id="insuranceDoctorTypeService" class="com.artonis.clinic.core.service.impl.InsuranceDoctorTypeServiceImpl">
+		<property name="dao" ref="insuranceDoctorTypeDao" />
+	</bean>
+	<bean id="insuranceDoctorTypeDao" class="com.artonis.clinic.core.dao.impl.InsuranceDoctorTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InsuranceParaclinicTypeService -->
+	<bean id="insuranceParaclinicTypeService" class="com.artonis.clinic.core.service.impl.InsuranceParaclinicTypeServiceImpl">
+		<property name="dao" ref="insuranceParaclinicTypeDao" />
+	</bean>
+	<bean id="insuranceParaclinicTypeDao" class="com.artonis.clinic.core.dao.impl.InsuranceParaclinicTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InsurancePrescriptionTypeService -->
+	<bean id="insurancePrescriptionTypeService" class="com.artonis.clinic.core.service.impl.InsurancePrescriptionTypeServiceImpl">
+		<property name="dao" ref="insurancePrescriptionTypeDao" />
+	</bean>
+	<bean id="insurancePrescriptionTypeDao" class="com.artonis.clinic.core.dao.impl.InsurancePrescriptionTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InsurancePrescriptionTypeService -->
+	<bean id="insuranceLimitService" class="com.artonis.clinic.core.service.impl.InsuranceLimitServiceImpl">
+		<property name="dao" ref="insuranceLimitDao" />
+	</bean>
+	<bean id="insuranceLimitDao" class="com.artonis.clinic.core.dao.impl.InsuranceLimitDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

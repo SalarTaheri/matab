@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.m169.reports.view" default-lazy="false">
+	<class name="PurchaseReportView" table="inv_m169_3_purchase_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+		<property name="countPurchaseOperation" type="long"/>
+		<property name="price" type="double"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="backingPrice" type="double"/>
+		<property name="backingSeasonVat" type="double"/>
+		<property name="backingToll" type="double"/>
+		<property name="season" type="string"/>
+		<property name="year" type="string"/>
+		<property name="personCompanyName" type="string"/>
+		<property name="nationalId" type="string"/>
+		<property name="personType" type="int"/>
+		<property name="companyType" type="int"/>
+	</class>
+	<class name="SaleReportView" table="inv_m169_3_sale_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+		<property name="countSaleOperation" type="long"/>
+		<property name="price" type="double"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="backingPrice" type="double"/>
+		<property name="backingSeasonVat" type="double"/>
+		<property name="backingToll" type="double"/>
+		<property name="season" type="string"/>
+		<property name="year" type="string"/>
+		<property name="personCompanyName" type="string"/>
+		<property name="nationalId" type="string"/>
+		<property name="personType" type="int"/>
+		<property name="companyType" type="int"/>
+	</class>
+		<class name="PurchaseContractReportView" table="inv_m169_3_purchasecontract_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+		<property name="countPurchaseContractOperation" type="long"/>
+		<property name="price" type="double"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="backingPrice" type="double"/>
+		<property name="backingSeasonVat" type="double"/>
+		<property name="backingToll" type="double"/>
+		<property name="season" type="string"/>
+		<property name="year" type="string"/>
+		<property name="personCompanyName" type="string"/>
+		<property name="nationalId" type="string"/>
+		<property name="personType" type="int"/>
+		<property name="companyType" type="int"/>
+	</class>
+		<class name="RefusalReportView" table="inv_m169_3_refusal_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+		<property name="countRefusalOperation" type="long"/>
+		<property name="price" type="double"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="backingPrice" type="double"/>
+		<property name="backingSeasonVat" type="double"/>
+		<property name="backingToll" type="double"/>
+		<property name="season" type="string"/>
+		<property name="year" type="string"/>
+		<property name="personCompanyName" type="string"/>
+		<property name="nationalId" type="string"/>
+		<property name="personType" type="int"/>
+		<property name="companyType" type="int"/>
+	</class>
+</hibernate-mapping>

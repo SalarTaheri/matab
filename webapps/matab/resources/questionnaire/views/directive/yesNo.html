@@ -1,0 +1,15 @@
+<div class="form-group">
+    <div class="col-lg-4 control-label">
+        {{currentQuestionNumber | NumberPadding:2}} - {{label}}
+    </div>
+    <div class="col-lg-8">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="answer[field]">
+            </label>
+        </div>
+        <div style="display: inline-block;" ng-class="{'disabled': !answer[field]}">
+            <ng-transclude></ng-transclude>
+        </div>
+    </div>
+</div>

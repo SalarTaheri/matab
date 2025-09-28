@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- VisitService -->
+	<bean id="visitService" class="com.artonis.clinic.patient.service.impl.VisitServiceImpl"> 
+		<property name="dao" ref="visitDao" />
+	</bean>
+	<bean id="visitDao" class="com.artonis.clinic.patient.dao.impl.VisitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- MedicalTestVisitService -->
+	<bean id="medicalTestVisitService" class="com.artonis.clinic.patient.service.impl.MedicalTestVisitServiceImpl"> 
+		<property name="dao" ref="medicalTestVisitDao" /> 
+	</bean>
+	<bean id="medicalTestVisitDao" class="com.artonis.clinic.patient.dao.impl.MedicalTestVisitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- VisitQueueStatisticViewService -->
+	<bean id="visitQueueStatisticViewService" class="com.artonis.clinic.patient.service.impl.VisitQueueStatisticViewServiceImpl"> 
+		<property name="dao" ref="visitQueueStatisticViewDao" /> 
+	</bean>
+	<bean id="visitQueueStatisticViewDao" class="com.artonis.clinic.patient.dao.impl.VisitQueueStatisticViewDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- AgentDoctorViewService -->
+	<bean id="agentDoctorService" class="com.artonis.clinic.patient.service.impl.AgentDoctorServiceImpl">
+		<property name="dao" ref="agentDoctorDao" />
+	</bean>
+	<bean id="agentDoctorDao" class="com.artonis.clinic.patient.dao.impl.AgentDoctorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- PatientFileService -->
+	<bean id="patientFileService" class="com.artonis.clinic.patient.service.impl.PatientFileServiceImpl">
+		<property name="dao" ref="patientFileDao" />
+	</bean>
+	<bean id="patientFileDao" class="com.artonis.clinic.patient.dao.impl.PatientFileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- patientAttachedFileService -->
+	<bean id="patientAttachedFileService" class="com.artonis.clinic.patient.service.impl.PatientAttachedFileServiceImpl">
+		<property name="dao" ref="patientAttachedFileDao" />
+	</bean>
+	<bean id="patientAttachedFileDao" class="com.artonis.clinic.patient.dao.impl.PatientAttachedFileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- convertFromAnotherSystemService -->
+	<bean id="convertFromAnotherSystemService" class="com.artonis.clinic.patient.service.impl.ConvertFromAnotherSystemServiceImpl">
+		<property name="dao" ref="convertFromAnotherSystemDaoImpl" />
+	</bean>
+	<bean id="convertFromAnotherSystemDaoImpl" class="com.artonis.clinic.patient.dao.impl.ConvertFromAnotherSystemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="pacsServerEndPoint" class="com.artonis.clinic.patient.service.pacs.PACSServerEndPoint">
+		<constructor-arg index="0" value="${server.ip}"/>
+		<constructor-arg index="1" value="${server.port}"/>
+		<constructor-arg index="2" value="${pacs.port}"/>
+		<constructor-arg index="3" value="${server.pageUrl}"/>
+	</bean>
+</beans>

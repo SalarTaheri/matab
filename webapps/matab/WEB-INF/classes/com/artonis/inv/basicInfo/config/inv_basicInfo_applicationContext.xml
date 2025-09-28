@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- InventoryDocumentsService -->
+	<bean id="inventoryDocumentsService" class="com.artonis.inv.basicInfo.service.impl.InventoryDocumentsServiceImpl"> 
+		<property name="dao" ref="inventoryDocumentsDao" /> 
+	</bean>
+	<bean id="inventoryDocumentsDao" class="com.artonis.inv.basicInfo.dao.impl.InventoryDocumentsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- InventoryEmployeeService -->
+	<bean id="inventoryEmployeeService" class="com.artonis.inv.basicInfo.service.impl.InventoryEmployeeServiceImpl"> 
+		<property name="dao" ref="inventoryEmployeeDao" /> 
+	</bean>
+	<bean id="inventoryEmployeeDao" class="com.artonis.inv.basicInfo.dao.impl.InventoryEmployeeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsPhysicalPlaceService -->
+	<bean id="goodsPhysicalPlaceService" class="com.artonis.inv.basicInfo.service.impl.GoodsPhysicalPlaceServiceImpl"> 
+		<property name="dao" ref="goodsPhysicalPlaceDao" /> 
+	</bean>
+	<bean id="goodsPhysicalPlaceDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsPhysicalPlaceDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsBarCodeService -->
+	<bean id="goodsBarCodeService" class="com.artonis.inv.basicInfo.service.impl.GoodsBarCodeServiceImpl"> 
+		<property name="dao" ref="goodsBarCodeDao" /> 
+	</bean>
+	<bean id="goodsBarCodeDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsBarCodeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsInventoryControlService -->
+	<bean id="goodsInventoryControlService" class="com.artonis.inv.basicInfo.service.impl.GoodsInventoryControlServiceImpl"> 
+		<property name="dao" ref="goodsInventoryControlDao" /> 
+	</bean>
+	<bean id="goodsInventoryControlDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsInventoryControlDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- MeasureUnitService -->
+	<bean id="measureUnitService" class="com.artonis.inv.basicInfo.service.impl.MeasureUnitServiceImpl"> 
+		<property name="dao" ref="measureUnitDao" /> 
+	</bean>
+	<bean id="measureUnitDao" class="com.artonis.inv.basicInfo.dao.impl.MeasureUnitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsCategoryService -->
+	<bean id="goodsCategoryService" class="com.artonis.inv.basicInfo.service.impl.GoodsCategoryServiceImpl"> 
+		<property name="dao" ref="goodsCategoryDao" /> 
+	</bean>
+	<bean id="goodsCategoryDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsCategoryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsGroupService -->
+	<bean id="goodsGroupService" class="com.artonis.inv.basicInfo.service.impl.GoodsGroupServiceImpl"> 
+		<property name="dao" ref="goodsGroupDao" /> 
+	</bean>
+	<bean id="goodsGroupDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsGroupDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- InventoryPhysicalLocationService -->
+	<bean id="inventoryPhysicalLocationService" class="com.artonis.inv.basicInfo.service.impl.InventoryPhysicalLocationServiceImpl"> 
+		<property name="dao" ref="inventoryPhysicalLocationDao" /> 
+	</bean>
+	<bean id="inventoryPhysicalLocationDao" class="com.artonis.inv.basicInfo.dao.impl.InventoryPhysicalLocationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- InventoryGoodsService -->
+	<bean id="inventoryGoodsService" class="com.artonis.inv.basicInfo.service.impl.InventoryGoodsServiceImpl"> 
+		<property name="dao" ref="inventoryGoodsDao" /> 
+	</bean>
+	<bean id="inventoryGoodsDao" class="com.artonis.inv.basicInfo.dao.impl.InventoryGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- InventoryTypeService -->
+	<bean id="inventoryTypeService" class="com.artonis.inv.basicInfo.service.impl.InventoryTypeServiceImpl"> 
+		<property name="dao" ref="inventoryTypeDao" /> 
+	</bean>
+	<bean id="inventoryTypeDao" class="com.artonis.inv.basicInfo.dao.impl.InventoryTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsTypeService -->
+	<bean id="goodsTypeService" class="com.artonis.inv.basicInfo.service.impl.GoodsTypeServiceImpl"> 
+		<property name="dao" ref="goodsTypeDao" /> 
+	</bean>
+	<bean id="goodsTypeDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="goodsCategoryAccountingItemDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsCategoryAccountingItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="goodsCategoryAccountingItemService" class="com.artonis.inv.basicInfo.service.impl.GoodsCategoryAccountingItemServiceImpl"> 
+		<property name="dao" ref="goodsCategoryAccountingItemDao" /> 
+	</bean>
+	<bean id="goodsCategoryAccountingItemDocumentDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsCategoryAccountingItemDocumentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="goodsCategoryAccountingItemDocumentService" class="com.artonis.inv.basicInfo.service.impl.GoodsCategoryAccountingItemDocumentServiceImpl"> 
+		<property name="dao" ref="goodsCategoryAccountingItemDocumentDao" /> 
+	</bean>
+	<bean id="goodsSubMeasureUnitDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsSubMeasureUnitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="goodsSubMeasureUnitService" class="com.artonis.inv.basicInfo.service.impl.GoodsSubMeasureUnitServiceImpl"> 
+		<property name="dao" ref="goodsSubMeasureUnitDao" /> 
+	</bean>
+	<!-- SurplusDeficitService -->
+	<bean id="surplusDeficitService" class="com.artonis.inv.basicInfo.service.impl.SurplusDeficitServiceImpl"> 
+		<property name="dao" ref="surplusDeficitDao" /> 
+	</bean>
+	<bean id="surplusDeficitDao" class="com.artonis.inv.basicInfo.dao.impl.SurplusDeficitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- InventorySettingService -->
+	<bean id="inventorySettingService" class="com.artonis.inv.basicInfo.service.impl.InventorySettingServiceImpl"> 
+		<property name="dao" ref="inventorySettingDao" /> 
+	</bean>
+	<bean id="inventorySettingDao" class="com.artonis.inv.basicInfo.dao.impl.InventorySettingDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GoodsTemplateService -->
+	<bean id="goodsTemplateService" class="com.artonis.inv.basicInfo.service.impl.GoodsTemplateServiceImpl"> 
+		<property name="dao" ref="goodsTemplateDao" /> 
+	</bean>
+	<bean id="goodsTemplateDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsTemplateDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- GoodsTemplateItemService -->
+	<bean id="goodsTemplateItemService" class="com.artonis.inv.basicInfo.service.impl.GoodsTemplateItemServiceImpl">
+		<property name="dao" ref="goodsTemplateItemDao" />
+	</bean>
+	<bean id="goodsTemplateItemDao" class="com.artonis.inv.basicInfo.dao.impl.GoodsTemplateItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.core.system.basicInfo.model" default-lazy="false">
+    <class name="City" table="sys_bas_city" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+		<property name="province_id" type="long"/>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="phoneCode" type="string"/>
+    </class>
+    
+    <class name="Province" table="sys_bas_province" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+		<property name="name" type="string"/>
+		<property name="country_id" type="long"/>
+    </class>
+	
+	<class name="ComboFiller" table="sys_bas_combofiller" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="module_id" type="long"/>
+    </class>
+    
+    
+    <class name="ComboFillerValue" table="sys_bas_combofillervalue" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="rank" type="int"/>
+		<property name="comboFiller_id" type="long"/>
+    </class>
+    
+	<class name="Country" table="sys_bas_country">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="country_code" type="string"/>
+	</class>
+
+    <class name="Module" table="sys_bas_module">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="parent_id" type="long"/>
+        <property name="name" type="string"/>
+    </class>
+	<class name="BusinessPartner" table="sys_bas_businesspartner">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="nameAndFamily" type="string"/>
+		<property name="title" type="int"/>
+		<property name="type" type="int"/>
+		<property name="citizenship" type="int"/>
+		<property name="nationalcode" type="string"/>
+		<property name="country_id" type="long"/>
+		<property name="province_id" type="long"/>
+		<property name="city_id" type="long"/>
+		<property name="phoneno" type="string"/>
+		<property name="faxno" type="string"/>
+		<property name="description" type="string"/>
+		<property name="mobileno" type="string"/>
+		<property name="emailaddress" type="string"/>
+		<property name="address" type="string"/>
+		<property name="preCodeCity" type="string"/>
+		<property name="foreignPersonNumber" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="floatAccountId" type="long"/>
+	</class>
+</hibernate-mapping>

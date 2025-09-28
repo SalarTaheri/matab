@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.payment.view" default-lazy="false">
+	<class name="PaymentBillView" table="fnc3paymentbill_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="long"/>
+		<property name="reference" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="description" type="string"/>
+		<property name="financeyearId" type="long"/>
+		<property name="state" type="int"/>
+		<property name="cofferId" type="long"/>
+		<property name="cofferName" type="string"/>
+		<property name="paymentType" type="int"/>
+		<property name="totalPriceCheque" type="long"/>
+		<property name="totalPriceCoffer" type="long"/>
+		<property name="totalPriceTransfered" type="long"/>
+		<property name="sumPriceOfItems" type="long"/>
+		<property name="totalPriceBankingBill" type="long"/>
+	</class>
+	<class name="PaymentBillReceiverView" table="fnc3pbillreceiver_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="receiverAccountCodingId" type="long"/>
+		<property name="accountLevel1Id" type="long"/>
+		<property name="accountLevel2Id" type="long"/>
+		<property name="accountLevel3Id" type="long"/>
+		<property name="accountLevel4Id" type="long"/>
+		<property name="accountCodeName" type="string"/>
+		<property name="paymentBillId" type="long"/>	
+		<property name="floatAccountLevel1CodeName" type="string"/>
+		<property name="floatAccountLevel2CodeName" type="string"/>
+		<property name="floatAccountLevel3CodeName" type="string"/>
+		<property name="floatAccountLevel4CodeName" type="string"/>
+		<property name="receiverPrice" type="long"/>
+		<property name="receiverDescription" type="string"/>
+	</class>
+		<class name="PaymentBillCofferView" table="fnc3pbillcoffer_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>	
+		<property name="accountCoding_Id" type="long"/>
+		<property name="floataccountLevel1_Id" type="long"/>
+		<property name="floataccountLevel2_Id" type="long"/>
+		<property name="floataccountLevel3_Id" type="long"/>
+		<property name="floataccountLevel4_Id" type="long"/>
+		<property name="accountCodeName" type="string"/>
+		<property name="floatAccountLevel1CodeName" type="string"/>
+		<property name="floatAccountLevel2CodeName" type="string"/>
+		<property name="floatAccountLevel3CodeName" type="string"/>
+		<property name="floatAccountLevel4CodeName" type="string"/>
+		<property name="price" type="long"/>
+		<property name="paymentBillId" type="long"/>
+	</class>
+		<class name="PaymentBillPaymentChequeView" table="fnc3pbillpaymentcheque_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>	
+			<property name="bank_Id" type="long"/>
+		<property name="branch_Id" type="long"/>
+		<property name="bankAccount_Id" type="long"/>
+		<property name="chequeBookletNum" type="int"/>
+		<property name="chequeSerial" type="long"/>
+		<property name="maturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="paymentChequeAccountCoding_Id"  column="accountCoding_Id"  type="long"  />
+		<property name="paymentChequeFloatAccountLevel1_Id" type="long" column="floatAccountLevel1_Id" />
+		<property name="paymentChequeFloatAccountLevel2_Id" type="long"  column="floatAccountLevel2_Id"/>
+		<property name="paymentChequeFloatAccountLevel3_Id" type="long" column="floatAccountLevel3_Id" />
+		<property name="paymentChequeFloatAccountLevel4_Id" type="long" column="floatAccountLevel4_Id" />	
+		<property name="paymentChequePrice" type="long" column="price" />	
+		<property name="paymentChequeDescription" type="string" column="description" />							
+	    <property name="paymentBillId" type="long"/>
+		<property name="accountCodeName" type="string"/>
+		<property name="bankName" type="string"/>
+	</class>
+		<class name="PaymentBillTransferedCashView" table="fnc3pilltransferedcash_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="originAccountCoding_Id" type="long"/>
+		<property name="originFloatAccountLevel1_Id" type="long"/>
+		<property name="originFloatAccountLevel2_Id" type="long"/>
+		<property name="originFloatAccountLevel3_Id" type="long"/>
+		<property name="originFloatAccountLevel4_Id" type="long"/>
+		<property name="destinationAccountCoding_Id" type="long"/>
+		<property name="destinationFloatAccountLevel1_Id" type="long"/>
+		<property name="destinationFloatAccountLevel2_Id" type="long"/>
+		<property name="destinationFloatAccountLevel3_Id" type="long"/>
+		<property name="destinationFloatAccountLevel4_Id" type="long"/>
+		<property name="transferedPrice" type="long"/>
+		<property name="transferedDescription" type="string"/>
+		<property name="paymentBillId" type="long"/>
+		<property name="originAccountCodeName" type="string"/>
+		<property name="destAccountCodeName" type="string"/>
+		<property name="originFloatAccountCodeName" type="string"/>
+		<property name="destFloatAccountCodeName" type="string"/>
+	</class>
+		<class name="PaymentBillBankingBillView" table="fnc3pbillbankingbill_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+	<property name="operationType" type="int"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="paymentBankingBillSerial" type="string"/>
+		<property name="paymentBankingBillState" type="int"/>
+		<property name="paymentBankingBillAccountCoding_Id" type="long"/>
+		<property name="paymentBankingBillFloatAccountLevel1_Id" type="long"/>
+		<property name="paymentBankingBillFloatAccountLevel2_Id" type="long"/>
+		<property name="paymentBankingBillFloatAccountLevel3_Id" type="long"/>
+		<property name="paymentBankingBillFloatAccountLevel4_Id" type="long"/>
+		<property name="paymentBankAccountAccountCoding_Id" type="long"/>
+		<property name="paymentBankAccounFloatAccountLevel1_Id" type="long"/>
+		<property name="paymentBankAccounFloatAccountLevel2_Id" type="long"/>
+		<property name="paymentBankAccounFloatAccountLevel3_Id" type="long"/>
+		<property name="paymentBankAccounFloatAccountLevel4_Id" type="long"/>
+		<property name="paymentBillId" type="long"/>
+		<property name="paymentBankingBillPrice" type="long"/>
+		<property name="paymentBankingBillDescription" type="string"/>
+		<property name="bankingBillBankAccountCodeName" type="string"/>
+		<property name="bankingBillPayerAccountCodeName" type="string"/>
+		</class>
+	<class name="PaymentBillReceiptChequeView" table="fnc3pbillreceiptcheque_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="receiptChequeSerial" type="string"/>
+		<property name="bankName" type="string"/>
+		<property name="sarresidDate" type="com.artonis.core.base.core.Date"/>
+		<property name="receiptChequePayer" type="string"/>
+		<property name="receiptChequeAccountCoding_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel1_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel2_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel3_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel4_Id" type="long"/>
+		<property name="receiptChequePrice" type="long"/>
+		<property name="receiptChequeDescription" type="string"/>
+		<property name="accountCode" type="string"/>
+		<property name="paymentBillId" type="long"/>
+	</class>
+	
+	<class name="CashRequestView" table="fnc3cashrequest_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="string"/>
+		<property name="state" type="int"/>
+		<property name="demandant" type="long"/>
+		<property name="amount" type="double"/>
+		<property name="requestType" type="int"/>
+		<property name="description" type="string"/>
+		<property name="registerDate" type="com.artonis.core.base.core.Date"/>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	<class name="CashPermissionView" table="fnc3cashpermission_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="string"/>
+		<property name="registerDate" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="registrant" type="long"/>
+		<property name="type" type="int"/>
+		<property name="registrantFullName" type="string"/>
+	</class>
+	<class name="CashPermissionReceiverView" table="fnc3cashPermissionReceiver_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="cashPermission_id" type="long"/>
+		<property name="cashPermissionReceiverSerial" column="serial" type="string"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="receiverAccountCoding_id" type="long"/>
+		<property name="receiverFloatAccountLevel1_id" type="long"/>
+		<property name="receiverFloatAccountLevel2_id" type="long"/>
+		<property name="receiverFloatAccountLevel3_id" type="long"/>
+		<property name="receiverFloatAccountLevel4_id" type="long"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+		<property name="accountCodeName" type="string"/>
+		<property name="floatAccount1CodeName" type="string"/>
+		<property name="floatAccount2CodeName" type="string"/>
+		<property name="floatAccount3CodeName" type="string"/>
+		<property name="floatAccount4CodeName" type="string"/>
+	</class>
+	<class name="CashPermissionPayerView" table="fnc3cashpermission_payer_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="cashPermission_id" type="long"/>
+		<property name="payFrom" type="int"/>
+		<property name="cashAccountCoding_id" type="long"/>
+		<property name="cashAccountCoding_nameAndCode" type="string"/>
+		<property name="cashFloatAccountLevel1_id" type="long"/>
+		<property name="cashFloatAccountLevel1_nameAndCode" type="string"/>
+		<property name="cashFloatAccountLevel2_id" type="long"/>
+		<property name="cashFloatAccountLevel2_nameAndCode" type="string"/>
+		<property name="cashFloatAccountLevel3_id" type="long"/>
+		<property name="cashFloatAccountLevel3_nameAndCode" type="string"/>
+		<property name="cashFloatAccountLevel4_id" type="long"/>
+		<property name="cashFloatAccountLevel4_nameAndCode" type="string"/>
+		<property name="cashPrice" type="long"/>
+		<property name="cashDescription" type="string"/>
+		<property name="bankBank_id" type="long"/>
+		<property name="bankBank_name" type="string"/>
+		<property name="bankBranch_id" type="long"/>
+		<property name="bankBranch_name" type="string"/>
+		<property name="bankBankAccount_id" type="long"/>
+		<property name="bankBankAccount_number" type="string"/>
+		<property name="bankChequeBookletNum" type="int"/>
+		<property name="bankChequeBookletNum_number" type="string"/>
+		<property name="bankMaturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="bankAccountCoding_id" type="long"/>
+		<property name="bankAccountCoding_nameAndCode" type="string"/>
+		<property name="bankFloatAccountLevel1_id" type="long"/>
+		<property name="bankFloatAccountLevel1_nameAndCode" type="string"/>
+		<property name="bankFloatAccountLevel2_id" type="long"/>
+		<property name="bankFloatAccountLevel2_nameAndCode" type="string"/>
+		<property name="bankFloatAccountLevel3_id" type="long"/>
+		<property name="bankFloatAccountLevel3_nameAndCode" type="string"/>
+		<property name="bankFloatAccountLevel4_id" type="long"/>
+		<property name="bankFloatAccountLevel4_nameAndCode" type="string"/>
+		<property name="bankPrice" type="long"/>
+		<property name="bankDescription" type="string"/>
+		<property name="bankChequeBookletItem_id" type="long"/>
+		<property name="bankChequeBookletItem_number" type="string"/>
+		<property name="bankType" type="int"/>
+		<property name="bankLastState" type="int"/>
+	</class>
+
+</hibernate-mapping>

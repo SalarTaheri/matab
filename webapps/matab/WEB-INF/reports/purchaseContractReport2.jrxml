@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report10" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="63d918a3-bdc9-4e74-811a-d0779ee37714">
+	<property name="ireport.zoom" value="1.3310000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2"/>
+	<parameter name="infoType" class="java.lang.String"/>
+	<parameter name="price" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="tax" class="java.lang.String"/>
+	<parameter name="season" class="java.lang.String"/>
+	<parameter name="toll" class="java.lang.String"/>
+	<parameter name="countPurchaseOperation" class="java.lang.String"/>
+	<parameter name="backingPrice" class="java.lang.String"/>
+	<parameter name="backingSeasonVat" class="java.lang.String"/>
+	<parameter name="backingToll" class="java.lang.String"/>
+	<parameter name="personType" class="java.lang.String"/>
+	<parameter name="companyType" class="java.lang.String"/>
+	<parameter name="personCompanyName" class="java.lang.String"/>
+	<parameter name="firstAndLastName" class="java.lang.String"/>
+	<parameter name="registerNumber" class="java.lang.String"/>
+	<parameter name="nationalId" class="java.lang.String"/>
+	<parameter name="taxAffairs" class="java.lang.String"/>
+	<parameter name="includeband" class="java.lang.String"/>
+	<parameter name="provinceName" class="java.lang.String"/>
+	<parameter name="cityName" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="postalCode" class="java.lang.String"/>
+	<parameter name="phoneNo" class="java.lang.String"/>
+	<parameter name="priorEconomicCode" class="java.lang.String"/>
+	<parameter name="newEconomicCode" class="java.lang.String"/>
+	<parameter name="registrationStateText" class="java.lang.String"/>
+	<parameter name="userName" class="java.lang.String"/>
+	<parameter name="deductionTax" class="java.lang.String"/>
+	<parameter name="backingDeductionTax" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     inv_m169_3_purchase_view.`season` AS season,
+     inv_m169_3_purchase_view.`year` AS year,
+     inv_m169_3_purchase_view.`personCompanyName` AS personCompanyName,
+     inv_m169_3_purchase_view.`price` AS price
+FROM
+     `inv_m169_3_purchase_view` inv_m169_3_purchase_view]]>
+	</queryString>
+	<field name="season" class="java.lang.String"/>
+	<field name="year" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="personCompanyName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="price" class="java.math.BigDecimal"/>
+	<variable name="variable1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="675" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c7fc01c7-ec48-4c3f-a4fb-c978bd508963" x="330" y="99" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{infoType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2fbb5f01-884e-4e7a-9865-f8e192e46b76" x="431" y="99" width="84" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[نوع اطلاعات]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99638a44-1179-4d12-b199-894305c94215" x="431" y="122" width="84" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[سال عملکرد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="256d1d7e-5553-4622-8583-0e0eb392c8fa" x="431" y="145" width="84" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[ماه یا فصل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f89c9f06-59ef-41e6-8a27-bc2507cb27c1" x="431" y="168" width="84" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[تعداد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa88f2f2-7169-4f69-8c47-6bf8cf505326" x="188" y="206" width="86" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[ارزش افزوده برگشتی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="35822f2b-8121-4b95-994b-54bd58e65bb8" x="188" y="99" width="86" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مبلغ / مبلغ ناخالص]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1966097-ff0f-4755-a844-e3fdab93e34d" x="188" y="123" width="86" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مالیات ارزش افزوده]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4484c03d-dde8-43de-90ea-6c36962c1c7e" x="188" y="147" width="86" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[عوارض شهرداری]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e51a2676-4f53-4b80-ac41-6aad9620b7e4" x="188" y="171" width="86" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مبلغ برگشتی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20af9f5a-2c69-4fcf-be82-8d39347cd81f" x="188" y="230" width="86" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[عوارض برگشتی]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="1b4f5f05-379d-42e7-a302-abe8a87eebee" x="88" y="99" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9f8c2fb6-7bd8-47a7-819d-e6ef2bc274e2" x="331" y="122" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="92e008f1-5dc0-4b2a-b100-ff0c93509067" x="88" y="123" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2cc16758-7e70-4ca7-a927-f87f042160c5" x="330" y="145" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{season}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2aadc8ad-8a0c-4f03-a554-058532869ccf" x="85" y="146" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{toll}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e194f1fe-64ff-4bd8-995d-6a6a8398259f" x="328" y="168" width="103" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{countPurchaseOperation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="42baf289-4bdb-479b-9f21-5bef62a967d8" x="83" y="171" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{backingPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="03e29919-db09-450f-a20b-3b8db176d4d9" x="84" y="206" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{backingSeasonVat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="862cea0d-50ce-4fc4-a957-5840c0d67dc4" x="85" y="230" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{backingToll}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3a58bf31-20f4-4136-87ee-ba3877a39e78" x="415" y="310" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[نوع شخص]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7211506f-ff54-4182-8f1b-d69d5bafb7b5" x="152" y="310" width="62" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[نوع شرکت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8ca7c64d-0861-42d0-a03d-c562e144b6b8" x="415" y="333" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[نام شخص حقوقی / شرکت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="86a4216c-b490-48e8-95bb-0bcdd13f3cab" x="415" y="357" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[نام و نام خانوادگی مدیرعامل]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c8e17e3e-3f3f-40e9-97d8-3a68618456ad" x="415" y="381" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[شماره ثبت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02f846cc-7b8d-4afb-b057-710a3151bd26" x="152" y="381" width="62" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[شناسه ملی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="57ac1bb5-48cf-4127-b731-d278a8609504" x="415" y="405" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مشمول بند]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ced72bf2-ad8c-4e62-9a0b-ef552b6cf6ea" x="415" y="429" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[اداره کل امور مالیاتی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="efe21eaf-9a54-4457-96f1-2f1d9084a882" x="415" y="452" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[استان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8f5f9c7c-e729-4f0f-a07d-f8a243e62dbe" x="152" y="452" width="62" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[شهر]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f41228f-e08c-4aea-86a5-afc8f2986153" x="415" y="475" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[آدرس]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7aad090a-ec20-4af6-9cc5-de1e32e797a1" x="415" y="498" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[کد پستی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04e3b8df-b6ce-43b6-b881-9b5092b80d0f" x="152" y="498" width="62" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[شماره تلفن]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="92ec4baa-fb44-4c58-bd6e-8f04b7c2aa60" x="415" y="521" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[کد اقتصادی پیشین]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b590721a-ab1c-4393-872d-7ea69e23ed20" x="152" y="521" width="62" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[کد اقتصادی جدید]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cbb600b8-b8d7-4097-8596-134b748362b7" x="414" y="544" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[وضعیت ثبت نام کد اقتصادی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9c24bf2d-036e-41fd-ae26-a1aae0834607" x="152" y="544" width="62" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[نام کاربری]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="165f80d9-b393-45ec-80a6-21ee55590a5b" x="314" y="310" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{personType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e070043-c3ae-4012-b709-de3ee1a106c3" x="52" y="310" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c8be32ea-c6b0-4667-ad8f-e68a1004be44" x="52" y="333" width="362" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{personCompanyName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e2dc39e8-1f98-478b-87bb-0f940d7ae2c2" x="52" y="357" width="362" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{firstAndLastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d32d4a7d-7b04-445f-b0f8-4af070826893" x="262" y="381" width="152" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{registerNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="881788c4-cdf5-4eab-8bba-b2867cc401ca" x="52" y="381" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nationalId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f3e5c04-874d-464f-b711-0c2db7e4f8ef" x="52" y="544" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{userName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f39c3aa2-655d-477d-ae85-0c8724848b69" x="262" y="544" width="152" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{registrationStateText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ed83bdc1-586e-4781-8e32-eed04f46ce44" x="274" y="429" width="140" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taxAffairs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6dc7d424-a3c7-4881-99fe-9fd2d07a7d7d" x="274" y="452" width="140" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{provinceName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="38ae760e-fe9c-4abb-bc61-bf2e38180c4f" x="52" y="452" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cityName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9097dfba-3cca-436b-bd52-cf20928c3859" x="51" y="475" width="363" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d304057-6347-4630-a26b-a264ad12ca19" x="274" y="498" width="140" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{postalCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ba82c51e-b2a0-4fc3-ba5a-9780f64f0dc4" x="52" y="498" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phoneNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="10a1cc3d-e3c4-42a4-b968-936437f924fc" x="274" y="521" width="140" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{priorEconomicCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a342cf17-160e-4a3d-91a3-64617fbb6f83" x="52" y="521" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{newEconomicCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5bc66812-eabf-4970-b562-dae165d85b55" x="155" y="12" width="206" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Titr"/>
+				</textElement>
+				<text><![CDATA[سامانه دریافت الکترونیکی اطلاعات معاملات مودیان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="73510fa8-fee3-4ad9-9c36-b3305b35b46c" x="282" y="30" width="34" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[غیر برخط]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dcee1628-d713-47d2-94c1-206ebe5e6bc9" x="240" y="30" width="42" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[(offline)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f9258d58-2b2a-4ec6-a6a3-8a29780e9062" x="205" y="30" width="35" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[و دریافت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62ae36a0-ee07-4d7d-9096-28fbf9d1bc03" x="190" y="30" width="15" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4b276caa-565f-49a5-b3fb-09a90841b743" x="149" y="586" width="365" height="31"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[لطفا از فرم حاضر یک نسخه پرینت تهیه و همراه سی دی حاوی فایل اکسس با مهر و امضا به اداره اطلاعات و خدمات مربوطه تحویل داده و رسید دریافت نمایید]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d0d9b156-b110-4fbc-af1a-d9ba7ca0d973" x="51" y="617" width="463" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[لازم به ذکر است که برای هر فرم اطلاعاتی یک پرینت چاپی تهیه می گردد و باید همه ی گزارشات همراه با سی دی باشد]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="35e43253-9652-466d-ba42-fdb5f0332464" x="37" y="642" width="100" height="20"/>
+				<textElement>
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مهر و امضا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8b6e7e64-f90d-443e-8263-2f0f68d86095" x="247" y="50" width="67" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[فرم ثبت مشخصات]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dcc07363-d66f-4fe6-b97a-31bed659c02d" x="200" y="50" width="48" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[نسخه 4.005]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d85842d6-169f-4e26-a34d-2bc937611782" x="274" y="405" width="140" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{includeband} == "1" ? "الف" : "ب"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a9d3757b-d82d-4c1e-a3d0-74f63716653d" x="430" y="230" width="85" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مالیات مکسوره برگشتی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5ab4b55-ab9d-47fc-b36f-6f5695e121e7" x="431" y="206" width="84" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<text><![CDATA[مالیات مکسوره]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6e8aeca7-a354-49c1-8a2f-f506b0935c18" x="327" y="206" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{deductionTax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="07e513a1-364b-44e5-82ba-4fc68d4f775a" x="327" y="230" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{backingDeductionTax}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="30d22ce2-425b-40f2-bc48-0750ca17c9b9" x="390" y="14" width="115" height="58"/>
+				<imageExpression><![CDATA["C:\\Users\\SE7EN\\Desktop\\لوگو_سازمان_امور_ماليلتي_كشور.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

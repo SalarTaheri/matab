@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+	<!-- UserService -->
+	<bean id="userService" class="com.artonis.core.system.authentication.service.impl.UserServiceImpl">
+		<property name="dao" ref="userDao" />
+	</bean>
+	<bean id="userDao" class="com.artonis.core.system.authentication.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- MenuService -->
+	<bean id="menuService" class="com.artonis.core.system.authentication.service.impl.MenuServiceImpl">
+		<property name="dao" ref="menuDao" />
+	</bean>
+	<bean id="menuDao" class="com.artonis.core.system.authentication.dao.impl.MenuDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- RoleService -->
+    <bean id="roleService" class="com.artonis.core.system.authentication.service.impl.RoleServiceImpl">
+        <property name="dao" ref="roleDao" />
+    </bean>
+    <bean id="roleDao" class="com.artonis.core.system.authentication.dao.impl.RoleDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+    <!--userRoleService-->
+    <bean id="userRoleService" class="com.artonis.core.system.authentication.service.impl.UserRoleServiceImpl">
+        <property name="dao" ref="userRoleDao" />
+    </bean>
+    <bean id="userRoleDao" class="com.artonis.core.system.authentication.dao.impl.UserRoleDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+	<!-- ButtonService -->
+	<bean id="buttonService" class="com.artonis.core.system.authentication.service.impl.ButtonServiceImpl"> 
+		<property name="dao" ref="buttonDao" /> 
+	</bean>
+	<bean id="buttonDao" class="com.artonis.core.system.authentication.dao.impl.ButtonDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- RoleButtonService -->
+	<bean id="roleButtonService" class="com.artonis.core.system.authentication.service.impl.RoleButtonServiceImpl"> 
+		<property name="dao" ref="roleButtonDao" /> 
+	</bean>
+	<bean id="roleButtonDao" class="com.artonis.core.system.authentication.dao.impl.RoleButtonDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+
+    <!-- RoleMenuService -->
+    <bean id="roleMenuService" class="com.artonis.core.system.authentication.service.impl.RoleMenuServiceImpl">
+        <property name="dao" ref="roleMenuDao" />
+    </bean>
+    <bean id="roleMenuDao" class="com.artonis.core.system.authentication.dao.impl.RoleMenuDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+	<!-- GridColumnService -->
+	<bean id="gridColumnService" class="com.artonis.core.system.authentication.service.impl.GridColumnServiceImpl">
+		<property name="dao" ref="gridColumnDao" />
+	</bean>
+	<bean id="gridColumnDao" class="com.artonis.core.system.authentication.dao.impl.GridColumnDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- RoleGridColumnService -->
+	<bean id="roleGridColumnService" class="com.artonis.core.system.authentication.service.impl.RoleGridColumnServiceImpl">
+		<property name="dao" ref="roleGridColumnDao" />
+	</bean>
+	<bean id="roleGridColumnDao" class="com.artonis.core.system.authentication.dao.impl.RoleGridColumnDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>
+
+

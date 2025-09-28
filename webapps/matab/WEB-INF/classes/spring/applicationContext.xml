@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/task
+                           http://www.springframework.org/schema/task/spring-task.xsd">
+
+<!--<beans default-lazy-init="false">-->
+
+	<!-- Configurer that replaces ${...} placeholders with values from properties files -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:config/jdbc.properties</value>
+				<value>classpath:config/mongodb.properties</value>
+				<value>classpath:config/config.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="sessionFactory" class="com.artonis.core.common.base.spring.CustomLocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		
+		<property name="mappingResources">
+			<list>
+			</list>
+		</property>
+				
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.max_fetch_depth">3</prop>
+				<prop key="hibernate.jdbc.fetch_size">10</prop>
+				<prop key="hibernate.jdbc.batch_size">20</prop>
+				<!--<prop key="hibernate.dbcp.maxActive">10</prop>-->
+				<prop key="hibernate.jdbc.use_scrollable_resultset">true</prop>
+				<prop key="hibernate.bytecode.use_reflection_optimizer">true</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">false</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+				<!--<prop key="hibernate.cache.use_query_cache">true</prop>-->
+				<!--<prop key="hibernate.cache.use_second_level_cache">true</prop>-->
+				<prop key="hibernate.cache.use_minimal_puts">true</prop>
+				<prop key="hibernate.cache.use_structured_entries">false</prop>
+				<prop key="hibernate.connection.useUnicode">true</prop>
+				<prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+				<prop key="hibernate.query.substitutions">true 1, false 0</prop>
+				<!-- <prop key="hibernate.connection.pool_size">10</prop> -->
+				<prop key="hibernate.show_sql">${jdbc.show_sql}</prop>
+				<prop key="javax.persistence.validation.mode">none</prop>
+				<!--<prop key="hibernate.hbm2ddl.auto">validate</prop>-->
+				<prop key="hibernate.c3p0.min_size">5</prop>
+				<prop key="hibernate.c3p0.max_size">20</prop>
+				<prop key="hibernate.c3p0.timeout">300</prop>
+				<prop key="hibernate.c3p0.max_statements">0</prop>
+				<prop key="hibernate.c3p0.idle_test_period">3000</prop>
+  
+			</props>
+		</property>
+	</bean>
+
+	<bean id="sessionFactorySecondDatabase" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSourceSecondDatabase" />
+		</property>
+
+		<property name="mappingResources">
+			<list>
+				<!--<value>com/artonis/hrm/core/config/core.hbm.xml</value>
+				<value>com/artonis/hrm/core/config/core_view.hbm.xml</value>
+				<value>com/artonis/core/system/authentication/config/base_authentication.hbm.xml</value>
+				<value>com/artonis/core/system/authentication/config/base_authentication_view.hbm.xml</value>-->
+			</list>
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
+				<prop key="hibernate.show_sql">${jdbc.show_sql}</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!--module application context-->
+	<import resource="hibernateApplicationContext.xml" />
+
+	<import resource="mongoApplicationContext.xml" />
+	
+	<import resource="beansApplicationContext.xml" />
+
+    <bean id="applicationContextUtil" class="com.artonis.core.common.base.spring.util.ApplicationContextUtil"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    	<property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <tx:annotation-driven />
+
+    <task:annotation-driven />
+
+
+     <!--<bean id="smsStartup" class="com.artonis.core.common.startup.SmsStartUp" init-method="init">-->
+		 <!--<constructor-arg index="0" value="${sms.source.number}"/>-->
+		 <!--<constructor-arg index="1" value="${sms.send.hour}"/>-->
+		 <!--<constructor-arg index="2" value="${sms.send.minute}"/>-->
+		 <!--<constructor-arg index="3" value="${sms.send.time.distance}"/>-->
+		 <!--<constructor-arg index="4" value="${sms.report.hour}"/>-->
+		 <!--<constructor-arg index="5" value="${sms.report.minute}"/>-->
+		 <!--<constructor-arg index="6" value="${sms.report.time.distance}"/>-->
+	<!--</bean>-->
+</beans>

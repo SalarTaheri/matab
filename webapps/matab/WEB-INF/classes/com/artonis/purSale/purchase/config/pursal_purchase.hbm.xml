@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.purSale.purchase.model" default-lazy="false">
+	<class name="PurchaseInvoice" table="pursal2purchaseInvoice">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial"/>
+		<property name="date_" />
+		<property name="businessPartnerId"/>
+		<property name="financeYearId"/>
+		<property name="state"/>
+		<property name="description"/>
+		<property name="registererId"/>
+	</class>
+	<class name="PurchaseInvoiceItem" table="pursal2purchaseInvoiceItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id"/>
+		<property name="purchaseInvoice_id"/>
+		<property name="goodsAmount" />
+		<property name="measureUnitId"/>
+		<property name="rate"/>
+		<property name="impurePrice" type="double"/>
+		<property name="discount" type="double"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="carriageFare" type="double"/>
+		<property name="payablePrice" type="double"/>
+	</class>
+</hibernate-mapping>

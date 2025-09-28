@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.clinic.report.view" default-lazy="false">
+
+	<class name="DoctorServicePercentReportView" table="his5doctorServicePercent_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeId" type="long"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="fullName" type="string"/>
+		<property name="groupId" type="long"/>
+		<property name="groupName" type="string"/>
+		<property name="serviceId" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="serviceItemId" type="long"/>
+		<property name="serviceItemName" type="string"/>
+		<property name="fromDate" type="com.artonis.core.base.core.Date"/>
+		<property name="toDate" type="com.artonis.core.base.core.Date"/>
+        <property name="percent" column="percent_" type="long"/>
+		<property name="type"  type="int"/>
+		<property name="price"  type="long"/>
+	</class>
+	
+</hibernate-mapping>

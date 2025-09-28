@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.basicInfo.expenditure.view" default-lazy="false">
+	<class name="ExpenditureView" table="fnc3expenditure_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="type" type="int"/>
+		<property name="expenditurerer" type="long"/>
+		<property name="expenditurererFullName" type="string"/>
+	</class>
+	<class name="ExpenditureFundView" table="fnc3expenditurefund_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="expenditurer_id" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="serial" type="string"/>
+		<property name="registerer" type="long"/>
+		<property name="state" type="int"/>
+		<property name="registererFullName" type="string"/>
+		<property name="expenditurerName" type="string"/>
+	</class>
+	<class name="ExpenditurefundExpenditureItemView" table="fnc3expenditurefund_expenditure_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="expenditurefund_id" type="long"/>
+		<property name="expenditureAccountCoding_id" type="long"/>
+		<property name="expenditureFloatAccountLevel1_id" type="long"/>
+		<property name="expenditureFloatAccountLevel2_id" type="long"/>
+		<property name="expenditureFloatAccountLevel3_id" type="long"/>
+		<property name="expenditureFloatAccountLevel4_id" type="long"/>
+		<property name="expenditureAccountCoding_name" type="string"/>
+		<property name="expenditureFloatAccountLevel1_name" type="string"/>
+		<property name="expenditureFloatAccountLevel2_name" type="string"/>
+		<property name="expenditureFloatAccountLevel3_name" type="string"/>
+		<property name="expenditureFloatAccountLevel4_name" type="string"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="ExpenditureFundExpenseFundItemView" table="fnc3expenditurefund_expensefund_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="expenditurefund_id" type="long"/>
+		<property name="expensefundAccountCoding_id" type="long"/>
+		<property name="expenseFundFloatAccountLevel1_id" type="long"/>
+		<property name="expenseFundFloatAccountLevel2_id" type="long"/>
+		<property name="expenseFundFloatAccountLevel3_id" type="long"/>
+		<property name="expenseFundFloatAccountLevel4_id" type="long"/>
+		<property name="expensefundAccountCoding_name" type="string"/>
+		<property name="expenseFundFloatAccountLevel1_name" type="string"/>
+		<property name="expenseFundFloatAccountLevel2_name" type="string"/>
+		<property name="expenseFundFloatAccountLevel3_name" type="string"/>
+		<property name="expenseFundFloatAccountLevel4_name" type="string"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	
+</hibernate-mapping>

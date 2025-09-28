@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.generalAccounting.accountingDocuments.view" default-lazy="false">
+
+    <class name="DocumentItemView" table="fnc2documentItem_View">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="doc_id" type="long"/>
+		<property name="accountId" type="long"/>
+		<property name="referenceNumber" type="long"/>
+		<property name="docNumber" type="long"/>
+		<property name="accountName" type="string"/>
+		<property name="accountCode" type="string"/>
+		<property name="accountArticleId" type="long"/>
+		<property name="debtorAmount" type="long"/>
+		<property name="creditorAmount" type="long"/>
+		<property name="amountType" type="int"/>
+		<property name="articleDescription" type="string"/>
+		<property name="floatAcc1Id" type="long"/>
+		<property name="floatAcc1Name" type="string"/>
+		<property name="floatAcc1Code" type="string"/>
+		<property name="floatAcc2Id" type="long"/>
+		<property name="floatAcc2Name" type="string"/>
+		<property name="floatAcc2Code" type="string"/>
+		<property name="floatAcc3Id" type="long"/>
+		<property name="floatAcc3Name" type="string"/>
+		<property name="floatAcc3Code" type="string"/>
+		<property name="floatAcc4Id" type="long"/>
+		<property name="floatAcc4Name" type="string"/>
+		<property name="floatAcc4Code" type="string"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="accountKolId" type="long"/>
+		<property name="accountKolCode" type="string"/>
+		<property name="accountKolName" type="string"/>
+		<property name="documentItemAmount" type="long"/>
+	</class>
+	<class name="DocumentView" table="fnc2document_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="docNumber" type="long"/>
+		<property name="referenceNumber" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="createDate" type="com.artonis.core.base.core.Date"/>
+		<property name="type" type="int"/>
+		<property name="state" type="int"/>
+		<property name="description" type="string"/>
+		<property name="financeYear_Id" type="long"/>
+		<property name="balanceStateId" type="int"/>
+		<property name="documentAmount" type="long"/>
+	</class>
+	
+</hibernate-mapping>

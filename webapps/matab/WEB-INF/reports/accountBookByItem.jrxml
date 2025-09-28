@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="accountBookByItem" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0802b4b1-6962-4893-bdf9-ba9f60257934">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1">
+		<box>
+			<pen lineWidth="1.0" lineStyle="Double"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="style2">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="style3">
+		<box>
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="companyName" class="java.lang.String"/>
+	<parameter name="patients" class="java.lang.String"/>
+	<parameter name="services" class="java.lang.String"/>
+	<parameter name="reagentDoctors" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="docNumber" class="java.lang.Long"/>
+	<field name="referenceNumber" class="java.lang.Long"/>
+	<field name="shamsiDate_" class="java.lang.String"/>
+	<field name="bedehkar" class="java.lang.Long"/>
+	<field name="bestankar" class="java.lang.Long"/>
+	<field name="mandeh" class="java.lang.Long"/>
+	<field name="accountCodeName" class="java.lang.String"/>
+	<field name="floatAccountLevel1CodeName" class="java.lang.String"/>
+	<field name="floatAccountLevel2CodeName" class="java.lang.String"/>
+	<field name="floatAccountLevel3CodeName" class="java.lang.String"/>
+	<field name="floatAccountLevel4CodeName" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<field name="cumulativeMandeh" class="java.lang.Long"/>
+	<variable name="bedehkar1" class="java.lang.Long" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{bedehkar}]]></variableExpression>
+	</variable>
+	<variable name="bestankar1" class="java.lang.Long" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{bestankar}]]></variableExpression>
+	</variable>
+	<variable name="bestankar2" class="java.lang.Long" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{bestankar}]]></variableExpression>
+	</variable>
+	<variable name="bedehkar2" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{bedehkar}]]></variableExpression>
+	</variable>
+	<variable name="bestankar3" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{bestankar}]]></variableExpression>
+	</variable>
+	<variable name="sumMandehPerPage" class="java.lang.Long" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{mandeh}]]></variableExpression>
+	</variable>
+	<variable name="sumMandehReport" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{mandeh}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<textField>
+				<reportElement uuid="89786883-2f8a-4c07-8a7a-9b5aa356d8cc" x="221" y="22" width="360" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3e80e47f-0c14-404d-8cb8-84e4a6288927" x="85" y="24" width="22" height="11"/>
+				<textElement>
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[کاربر:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b73fa995-0e9f-4aea-aee3-c7554fb44a95" x="0" y="24" width="85" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="591ab48a-6bd1-41dd-a4fb-ed54df6d04eb" x="85" y="0" width="58" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[تاریخ گزارش:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8df0ed59-da0d-4125-a73d-44149f2c912f" x="0" y="0" width="85" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c2196d62-af62-4c60-97be-bd0caed4181b" x="196" y="5" width="389" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[گزارش دفتر حساب مطابق ردیف های هر سند ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="72fcfbef-981b-4a61-8048-0a2e5f4c0a00" x="490" y="50" width="46" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[از تاریخ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ff53091e-550e-4381-882a-bc827e17f2f3" x="390" y="50" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="264f7075-23f4-406a-aa73-6f9f40686853" x="331" y="50" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[تا تاریخ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="74c58ade-a662-4ef3-9c54-0e5440470884" x="231" y="50" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a728d7d6-357c-4139-82cf-eb3bfc64eea9" style="style2" mode="Transparent" x="741" y="0" width="32" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[شماره سند]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="999412c8-55d4-463c-95c2-8480ed24883b" mode="Transparent" x="429" y="0" width="21" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[سطح 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0c34360b-e559-4e2f-b6b3-912626d9381b" mode="Transparent" x="408" y="0" width="21" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[سطح  3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="faa23ccc-0cd8-4765-846d-08e4ad632a87" mode="Transparent" x="387" y="0" width="21" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[سطح 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c5bb6018-940a-4fa8-933f-d468d28a354a" mode="Transparent" x="274" y="0" width="113" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[توضیحات]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9093b168-2e5f-4f86-8d3d-f0834b07d3e8" mode="Transparent" x="214" y="0" width="60" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بدهکار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3875265-a959-45eb-8a38-428982c50394" mode="Transparent" x="154" y="0" width="60" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[بستانکار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1faa794c-97fa-473c-96cf-829a47cd70d2" mode="Transparent" x="450" y="0" width="102" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[سطح 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="280505d5-f698-465b-94d8-bf95bf5de87e" mode="Transparent" x="552" y="0" width="99" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[نام و کد حساب]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="958a262d-a211-4817-8160-074d6cacb661" mode="Transparent" x="79" y="0" width="75" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[مانده]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e9286f5-ee68-41e6-a961-beb8a068238b" style="style2" mode="Transparent" x="773" y="0" width="29" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[ردیف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4adba19f-72bd-45a4-8828-3b26087769b3" style="style2" mode="Transparent" x="709" y="0" width="32" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[عطف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8cb0cd15-6c86-4552-b2ba-83de1c815b98" style="style2" mode="Transparent" x="651" y="0" width="58" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[تاریخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4cb2b3d3-431b-4ae2-83a8-7c31b5f92e0a" mode="Transparent" x="0" y="0" width="79" height="42"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[مانده تجمیعی]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement uuid="5f0479e4-97cb-4aa2-aebf-75a595e5a9d2" style="style2" x="741" y="0" width="32" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{docNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="06ca942e-2175-4aac-aa90-22cb406ec9bc" style="style2" x="552" y="0" width="99" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{accountCodeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ccfaf66d-3f47-445d-80de-f49ddbb508fd" style="style2" x="450" y="0" width="102" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{floatAccountLevel1CodeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0dd34a86-4b1f-4295-bde7-6ae8a88d846c" style="style2" x="429" y="0" width="21" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{floatAccountLevel2CodeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4cbbe61c-efa0-439f-8cc2-8296378ff215" style="style2" x="408" y="0" width="21" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{floatAccountLevel3CodeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="daa37296-59c8-4683-be96-0ebcefc137eb" x="387" y="0" width="21" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{floatAccountLevel4CodeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7fda2550-06f0-41af-b266-9fad90ac809e" positionType="Float" x="274" y="0" width="113" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="8a6a7aeb-34a9-4909-9192-28d2b4968776" x="214" y="0" width="60" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bedehkar}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="a7e40171-ae6e-4fb2-af83-8af4bbb1f0c3" x="154" y="0" width="60" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bestankar}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="e5c97e96-d037-4e64-b898-36ad9585691a" x="79" y="0" width="75" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mandeh}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2321216c-df15-4eed-9bae-93f6829284a6" style="style2" x="773" y="0" width="29" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8fcdd096-128b-4243-864b-05a7163b726d" style="style2" x="709" y="0" width="32" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referenceNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ecb5e5df-20dc-4f8f-aef0-04f4dd9eda27" style="style2" x="651" y="0" width="58" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shamsiDate_}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="7a4592bf-7ad7-4b71-b7be-5bb3ae6a4a2d" x="0" y="0" width="79" height="42"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cumulativeMandeh}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30" splitType="Stretch">
+			<textField pattern="#,##0.###">
+				<reportElement uuid="721d0d32-f312-4855-840e-a9910ceb3d06" x="214" y="0" width="60" height="29"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{bedehkar1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fc98674a-be54-46be-95ff-43c38fdb0285" mode="Transparent" x="274" y="0" width="528" height="29"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع هر صفحه]]></text>
+			</staticText>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="c9f48ad8-c78b-497b-933b-49e27471d785" x="154" y="0" width="60" height="29"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{bestankar2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="c9f74cfc-0678-4028-8eb4-5f28fc0a4cb4" x="79" y="0" width="75" height="29"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumMandehPerPage}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7a60e7d0-a2dc-49d9-b1a5-51bf241085a4" x="390" y="12" width="16" height="20"/>
+				<textElement>
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="65">
+			<textField pattern="#,##0.###">
+				<reportElement uuid="786c0ad5-343c-4edc-a927-2b662d9d669d" x="213" y="0" width="60" height="29"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{bedehkar2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="644c25bf-f62d-4d0c-806c-6c4956df3fbc" mode="Transparent" x="274" y="0" width="528" height="29"/>
+				<box>
+					<topPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع کل]]></text>
+			</staticText>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="655386d7-c1be-41a1-92ed-ff0a55bf3ce9" x="79" y="0" width="75" height="29"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumMandehReport}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###">
+				<reportElement uuid="409464d4-6360-4947-af83-2d566862b740" x="154" y="0" width="59" height="29"/>
+				<box>
+					<topPen lineWidth="1.5"/>
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{bestankar3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="295ac676-a2dc-4291-83c5-69269e96fffa" x="389" y="42" width="16" height="20"/>
+				<textElement>
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

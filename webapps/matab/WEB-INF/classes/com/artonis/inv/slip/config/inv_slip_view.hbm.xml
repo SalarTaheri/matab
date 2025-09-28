@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.inv.slip.view" default-lazy="false">
+	<class name="CustomizeConsumptionSlipView" table="inv4customize_consumptionSlip_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="consumptionSlip_id" type="long"/>
+		<property name="goodsTemplate_id" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="goodsTemplateName" type="string"/>
+		<property name="issuer" type="long"/>
+		<property name="referenceConsumptionSlip" type="string"/>
+		<property name="consumptionSlipSerial" type="string"/>
+		<property name="issuerName" type="string"/>
+		<property name="inventoryName" type="string"/>
+		<property name="inventory_id" type="long"/>
+	</class>
+	<class name="AllSlipView" table="inv4allSlip_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="documentName" type="string"/>
+		<property name="documentType" type="int"/>
+		<property name="documentId" type="long"/>
+		<property name="documentDate" type="com.artonis.core.base.core.Date"/>
+		<property name="documentState" type="int"/>
+		<property name="documentSerial" type="string"/>
+		<property name="documentReference" type="string"/>
+		<property name="dateInMilliSec" type="long"/>
+		<property name="isSorted" type="boolean"/>
+		<property name="inventoryId" type="long"/>
+		<property name="inventoryName" type="string"/>
+		<property name="issuerId" type="long"/>
+		<property name="issuerFirstName" type="string"/>
+		<property name="issuerLastName" type="string"/>
+		<property name="pageSystemCode" type="string"/>
+	</class>
+	<class name="AllSlipWithGoodsView" table="inv4allSlipWithGoods_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="documentName" type="string"/>
+		<property name="documentType" type="int"/>
+		<property name="documentId" type="long"/>
+		<property name="documentDate" type="com.artonis.core.base.core.Date"/>
+		<property name="documentState" type="int"/>
+		<property name="documentSerial" type="string"/>
+		<property name="documentReference" type="string"/>
+		<property name="dateInMilliSec" type="long"/>
+		<property name="isSorted" type="boolean"/>
+		<property name="inventoryId" type="long"/>
+		<property name="inventoryName" type="string"/>
+		<property name="issuerId" type="long"/>
+		<property name="issuerFirstName" type="string"/>
+		<property name="issuerLastName" type="string"/>
+		<property name="pageSystemCode" type="string"/>
+		<property name="goodsId" type="long"/>
+		<property name="goodsName" type="string"/>
+		<property name="incomingAmount" type="long"/>
+		<property name="outgoingAmount" type="long"/>
+	</class>
+</hibernate-mapping>

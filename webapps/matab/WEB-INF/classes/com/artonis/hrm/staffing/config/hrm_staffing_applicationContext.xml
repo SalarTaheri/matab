@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- OutputfactorRecruitmentService -->
+	<bean id="outputfactorRecruitmentService" class="com.artonis.hrm.staffing.service.impl.OutputfactorRecruitmentServiceImpl"> 
+		<property name="dao" ref="outputfactorRecruitmentDao" /> 
+	</bean>
+	<bean id="outputfactorRecruitmentDao" class="com.artonis.hrm.staffing.dao.impl.OutputfactorRecruitmentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- RecruitmentTypeService -->
+	<bean id="recruitmentTypeService" class="com.artonis.hrm.staffing.service.impl.RecruitmentTypeServiceImpl"> 
+		<property name="dao" ref="recruitmentTypeDao" /> 
+	</bean>
+	<bean id="recruitmentTypeDao" class="com.artonis.hrm.staffing.dao.impl.RecruitmentTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- WageFactorService -->
+	<bean id="wageFactorService" class="com.artonis.hrm.staffing.service.impl.WageFactorServiceImpl"> 
+		<property name="dao" ref="wageFactorDao" /> 
+	</bean>
+	<bean id="wageFactorDao" class="com.artonis.hrm.staffing.dao.impl.WageFactorDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- WageFactorDeductionsRecruitmentTypeService -->
+	<bean id="wageFactorDeductionsRecruitmentTypeService" class="com.artonis.hrm.staffing.service.impl.WageFactorDeductionsRecruitmentTypeServiceImpl"> 
+		<property name="dao" ref="wageFactorDeductionsRecruitmentTypeDao" /> 
+	</bean>
+	<bean id="wageFactorDeductionsRecruitmentTypeDao" class="com.artonis.hrm.staffing.dao.impl.WageFactorDeductionsRecruitmentTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- WageFactorBenefitsRecruitmentTypeService -->
+	<bean id="wageFactorBenefitsRecruitmentTypeService" class="com.artonis.hrm.staffing.service.impl.WageFactorBenefitsRecruitmentTypeServiceImpl"> 
+		<property name="dao" ref="wageFactorBenefitsRecruitmentTypeDao" /> 
+	</bean>
+	<bean id="wageFactorBenefitsRecruitmentTypeDao" class="com.artonis.hrm.staffing.dao.impl.WageFactorBenefitsRecruitmentTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- WageFactorEmployerObligationsRecruitmentTypeService -->
+	<bean id="wageFactorEmployerObligationsRecruitmentTypeService" class="com.artonis.hrm.staffing.service.impl.WageFactorEmployerObligationsRecruitmentTypeServiceImpl"> 
+		<property name="dao" ref="wageFactorEmployerObligationsRecruitmentTypeDao" /> 
+	</bean>
+	<bean id="wageFactorEmployerObligationsRecruitmentTypeDao" class="com.artonis.hrm.staffing.dao.impl.WageFactorEmployerObligationsRecruitmentTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

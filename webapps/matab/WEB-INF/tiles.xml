@@ -1,0 +1,50 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="reportPreview" template="/WEB-INF/tiles/emptyTemplate.jsp">
+	    <put-attribute name="body"  value="/WEB-INF/pages/reportPreview.jsp"/>
+	</definition>
+
+	
+
+	<definition name="index" template="/WEB-INF/tiles/emptyTemplate.jsp">
+        <put-attribute name="title" value="Index" />
+        <put-attribute name="body" value="/WEB-INF/pages/index.jsp" />
+    </definition>
+    
+	<definition name="login" template="/WEB-INF/tiles/loginTemplate.jsp">
+        <put-attribute name="title" value="LOGIN" />
+        <put-attribute name="body" value="/WEB-INF/pages/login.jsp" />
+    </definition>
+
+    <definition name="HelloWorldPage.fa-IR" template="/WEB-INF/tiles/template.jsp">
+        <put-attribute name="title" value="HelloWorldPage" />
+        <put-attribute name="body" value="/WEB-INF/pages/HelloWorldPage.fa-IR.jsp" />
+    </definition>
+    
+    <definition name="hrm/employee/Employee/employee" template="/WEB-INF/tiles/template.jsp"> 
+        <put-attribute name="title" value="HelloWorldPage" /> 
+        <put-attribute name="body" value="/WEB-INF/pages/hrm/employee/Employee/employee.jsp" /> 
+    </definition> 
+
+	<definition name="page/*/*/*/*/*" template="/WEB-INF/tiles/{1}.jsp">
+	    <put-attribute name="body"  value="/WEB-INF/pages/{2}/{3}/{4}/{5}.jsp"/>
+	</definition>
+	<definition name="page/*/*/*/*/*/*" template="/WEB-INF/tiles/{1}.jsp">
+	    <put-attribute name="body"  value="/WEB-INF/pages/{2}/{3}/{4}/{5}/{6}.jsp"/>
+	</definition>
+	<definition name="page/*/*/*/*/*/*/*" template="/WEB-INF/tiles/{1}.jsp">
+	    <put-attribute name="body"  value="/WEB-INF/pages/{2}/{3}/{4}/{5}/{6}/{7}.jsp"/>
+	</definition>
+    <definition name="page/*/*/*/*/*/*/*/*" template="/WEB-INF/tiles/{1}.jsp">
+	    <put-attribute name="body"  value="/WEB-INF/pages/{2}/{3}/{4}/{5}/{6}.jsp"/>
+	    <put-attribute name="tree"  value="/WEB-INF/pages/{2}/{3}/{4}/{7}/Tree.jsp"/>
+	</definition>
+
+    <definition name="jsonTest" template="/WEB-INF/tiles/template.jsp">
+        <put-attribute name="title" value="JSON TEST" />
+        <put-attribute name="body" value="/WEB-INF/pages/jsonTest.jsp" />
+    </definition>
+    
+</tiles-definitions>

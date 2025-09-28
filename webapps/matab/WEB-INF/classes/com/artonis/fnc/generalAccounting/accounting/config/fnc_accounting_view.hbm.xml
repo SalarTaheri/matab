@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.generalAccounting.accounting.view" default-lazy="false">
+	<class name="AccountCodingTypeView" table="fnc1accountcoding_type_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="accountGroupNature_id" type="long"/>
+		<property name="accountGroupNatureName" type="string"/>
+	</class>
+     <class name="AllFloatAccountView" table="fnc1Allfloataccount_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="parent_id" type="long"/>
+        <property name="level" type="int"/>
+        <property name="hasChild" type="boolean"/>
+        <property name="nameCode" type="string"/>
+        <property name="groupNature_id" type="int"/>
+        <property name="groupNature_name" type="string"/>
+        <property name="type" type="int"/>
+        <property name="codeAsLong" type="long"/>
+        <property name="parentFloatAccountName" type="string"/>
+    </class>
+    <class name="AccountCodingAndAccountCodingGroupView" table="fnc1accountcoding_accountcodinggroup_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="accountTypeId" type="long"/>
+		<property name="accountTypeName" type="string"/>
+		<property name="accountGroupTypeId" type="long"/>
+		<property name="accountGroupTypeName" type="string"/>
+		<property name="nature" type="long"/>
+		<property name="accountGroupNatureName" type="string"/>
+		<property name="accountLayer" type="int"/>
+		<property name="codeAsLong" type="long"/>
+	</class>
+	<class name="FloatAccountRelatedFloatAccountGroupView" table="fnc1floatAccountRelatedFloatAccount_View">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="floatAccountId" type="long"/>
+		<property name="floatAccountGroupId" type="long"/>
+		<property name="floatAccountGroupcodeName" type="string"/>
+	</class>
+</hibernate-mapping>

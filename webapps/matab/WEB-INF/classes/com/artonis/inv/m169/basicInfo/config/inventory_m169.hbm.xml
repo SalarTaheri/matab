@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.m169.basicInfo.model" default-lazy="false">
+    <class name="ServiceGoods" table="inv_bas_goods" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="specification" type="string"/>
+        <property name="metrics" type="string"/>
+    </class>
+    
+	<class name="SeasonVat" table="inv_m169_1_seasonvat">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="length" type="string"/>
+		<property name="startDate" type="com.artonis.core.base.core.Date"/>
+		<property name="finishDate" type="com.artonis.core.base.core.Date"/>
+		<property name="complicationPercent" type="float"/>
+		<property name="taxPercent" type="float"/>
+		<property name="active" type="boolean"/>
+		<property name="year" type="int"/>
+		<property name="seasionNumber" type="int"/>
+	</class>
+
+	<class name="Contract" table="inv_m169_1_contract">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="type" type="int"/>
+		<property name="person" type="long"/>
+		<property name="startDate" type="com.artonis.core.base.core.Date"/>
+		<property name="finishDate" type="com.artonis.core.base.core.Date"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+		<property name="contractNumber" type="string"/>
+	</class>
+	
+	<class name="Person" table="inv_m169_1_person">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="family" type="string"/>
+		<property name="title" type="byte"/>
+		<property name="type" type="byte"/>
+		<property name="citizenship" type="byte"/>
+		<property name="nationalCode" type="string"/>
+		<property name="countryId" column="country_id" type="long"/>
+		<property name="provinceId" column="province_id" type="long"/>
+		<property name="cityId" column="city_id" type="long"/>
+		<property name="phoneNo" type="string"/>
+		<property name="faxNo" type="string"/>
+		<property name="clientCode" type="string"/>
+		<property name="description" type="string"/>
+		<property name="mobileNo" type="string"/>
+		<property name="emailAddress" type="string"/>
+		<property name="birthDate" type="com.artonis.core.base.core.Date"/>
+		<property name="economicNo" column="economic_no" type="string"/>
+		<property name="address" column="address" type="string"/>
+		<property name="preCodeCity" column="preCodeCity" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="foreignPersonNumber" type="string"/>
+	</class>
+	<class name="CompanyPerson" table="inv_m169_1_companyperson">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="personType" type="int"/>
+		<property name="companyType" type="int"/>
+		<property name="personCompanyName" type="string"/>
+		<property name="firstAndLastName" type="string"/>
+		<property name="registerNumber" type="string"/>
+		<property name="nationalId" type="string"/>
+		<property name="taxAffairs" type="string"/>
+		<property name="province_Id" type="long"/>
+		<property name="city_Id" type="long"/>
+		<property name="address" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="phoneNo" type="string"/>
+		<property name="priorEconomicCode" type="string"/>
+		<property name="newEconomicCode" type="string"/>
+		<property name="registrationState" type="int"/>
+		<property name="userName" type="string"/>
+		<property name="includeBand" type="int"/>
+	</class>
+
+	<class name="M169Province" table="inv_m169_province">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="country_id" type="long"/>
+	</class>
+	<class name="M169City" table="inv_m169_city">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="province_id" type="long"/>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+	</class>
+</hibernate-mapping>

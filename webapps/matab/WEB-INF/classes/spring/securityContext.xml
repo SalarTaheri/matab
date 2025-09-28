@@ -1,0 +1,42 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/security
+                           http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <security:global-method-security pre-post-annotations="enabled" />
+
+    <security:http pattern="/activation/**" security="none"/>
+    <security:http pattern="/resources/**" security="none"/>
+    <security:http pattern="/rest/**" security="none"/>
+    <security:http pattern="/clinic/basicInfo/clinicConfiguration/**" security="none"/>
+
+    <security:http use-expressions="true" entry-point-ref="ajaxAwareLoginUrlAuthenticationEntryPoint">
+        <security:intercept-url pattern="/login/**" access="permitAll"/>
+        <security:intercept-url pattern="/**" access="isAuthenticated()" />
+        <security:form-login login-processing-url="/j_spring_security_check" login-page="/login/" default-target-url="/index"
+        	authentication-success-handler-ref="authenticationSuccessHandler"
+        	authentication-failure-handler-ref="authenticationFailureHandler"
+        	authentication-failure-url="/login?login_error=1" />
+        <security:logout logout-url="/j_spring_security_logout" />
+        <security:headers disabled="true" />
+        <security:csrf disabled="true" />
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider user-service-ref="userDetailsService" />
+    </security:authentication-manager>
+
+    <bean id="userDetailsService" class="com.artonis.core.system.authentication.UserDetailsServiceImpl" />
+    
+    <bean id="authenticationSuccessHandler" class="com.artonis.core.system.authentication.service.impl.CustomAuthenticationSuccessHandler" />
+
+    <bean id="authenticationFailureHandler" class="com.artonis.core.system.authentication.service.impl.CustomAuthenticationFailureHandler"/>
+
+    <bean id="ajaxAwareLoginUrlAuthenticationEntryPoint" class="com.artonis.core.base.security.AjaxAwareLoginUrlAuthenticationEntryPoint">
+        <constructor-arg value="/login" />
+    </bean>
+
+</beans>

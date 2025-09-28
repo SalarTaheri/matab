@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.purSale.purchase.view" default-lazy="false">
+	<class name="PurchaseInvoiceView" table="pursal2purchaseInvoice_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial"/>
+		<property name="date_" />
+		<property name="businessPartnerId"/>
+		<property name="financeYearId"/>
+		<property name="state"/>
+		<property name="description"/>
+		<property name="registererId"/>
+		<property name="registererName"/>
+		<property name="totalPrice"/>
+		<property name="docNumber" type="string"/>
+		<property name="businessPartnerName" type="string"/>
+		<property name="totalImpurePrice" />
+		<property name="totalTollPrice" />
+		<property name="totalTaxPrice" />
+		<property name="totalDiscountPrice" />
+		<property name="totalCarriageFarePrice" type="double"/>
+		<property name="totalPurePrice" type="double"/>
+	</class>
+	<class name="PurchaseInvoiceItemView" table="pursal2purchaseInvoiceItem_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id"/>
+		<property name="goodsAmount" />
+		<property name="purchaseInvoice_id"/>
+		<property name="goodsCodeName"/>
+		<property name="measureUnitId"/>
+		<property name="measureUnit_Name"/>
+		<property name="rate"/>
+		<property name="impurePrice" type="double"/>
+		<property name="convertCoefficient"/>
+		<property name="discount" type="double"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="carriageFare" type="double"/>
+		<property name="payablePrice" type="double"/>
+	</class>
+</hibernate-mapping>

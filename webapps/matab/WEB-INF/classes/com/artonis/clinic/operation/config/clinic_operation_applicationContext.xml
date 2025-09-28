@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	
+	<!-- SurgeryRvuService -->
+	<bean id="surgeryRvuService" class="com.artonis.clinic.operation.service.impl.SurgeryRvuServiceImpl"> 
+		<property name="dao" ref="surgeryRvuDao" /> 
+	</bean>
+	<bean id="surgeryRvuDao" class="com.artonis.clinic.operation.dao.impl.SurgeryRvuDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- InsuranceDisketteService -->
+	<bean id="insuranceDisketteService" class="com.artonis.clinic.operation.service.impl.InsuranceDisketteServiceImpl"> 
+		<property name="dao" ref="insuranceDisketteDao" /> 
+	</bean>
+	<bean id="insuranceDisketteDao" class="com.artonis.clinic.operation.dao.impl.InsuranceDisketteDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- NursingInfoService -->
+	<bean id="nursingInfoService" class="com.artonis.clinic.operation.service.impl.NursingInfoServiceImpl"> 
+		<property name="dao" ref="nursingInfoDao" /> 
+	</bean>
+	<bean id="nursingInfoDao" class="com.artonis.clinic.operation.dao.impl.NursingInfoDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- InsuranceDiskettePrescribeHeaderService -->
+	<bean id="insuranceDiskettePrescribeHeaderService" class="com.artonis.clinic.operation.service.impl.InsuranceDiskettePrescribeHeaderServiceImpl"> 
+		<property name="dao" ref="insuranceDiskettePrescribeHeaderDao" /> 
+	</bean>
+	<bean id="insuranceDiskettePrescribeHeaderDao" class="com.artonis.clinic.operation.dao.impl.InsuranceDiskettePrescribeHeaderDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	
+	<!-- InsuranceDiskettePrescribeBodyService -->
+	<bean id="insuranceDiskettePrescribeBodyService" class="com.artonis.clinic.operation.service.impl.InsuranceDiskettePrescribeBodyServiceImpl"> 
+		<property name="dao" ref="insuranceDiskettePrescribeBodyDao" /> 
+	</bean>
+	<bean id="insuranceDiskettePrescribeBodyDao" class="com.artonis.clinic.operation.dao.impl.InsuranceDiskettePrescribeBodyDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 	
+</beans>

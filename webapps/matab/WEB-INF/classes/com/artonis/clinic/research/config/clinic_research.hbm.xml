@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.research.model" default-lazy="false">
+	<class name="Registration" table="his4registration">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patient_id" type="long"/>
+		<property name="registerationDate" type="com.artonis.core.base.core.Date"/>
+		<property name="release" type="boolean"/>
+		<property name="user_id" type="long"/>
+	</class>
+	
+	<class name="RegistrationDepartment" table="his4registrationDepartment">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="registration_id" type="long"/>
+		<property name="department_id" type="long"/>
+		<property name="registrationUser_id" type="long"/>
+		<property name="registrationDate" type="com.artonis.core.base.core.Date"/>
+		<property name="release" type="boolean"/>
+	</class>
+	<class name="SurveyForm" table="his4surveyform">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	<class name="SurveyFormItem" table="his4surveyform_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="surveyform_id" type="long"/>
+		<property name="name" type="string"/>
+		<property name="key_" type="string"/>
+		<property name="datatype" type="string"/>
+		<property name="fieldCommaSep" type="string"/>
+		<property name="listLoaderUrl" type="string" />
+		<property name="alias" type="string" />
+		<property name="formFieldType" type="string" />
+		<property name="visible" type="boolean" />
+	</class>
+</hibernate-mapping>

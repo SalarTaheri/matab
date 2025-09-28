@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.hrm.core.model" default-lazy="false">
+    <class name="Company" table="hrm_ent_company" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+		<property name="code" type="string"/>
+		<property name="systemCode" type="string"/>
+		<property name="name" type="string"/>
+		<property name="parent_id" type="long"/>
+		<property name="rank" type="int"/>
+		<property name="state" type="int"/>
+		<property name="description" type="string"/>
+		<property name="legalNumber" type="string"/>
+		<property name="province_id" type="long"/>
+		<property name="city_id" type="long"/>
+		<property name="phoneNumber" type="string"/>
+		<property name="faxNumber" type="string"/>
+		<property name="webSite" type="string"/>
+		<property name="email" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="address" type="string"/>
+		<property name="picAddress" type="string"/>
+		<property name="companyType" type="int"/>
+    </class>
+ 	<class name="Employee" table="hrm_emp_employee" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="firstName" type="string"/>
+        <property name="lastName" type="string"/>
+        <property name="fatherName" type="string"/>
+        <property name="prefix" type="string"/>
+        <property name="nationalCode" type="string"/>
+        <property name="identityNumber" type="string"/>
+        <property name="personnelCode" type="string"/>
+        <property name="sex" type="long"/>
+		<property name="marriage" type="long"/>
+		<property name="tel" type="string"/>
+		<property name="mobile" type="string"/>
+		<property name="address" type="string"/>
+		<property name="workingGroup" type="int"/>
+		<property name="birthDate" type="com.artonis.core.base.core.Date"/> 
+		<property name="nationality_id" type="long"/>
+        <property name="workingStartDate" type="com.artonis.core.base.core.Date"/>
+        <property name="birthCity_id" type="long"/>
+        <property name="birthProvince_id" type="long"/>
+        <property name="identityIssuanceDate" type="com.artonis.core.base.core.Date"/>
+        <property name="identitySerial" type="string"/>
+        <property name="religious_id" type="long"/>
+        <property name="issuanceCity_id" type="long"/>
+        <property name="insuranceNumber" type="double"/>
+        <property name="email" type="string"/>
+        <property name="militaryState_id" type="long"/>
+        <property name="operatingUnit_id" type="long"/>
+        <property name="floatAccount_Id" type="long"/>
+        <property name="fullName" formula="firstName +' '+ lastName" />
+        <property name="medicalCouncilCode" type="string"/>
+        <property name="doctorGroup" type="integer"/>
+        <property name="isEndlessConnection" type="boolean"/>
+    </class>
+    <class name="EmployeeProficiencyRel" table="hrm_emp_employee_proficiency_rel">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employee_id" type="long"/>
+		<property name="proficiency_id" type="long"/>
+    </class>
+	<class name="OperatingUnit" table="hrm_ent_operatingunit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+        <property name="systemCode" type="string"/>
+		<property name="company_id" type="long"/>
+		<property name="parent_id" type="long"/>
+	</class>
+</hibernate-mapping>

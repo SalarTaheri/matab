@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.reports.model" default-lazy="false">
+	<class name="ReceiptPaymentDocReport" table="fnc3cheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="chequeSerial" type="string"/>
+		<property name="type" type="int"/>
+		<property name="bill_id" type="long"/>
+		<property name="businessPartner_id" type="long"/>
+	</class>
+</hibernate-mapping>

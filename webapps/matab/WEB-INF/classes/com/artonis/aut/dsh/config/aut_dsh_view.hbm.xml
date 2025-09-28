@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.aut.dsh.view" default-lazy="false">
+	<class name="SenderView" table="aut1sender_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="senderUser_id" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="subject" type="string"/>
+		<property name="letter" type="string"/>
+		<property name="usernames" type="string"/>
+	</class>
+	<class name="ReceiverView" table="aut1receiver_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="hasRead" type="boolean"/>
+        <property name="letter" type="string"/>
+        <property name="letter_id" type="long"/>
+        <property name="receiverUser_id" type="long"/>
+        <property name="username" type="string"/>
+        <property name="user_id" type="long"/>
+        <property name="subject" type="string"/>
+
+
+	</class>
+</hibernate-mapping>

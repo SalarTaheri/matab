@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.m169.operation.model" default-lazy="false">
+	<class name="PurchaseOperation" table="inv_m169_2_purchase">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="tradingBelow10Percent" type="boolean"/>
+		<property name="serviceGoods_id" type="long"/>
+		<property name="sellerType" type="int"/>
+		<property name="person_id" type="long"/>
+		<property name="foreignPersonCode" type="string"/>
+		<property name="return_" type="boolean"/>
+		<property name="price" type="long"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="personType" type="int"/>
+		<property name="state" type="int"/>
+		<property name="documentNumber" type="string"/>
+		<property name="rahgiriCode" type="string"/>
+		<property name="employee_id" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="SaleOperation" table="inv_m169_2_sale">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="tradingBelow10Percent" type="boolean"/>
+		<property name="serviceGoods_id" type="long"/>
+		<property name="buyerType" type="int"/>
+		<property name="person_id" type="long"/>
+		<property name="foreignPersonCode" type="string"/>
+		<property name="return_" type="boolean"/>
+		<property name="price" type="long"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="personType" type="int"/>
+		<property name="state" type="int"/>
+		<property name="documentNumber" type="string"/>
+		<property name="rahgiriCode" type="string"/>
+		<property name="employee_id" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="PurchaseContractOperation" table="inv_m169_2_purchasecontract">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="contractSideType" type="int"/>
+		<property name="person_id" type="long"/>
+		<property name="seasonVat_id" type="long"/>
+		<property name="foreignPersonCode" type="string"/>
+		<property name="return_" type="boolean"/>
+		<property name="price" type="long"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="contractDate" type="com.artonis.core.base.core.Date"/>
+		<property name="contractSubject" type="string"/>
+		<property name="deductionTax" type="double"/>
+		<property name="state" type="int"/>
+		<property name="documentNumber" type="string"/>
+		<property name="rahgiriCode" type="string"/>
+		<property name="startDate" type="com.artonis.core.base.core.Date"/>
+		<property name="finishDate" type="com.artonis.core.base.core.Date"/>
+		<property name="employee_id" type="long"/>
+		<property name="description" type="string"/>
+		<property name="paymentDescription" type="string"/>
+	</class>
+	<class name="RefusalOperation" table="inv_m169_2_refusal">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="serviceGoods_id" type="long"/>
+		<property name="personType" type="int"/>
+		<property name="backBuyerDate" type="com.artonis.core.base.core.Date"/>
+		<property name="person_id" type="long"/>
+		<property name="return_" type="boolean"/>
+		<property name="price" type="long"/>
+		<property name="tax" type="double"/>
+		<property name="toll" type="double"/>
+		<property name="state" type="int"/>
+		<property name="documentNumber" type="string"/>
+		<property name="rahgiriCode" type="string"/>
+		<property name="employee_id" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="FinanceOperationHistory" table="inv_m169_2_financeoperationhistory">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="operationId" type="long"/>
+		<property name="operationType" type="int"/>
+		<property name="operationDate" type="com.artonis.core.base.core.Date"/>
+		<property name="operationTime" type="java.sql.Time"/>
+	    <property name="operationState" type="int"/>
+		<property name="employee_id" type="long"/>
+	</class>
+</hibernate-mapping>

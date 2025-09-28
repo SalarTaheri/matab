@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.patient.view" default-lazy="false">
+	<class name="VisitMedicaltestView" table="his_pnt_visit_medicaltest_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="testName" type="string"/>
+		<property name="visit_id" type="long"/>
+		<property name="medicalTest_id" type="long"/>
+		<property name="value" type="string"/>
+		<property name="mongoVisit_id" type="string"/>
+		<property name="patient_id" type="long"/>
+		
+		
+	</class>
+
+    <class name="VisitQueueStatisticView" table="his_pnt_visitqueue_statistic_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="department_id" type="long"/>
+		<property name="department_name" type="string"/>
+		<property name="visitDate" type="com.artonis.core.base.core.Date"/>
+		<property name="doctor_id" type="long"/>
+		<property name="doctorName" type="string"/>
+		<property name="doctorFam" type="string"/>
+		<property name="service_id" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="state_id" type="int"/>
+		<property name="state_code" type="int"/>
+		<property name="state_name" type="string"/>
+		<property name="count" column="count_" type="long"/>
+	</class>
+	
+	<class name="AgentDoctorView" table="his1agentDoctor_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="tableType" type="int"/>
+        <property name="firstName" type="string"/>
+        <property name="lastName" type="string"/>
+        <property name="fatherName" type="string"/>
+        <property name="nationalCode" type="string"/>
+        <property name="identityNumber" type="string"/>
+        <property name="birthDate" type="com.artonis.core.base.core.Date"/>
+        <property name="sex" type="long"/>
+        <property name="fullName" type="string"/>
+        <property name="medicalCouncilCode" type="string"/>
+	</class>
+
+	<class name="VisitQueueHisPartnerPatientReceptionReportView" table="his5VisitQueueHisPartnerPatientReceptionReport_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+        <property name="serviceId" type="long"/>
+        <property name="serviceName" type="string"/>
+        <property name="doctorId" type="long"/>
+        <property name="doctorFullName" type="string"/>
+        <property name="visitDate" type="com.artonis.core.base.core.Date"/>
+		<property name="patientCount" type="int"/>
+		<property name="waitingCount" type="int"/>
+		<property name="doneCount" type="int"/>
+	</class>
+
+	<class name="VisitQueueHisPartnerPatientReceptionAggregationReportView" table="his5VisitQueueHisPartnerPatientReceptionAggregationReport_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+        <property name="serviceId" type="long"/>
+        <property name="serviceName" type="string"/>
+        <property name="doctorId" type="long"/>
+        <property name="doctorFullName" type="string"/>
+		<property name="patientCount" type="int"/>
+	</class>
+
+</hibernate-mapping>

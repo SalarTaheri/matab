@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	
+	<!-- GoodsKardexService -->
+	<bean id="goodsKardexService" class="com.artonis.inv.reports.service.impl.GoodsKardexServiceImpl"> 
+		<property name="dao" ref="goodsKardexDao" /> 
+	</bean>
+	<bean id="goodsKardexDao" class="com.artonis.inv.reports.dao.impl.GoodsKardexDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- RialiKardexService -->
+	<bean id="rialiKardexService" class="com.artonis.inv.reports.service.impl.RialiKardexServiceImpl"> 
+		<property name="dao" ref="rialiKardexDao" /> 
+	</bean>
+	<bean id="rialiKardexDao" class="com.artonis.inv.reports.dao.impl.RialiKardexDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- PurchaseReceiptGoodsDetialService -->
+	<bean id="purchaseReceiptGoodsDetialService" class="com.artonis.inv.reports.service.impl.PurchaseReceiptGoodsDetialServiceImpl"> 
+		<property name="dao" ref="purchaseReceiptGoodsDetialDao" /> 
+	</bean>
+	<bean id="purchaseReceiptGoodsDetialDao" class="com.artonis.inv.reports.dao.impl.PurchaseReceiptGoodsDetialDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InventoryStockService -->
+	<bean id="inventoryStockService" class="com.artonis.inv.reports.service.impl.InventoryStockServiceImpl">
+		<property name="dao" ref="inventoryStockDao" />
+	</bean>
+	<bean id="inventoryStockDao" class="com.artonis.inv.reports.dao.impl.InventoryStockDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- ReceiptAndSlipService -->
+	<bean id="receiptAndSlipService" class="com.artonis.inv.reports.service.impl.ReceiptAndSlipServiceImpl">
+		<property name="dao" ref="receiptAndSlipDao" />
+	</bean>
+	<bean id="receiptAndSlipDao" class="com.artonis.inv.reports.dao.impl.ReceiptAndSlipDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+</beans>

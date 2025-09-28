@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.operation.model" default-lazy="false">
+	<class name="DirectlyConsumptionReceiptTemp" table="inv2directlyConsumptionReceipt">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="string"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="reference" type="int"/>
+		<property name="finanaceYear_id" type="long"/>
+		<property name="businessPartner_id" type="long"/>
+		<property name="exporter" type="long"/>
+	</class>
+	<class name="BeginPeriodReceipt" table="inv2BeginPeriodReceipt">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="reference" type="string"/>
+		<property name="serial" type="string"/>
+		<property name="state" type="int"/>
+		<property name="inventory_id" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="dateInMilliSec" type="long" />
+		<property name="exporter" type="long"/>
+		<property name="isSorted" type="boolean"/>
+	</class>
+	<class name="BeginPeriodReceiptGoods" table="inv2beginPeriodReceipt_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsAmount" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="beginPeriodReceipt_id" type="long"/>
+		<property name="rate" type="double"/>
+		<property name="sum" type="double"/>
+	</class>
+	<class name="TemporaryReceipt" table="inv2temporaryReceipt">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="state" type="int"/>
+		<property name="inventory_id" type="int"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="exporter" type="long"/>
+		<property name="reference" type="string"/>
+		<property name="serial" type="string"/>
+		<property name="financeYear_id" type="long"/>
+		<property name="businessPartner_id" type="long"/>
+	</class>
+	<class name="TemporaryReceiptGoods" table="inv2temporaryReceipt_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsAmount" type="long"/>
+		<property name="temporaryReceipt_id" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+	</class>
+	<class name="TransferBetweenInventory" table="inv2transferBetweenInventory">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="originInventoryReference" type="string" />
+		<property name="originInventorySerial" type="string" />
+		<property name="destinationInventoryReference" type="string" />
+		<property name="destinationInventorySerial" type="string" />
+		<property name="originInventoryId" column="originInventory_id" type="long" />
+		<property name="destinationInventoryId" column="destinationInventory_id" type="long" />
+		<property name="date" type="com.artonis.core.base.core.Date" />
+		<property name="dateInMilliSec" type="long" />
+		<property name="issuerId" column="issuer_id" type="long" />
+		<property name="requestGoodsId" column="requestGoods_id" type="long" />
+		<property name="isSortedOriginInventory" type="boolean"/>
+		<property name="isSortedDestinationInventory" type="boolean"/>
+		<property name="originInventoryState" type="int" />
+		<property name="destinationInventoryState" type="int" />
+	</class>
+	<class name="TransferBetweenInventoryGoods" table="inv2transferBetweenInventory_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="amount" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="transferBetweenInventoryId" column="transferBetweenInventory_id" type="long"/>
+		<property name="rate" type="float"/>
+		<property name="sum" type="long"/>
+	</class>
+	<class name="GoodsPricing" table="inv2goodsPricing">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="documentId" type="long"/>
+		<property name="documentDate" type="com.artonis.core.base.core.Date"/>
+		<property name="documentType" type="int"/>
+		<property name="documentReceiptOrSlipType" type="int"/>
+		<property name="dateInMilliSec" type="long"/>
+		<property name="goodsId" type="long"/>
+		<property name="inventoryId" type="long"/>
+		<property name="remainingAmount" type="long"/>
+		<property name="rate" type="float"/>
+		<property name="price" type="long"/>
+	</class>
+	<class name="ClosingSlip" table="inv4closingSlip">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="reference" type="string" />
+		<property name="serial" type="string" />
+		<property name="state" type="int" />
+		<property name="inventoryId" column="inventory_id" type="long" />
+		<property name="date" type="com.artonis.core.base.core.Date" />
+		<property name="dateInMiliSec" type="long" />
+		<property name="issuer" type="long" />
+		<property name="isSorted" type="boolean"/>
+		<property name="description" type="string"/>
+		<property name="financeYear_id" type="long"/>
+		<property name="beginPeriodReceipt_id" type="long"/>
+	</class>
+	<class name="ClosingSlipGoods" table="inv4closingSlip_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="amount" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="closingSlip_id"  type="long"/>
+		<property name="rate" type="float"/>
+		<property name="sum" type="long"/>
+	</class>
+</hibernate-mapping>

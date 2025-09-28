@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.thinkRoom.sessionManagement.view" default-lazy="false">
+
+    <!--<class name="MemberSessionView" table="tnk_bas_members">-->
+    <class name="MemberSessionView" table="tnk_bas_member_session_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="lastname" type="string"/>
+        <property name="sex" type="int"/>
+        <property name="job" type="string"/>
+        <property name="tel1" type="string"/>
+        <property name="cellphone" type="string"/>
+        <property name="email" type="string"/>
+        <property name="member_card" type="boolean"/>
+        <property name="business_card" type="boolean"/>
+        <property name="session_id" type="long"/>
+        <property name="member_id" type="long"/>
+    </class>
+
+    <class name="MemberSessionSearch" table="tnk_bas_member_session_view_search">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="man_cont" type="int"/>
+        <property name="woman_cont" type="int"/>
+        <property name="man_has_card_cont" type="int"/>
+        <property name="woman_has_card_cont" type="int"/>
+        <property name="date" column="session_date" type="com.artonis.core.base.core.Date"/>
+        <property name="session_name"  type="string"/>
+        <property name="session_name_id"  type="long"/>
+    </class>
+
+    <class name="ThinkRoomSessionView" table="tnk_bas_session_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="start_time" type="java.sql.Time"/>
+        <property name="end_time" type="java.sql.Time"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="description" type="string"/>
+        <property name="session_name_id" type="long"/>
+        <property name="name" type="string"/>
+
+    </class>
+
+
+	
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- PaymentChequeService -->
+	<bean id="paymentChequeService" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.service.impl.PaymentChequeServiceImpl"> 
+		<property name="dao" ref="paymentChequeDao" /> 
+	</bean>
+	<bean id="paymentChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.dao.impl.PaymentChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PassedPaymentChequeService -->
+	<bean id="passedPaymentChequeService" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.service.impl.PassedPaymentChequeServiceImpl"> 
+		<property name="dao" ref="passedPaymentChequeDao" /> 
+	</bean>
+	<bean id="passedPaymentChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.dao.impl.PassedPaymentChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- VoidedPaymentChequeService -->
+	<bean id="voidedPaymentChequeService" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.service.impl.VoidedPaymentChequeServiceImpl"> 
+		<property name="dao" ref="voidedPaymentChequeDao" /> 
+	</bean>
+	<bean id="voidedPaymentChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.dao.impl.VoidedPaymentChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReturnedPaymentChequeService -->
+	<bean id="returnedPaymentChequeService" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.service.impl.ReturnedPaymentChequeServiceImpl"> 
+		<property name="dao" ref="returnedPaymentChequeDao" /> 
+	</bean>
+	<bean id="returnedPaymentChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.dao.impl.ReturnedPaymentChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

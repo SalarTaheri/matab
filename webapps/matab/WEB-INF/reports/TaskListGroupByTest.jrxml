@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-13T19:44:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TaskListGroupByTest" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47c1d7dd-f333-4473-bc85-19f45bff2bbf">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA["StyleTemplate.jrtx"]]></template>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="userName" class="java.lang.String"/>
+	<parameter name="taskListForm" class="com.artonis.lab.operation.controller.TaskListForm"/>
+	<field name="abbreviatedName" class="java.lang.String"/>
+	<field name="labQueues" class="java.util.Set"/>
+	<pageHeader>
+		<band height="75">
+			<staticText>
+				<reportElement x="180" y="0" width="200" height="20" uuid="b508bed2-df19-41f8-89a3-ce53691e4d14"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[آزمایشگاه پاتوبیولوژی بهبود]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="20" width="60" height="20" uuid="11497c6a-d54d-4199-b5b9-d9ff366673be"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[لیست کار:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="20" width="215" height="20" uuid="289f2a78-bf74-4da7-a1a9-c44fc6201195"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taskListForm}.getUnitName() == null ? "" : $P{taskListForm}.getUnitName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="507" y="40" width="44" height="20" uuid="28d2807e-213b-427c-ac90-759b818539a3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[از تاریخ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="40" width="40" height="20" uuid="c7d7a9f6-5e7c-4343-b077-adc3757ba11e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[تا تاریخ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="40" width="90" height="20" uuid="f31aa4f5-76be-40bc-9108-4335837cf81e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taskListForm}.getFromDate().toString()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="40" width="90" height="20" uuid="3454740a-a49e-41f7-a571-48e9fe7fb176"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{taskListForm}.getToDate().toString()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="244" y="40" width="30" height="20" uuid="14183828-604e-4a34-8b82-247b69a4f606"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[چاپ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement key="" x="138" y="40" width="100" height="20" uuid="efff5ae3-c11f-4973-b033-9f0e5a2421bf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="108" y="40" width="30" height="20" uuid="d678a579-77d3-435b-a76f-3bf5e936a671"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[کاربر:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-20" y="40" width="122" height="20" uuid="a23a86e9-1b22-45be-88af-012aac8fe3ce"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{userName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="138" height="19" uuid="e55d0d81-6070-467d-b9ef-6b9ee419e0fe"/>
+				<textElement textAlignment="Left">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["صفحه " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-11" y="66" width="571" height="1" uuid="5f2094f3-2ae7-454a-9b07-8dedda8ce095"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="45">
+			<textField>
+				<reportElement x="0" y="0" width="280" height="19" uuid="970a23ff-751f-4016-8e63-580c164094b0"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{abbreviatedName}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-20" y="20" width="595" height="20" uuid="3be28f92-4761-426b-8fd0-432ca3adc136"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{labQueues})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["TaskListGroupByTestItem.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="-11" y="42" width="571" height="1" uuid="270ccd40-dd5a-490d-9306-8f5e0af1e403"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

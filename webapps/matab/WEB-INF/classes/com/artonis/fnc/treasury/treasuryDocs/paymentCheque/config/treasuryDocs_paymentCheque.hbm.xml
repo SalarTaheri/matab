@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.model" default-lazy="false">
+	<class name="PaymentCheque" table="fnc3pbillpaymentcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bank_Id" type="long"/>
+		<property name="branch_Id" type="long"/>
+		<property name="bankAccount_Id" type="long"/>
+		<property name="chequeBookletNum" type="int"/>
+		<property name="maturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="accountCoding_Id" type="long"/>
+		<property name="floatAccountLevel1_Id" type="long"/>
+		<property name="floatAccountLevel2_Id" type="long"/>
+		<property name="floatAccountLevel3_Id" type="long"/>
+		<property name="floatAccountLevel4_Id" type="long"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+		<property name="paymentBillId" type="long"/>
+		<property name="chequeBookletItem_Id" type="long"/>
+		<property name="type" type="int"/>
+	</class>
+	<class name="PassedPaymentCheque" table="fnc3passedpaymentcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="passedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="accountCoding_Id" type="long"/>
+		<property name="floatAccountLevel1_Id" type="long"/>
+		<property name="floatAccountLevel2_Id" type="long"/>
+		<property name="floatAccountLevel3_Id" type="long"/>
+		<property name="floatAccountLevel4_Id" type="long"/>
+		<property name="chequeState_Id" type="long"/>
+		<property name="description" type="string"/>
+		
+	</class>
+	<class name="VoidedPaymentCheque" table="fnc3voidedpaymentcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="voidedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="voidedDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+	<class name="ReturnedPaymentCheque" table="fnc3returndedpaymentcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="returnedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="returnedDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+</hibernate-mapping>

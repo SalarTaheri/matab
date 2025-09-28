@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+	<!-- SourceWelfareService -->
+	<bean id="sourceWelfareService" class="com.artonis.hrm.welfare.service.impl.SourceWelfareServiceImpl">
+		<property name="dao" ref="sourceWelfareDao" />
+	</bean>
+	<bean id="sourceWelfareDao" class="com.artonis.hrm.welfare.dao.impl.SourceWelfareDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- WelfareFacility -->
+	<bean id="welfareFacilityService" class="com.artonis.hrm.welfare.service.impl.WelfareFacilityServiceImpl">
+		<property name="dao" ref="welfareFacilityDao" />
+	</bean>
+	<bean id="welfareFacilityDao" class="com.artonis.hrm.welfare.dao.impl.WelfareFacilityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- EmployeeFacilityRequst -->
+	<bean id="employeeFacilityRequstService" class="com.artonis.hrm.welfare.service.impl.EmployeeFacilityRequstServiceImpl">
+		<property name="dao" ref="employeeFacilityRequstDao" />
+	</bean>
+	<bean id="employeeFacilityRequstDao" class="com.artonis.hrm.welfare.dao.impl.EmployeeFacilityRequstDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+</beans>
+
+

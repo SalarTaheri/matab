@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.generalAccounting.basicinfo.model" default-lazy="false">
+	<class name="CustomizeAccount" table="fnc1customizeaccount">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="accountGroup" type="int"/>
+		<property name="accountName" type="int"/>
+		<property name="systemName" type="int"/>
+		<property name="pageName" type="int"/>
+		<property name="subPageName" type="int"/>
+		<property name="accountCodingId" type="long"/>
+		<property name="accountCodingType" type="int"/>
+		<property name="pageEntityName" type="int"/>
+	</class>
+	<class name="CustomizeAccountRelatedAccountCoding" table="fnc1cstz_acc_rel_accountcoding">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="customizeAccount_id" type="long"/>
+		<property name="accountCoding_id" type="long"/>
+	</class>
+	<class name="Exchange" table="fnc1exchange">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="rate" type="long"/>
+	</class>
+	<class name="GeneralAccountingConfig" table="fnc1generalAccountingConfig">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="numberActiveLevels" type="int"/>
+	</class>
+</hibernate-mapping>

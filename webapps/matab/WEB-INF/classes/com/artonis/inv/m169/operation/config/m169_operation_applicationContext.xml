@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- PurchaseOperationService -->
+	<bean id="purchaseOperationService" class="com.artonis.inv.m169.operation.service.impl.PurchaseOperationServiceImpl"> 
+		<property name="dao" ref="purchaseOperationDao" /> 
+	</bean>
+	<bean id="purchaseOperationDao" class="com.artonis.inv.m169.operation.dao.impl.PurchaseOperationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- SaleOperationService -->
+	<bean id="saleOperationService" class="com.artonis.inv.m169.operation.service.impl.SaleOperationServiceImpl"> 
+		<property name="dao" ref="saleOperationDao" /> 
+	</bean>
+	<bean id="saleOperationDao" class="com.artonis.inv.m169.operation.dao.impl.SaleOperationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PurchaseContractOperationService -->
+	<bean id="purchaseContractOperationService" class="com.artonis.inv.m169.operation.service.impl.PurchaseContractOperationServiceImpl"> 
+		<property name="dao" ref="purchaseContractOperationDao" /> 
+	</bean>
+	<bean id="purchaseContractOperationDao" class="com.artonis.inv.m169.operation.dao.impl.PurchaseContractOperationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- RefusalOperationService -->
+	<bean id="refusalOperationService" class="com.artonis.inv.m169.operation.service.impl.RefusalOperationServiceImpl"> 
+		<property name="dao" ref="refusalOperationDao" /> 
+	</bean>
+	<bean id="refusalOperationDao" class="com.artonis.inv.m169.operation.dao.impl.RefusalOperationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- FinanceOperationViewService -->
+	<bean id="financeOperationViewService" class="com.artonis.inv.m169.operation.service.impl.FinanceOperationViewServiceImpl"> 
+		<property name="dao" ref="financeOperationViewDao" /> 
+	</bean>
+	<bean id="financeOperationViewDao" class="com.artonis.inv.m169.operation.dao.impl.FinanceOperationViewDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- FinanceOperationHistoryService -->
+	<bean id="financeOperationHistoryService" class="com.artonis.inv.m169.operation.service.impl.FinanceOperationHistoryServiceImpl"> 
+		<property name="dao" ref="financeOperationHistoryDao" /> 
+	</bean>
+	<bean id="financeOperationHistoryDao" class="com.artonis.inv.m169.operation.dao.impl.FinanceOperationHistoryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.basicInfo.bankAndBranch.model" default-lazy="false">
+	<class name="Branch" table="fnc3branch">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bank_id" type="long"/>
+		<property name="branchName" column="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="address" type="string"/>
+		<property name="telephone" type="string"/>
+	</class>
+	<class name="BankAccount" table="fnc3bankaccount">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bank_id" type="long"/>
+		<property name="branch_id" type="long"/>
+		<property name="number" type="string"/>
+		<property name="type" type="int"/>
+		<property name="floatAccount_id" type="long"/>
+		<property name="accountCoding_id" type="long"/>
+		<property name="accountType" type="int"/>
+	</class>
+	<class name="ChequeBooklet" table="fnc3chequebooklet">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bank_id" type="long"/>
+		<property name="branch_id" type="long"/>
+		<property name="bankAccount_id" type="long"/>
+		<property name="number" type="long"/>
+		<property name="count" type="long"/>
+		<property name="beginSerial" type="string"/>
+		<property name="state" type="int"/>
+	</class>
+	<class name="ChequeBookletItem" table="fnc3ChequeBookletItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="long"/>
+		<property name="chequeBooklet_Id" type="long"/>
+	</class>
+</hibernate-mapping>

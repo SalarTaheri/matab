@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.reports.balance.model" default-lazy="false">
+	<class name="TestBalance" table="fnc4Balance">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="beginRemainingBedehkar" type="long"/>
+		<property name="beginRemainingBestankar" type="long"/>
+		<property name="turnOverBedehkar" type="long"/>
+		<property name="turnOverBestankar" type="long"/>
+		<property name="endRemainingBedehkar" type="long"/>
+		<property name="endRemainingBestankar" type="long"/>
+		<property name="accountCode" type="string"/>
+		<property name="accountCodeName" type="string"/>
+	</class>
+	<class name="FloatAccountBalance" table="fnc4Balance">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="beginRemainingBedehkar" type="long"/>
+		<property name="beginRemainingBestankar" type="long"/>
+		<property name="turnOverBedehkar" type="long"/>
+		<property name="turnOverBestankar" type="long"/>
+		<property name="endRemainingBedehkar" type="long"/>
+		<property name="endRemainingBestankar" type="long"/>
+		<property name="accountCode" type="string"/>
+		<property name="accountCodeName" type="string"/>
+	</class>
+</hibernate-mapping>

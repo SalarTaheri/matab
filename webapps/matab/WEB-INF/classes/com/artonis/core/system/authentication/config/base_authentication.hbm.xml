@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.core.system.authentication.model" default-lazy="false">
+    <class name="User" table="sys_bas_user" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="userName" type="string"/>
+        <property name="password" type="string"/>
+        <property name="employee_id" type="long"/>
+        <property name="active" type="boolean"/>
+        <property name="fullScreenMode" type="boolean"/>
+        <property name="defaultPageController" type="string"/>
+    </class>
+    <class name="Menu" table="sys_bas_menu" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>        
+		 <property name="superMenu" type="long"/>
+		 <property name="systemCode" type="string"/>
+		 <property name="parentSystemCode" type="string"/>
+		 <property name="name" type="string"/>
+		 <property name="visible" type="boolean"/>
+		 <property name="area" type="string"/>
+		 <property name="controller" type="string"/>
+		 <property name="action" type="string"/>
+		 <property name="hasChildMenu" type="boolean"/>
+		 <property name="position" type="int"/>
+        <property name="hasSeparator" type="boolean"/>
+    </class>
+
+    <class name="Role" table="sys_bas_role" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="sessionTimeout" type="int"/>
+        <property name="active" type="boolean"/>
+        <property name="showFinanceYear" type="boolean"/>
+        <property name="notShowOnOtherUserForDef" type="boolean"/>
+    </class>
+
+    <class name="UserRole" table="sys_bas_user_role" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+		 <property name="role_id" type="long"/>
+		 <property name="user_id" type="long"/>
+
+    </class>
+
+    <class name="RoleMenu" table="sys_bas_role_menu" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+		 <property name="role_id" type="long"/>
+		 <property name="menu_id" type="long"/>
+    </class>
+
+	<class name="Button" table="sys_bas_menu_button">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="menu_id" type="long"/>
+		<property name="btn_id" type="string"/>
+		<property name="btn_caption" type="string"/>
+		<property name="menuSystemCode" type="string"/>
+	</class>
+	
+	<class name="RoleButton" table="sys_bas_role_button">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="role_id" type="long"/>
+		<property name="button_id" type="long"/>
+	</class>
+
+    <class name="GridColumn" table="sys_bas_menu_gridColumn">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="menuId" type="long"/>
+        <property name="menuSystemCode" type="string"/>
+        <property name="gridColumnField" type="string"/>
+        <property name="gridColumnTitle" type="string"/>
+    </class>
+
+    <class name="RoleGridColumn" table="sys_bas_role_gridColumn">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="roleId" type="long"/>
+        <property name="gridColumnId" type="long"/>
+    </class>
+
+</hibernate-mapping>

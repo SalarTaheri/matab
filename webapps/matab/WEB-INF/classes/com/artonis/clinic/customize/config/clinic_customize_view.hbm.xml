@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.customize.view" default-lazy="false">
+
+    <class name="UserLabTestGroupItemView" table="his2user_labtestgroup_item_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="user_labtest_id" type="long"/>
+        <property name="user_labtestgroup_id" type="long"/>
+        <property name="name" type="string"/>
+
+    </class>
+
+    <class name="UserLabTestItemView" table="his2user_labtest_item_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="user_labtest_id" type="long"/>
+        <property name="medicalTest_id" type="long"/>
+        <property name="name" type="string"/>
+        <property name="medicalTestName" type="string"/>
+        <property name="user_id" type="long"/>
+        <property name="orderNumber" type="int"/>
+        <property name="isNotShow" type="boolean"/>
+
+    </class>
+    <class name="UserOperationItemView" table="his2user_operation_item_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="user_operation_id" type="long"/>
+        <property name="operation_id" type="long"/>
+        <property name="name" type="string"/>
+        <property name="operationName" type="string"/>
+        <property name="user_id" type="long"/>
+        <property name="orderNumber" type="int"/>
+
+    </class>
+    <class name="UserImageItemView" table="his2user_image_item_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="user_image_id" type="long"/>
+        <property name="image_id" type="long"/>
+        <property name="name" type="string"/>
+        <property name="imageName" type="string"/>
+        <property name="user_id" type="long"/>
+        <property name="orderNumber" type="int"/>
+
+    </class>
+    <class name="DiagnosisCustomizationItemView" table="his2diagnosisCustomizationItem_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="diagnosisCustomizationId" type="long"/>
+        <property name="diagnosisId" type="long"/>
+        <property name="userId" type="long"/>
+        <property name="diagnosisName" type="string"/>
+        <property name="orderNumber" type="int"/>
+    </class>
+</hibernate-mapping>

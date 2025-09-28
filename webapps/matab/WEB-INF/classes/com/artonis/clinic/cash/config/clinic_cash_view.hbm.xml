@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.cash.view" default-lazy="false">
+	<class name="CashVisitView" table="his3cashvisit_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+	    <property name="patient_id" type="long"/>
+	    <property name="doctor_id" type="long"/>
+	    <property name="cash_id" type="long"/>
+	    <property name="employee_id" type="long"/>
+	    <property name="doctorCost" type="double"/>
+	    <property name="discount" type="double"/>
+	    <property name="returnCost" type="double"/>
+	    <property name="insurance_id" type="long"/>
+	    <property name="state" type="int"/>
+	    <property name="registerDate" type="com.artonis.core.base.core.Date"/>
+	    <property name="description" type="string"/>
+	    <property name="filenumber" type="string"/>
+	    <property name="firstname" type="string"/>
+	    <property name="lastname" type="string"/>
+	    <property name="fathername" type="string"/>
+	    <property name="doctorName" type="string"/>
+	    <property name="doctorFam" type="string"/>
+	    <property name="insurance" type="string"/>
+	    <property name="searchField" type="string"/>
+	</class>
+	<class name="DoctorVisitCostView" table="his3doctor_visit_cost_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+	    <property name="employee_id" type="long"/>
+	    <property name="visitCost" type="double"/>
+	    <property name="firstname" type="string"/>
+	    <property name="lastname" type="string"/>
+	    <property name="personnelCode" type="string"/>
+	</class>	
+	
+	
+</hibernate-mapping>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- UserDrugService -->
+	<bean id="userDrugService" class="com.artonis.clinic.customize.service.impl.UserDrugServiceImpl"> 
+		<property name="dao" ref="userDrugDao" /> 
+	</bean>
+	<bean id="userDrugDao" class="com.artonis.clinic.customize.dao.impl.UserDrugDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- UserLabTestService -->
+	<bean id="userLabTestService" class="com.artonis.clinic.customize.service.impl.UserLabTestServiceImpl"> 
+		<property name="dao" ref="userLabTestDao" /> 
+		<property name="userLabTestItemService" ref="userLabTestItemService" />
+	</bean>
+	<bean id="userLabTestDao" class="com.artonis.clinic.customize.dao.impl.UserLabTestDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- UserLabTestItemService -->
+	<bean id="userLabTestItemService" class="com.artonis.clinic.customize.service.impl.UserLabTestItemServiceImpl">
+		<property name="dao" ref="userLabTestItemDao" />
+	</bean>
+	<bean id="userLabTestItemDao" class="com.artonis.clinic.customize.dao.impl.UserLabTestItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- UserLabTestGroupService -->
+	<bean id="userLabTestGroupService" class="com.artonis.clinic.customize.service.impl.UserLabTestGroupServiceImpl">
+		<property name="dao" ref="userLabTestGroupDao" />
+	</bean>
+	<bean id="userLabTestGroupDao" class="com.artonis.clinic.customize.dao.impl.UserLabTestGroupDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- UserLabTestGroupItemService -->
+	<bean id="userLabTestGroupItemService" class="com.artonis.clinic.customize.service.impl.UserLabTestGroupItemServiceImpl">
+		<property name="dao" ref="userLabTestGroupItemDao" />
+	</bean>
+	<bean id="userLabTestGroupItemDao" class="com.artonis.clinic.customize.dao.impl.UserLabTestGroupItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+    <!-- UserDrugGroupService -->
+	<bean id="userDrugGroupService" class="com.artonis.clinic.customize.service.impl.UserDrugGroupServiceImpl">
+		<property name="dao" ref="userDrugGroupDao" />
+	</bean>
+	<bean id="userDrugGroupDao" class="com.artonis.clinic.customize.dao.impl.UserDrugGroupDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- UserDrugGroupItemService -->
+	<bean id="userDrugGroupItemService" class="com.artonis.clinic.customize.service.impl.UserDrugGroupItemServiceImpl">
+		<property name="dao" ref="userDrugGroupItemDao" />
+	</bean>
+	<bean id="userDrugGroupItemDao" class="com.artonis.clinic.customize.dao.impl.UserDrugGroupItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- UserOperationService -->
+	<bean id="userOperationService" class="com.artonis.clinic.customize.service.impl.UserOperationServiceImpl"> 
+		<property name="dao" ref="userOperationDao" /> 
+		<property name="userOperationItemService" ref="userOperationItemService" />
+	</bean>
+	<bean id="userOperationDao" class="com.artonis.clinic.customize.dao.impl.UserOperationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- UserOperationItemService -->
+	<bean id="userOperationItemService" class="com.artonis.clinic.customize.service.impl.UserOperationItemServiceImpl">
+		<property name="dao" ref="userOperationItemDao" />
+
+	</bean>
+	<bean id="userOperationItemDao" class="com.artonis.clinic.customize.dao.impl.UserOperationItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- UserImageService -->
+	<bean id="userImageService" class="com.artonis.clinic.customize.service.impl.UserImageServiceImpl">
+		<property name="dao" ref="userImageDao" />
+		<property name="userImageItemService" ref="userImageItemService" />
+	</bean>
+	<bean id="userImageDao" class="com.artonis.clinic.customize.dao.impl.UserImageDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- UserImageItemService -->
+	<bean id="userImageItemService" class="com.artonis.clinic.customize.service.impl.UserImageItemServiceImpl">
+		<property name="dao" ref="userImageItemDao" />
+
+	</bean>
+	<bean id="userImageItemDao" class="com.artonis.clinic.customize.dao.impl.UserImageItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- DiagnosisCustomizationService -->
+	<bean id="diagnosisCustomizationService" class="com.artonis.clinic.customize.service.impl.DiagnosisCustomizationServiceImpl"> 
+		<property name="dao" ref="diagnosisCustomizationDao" /> 
+		<property name="diagnosisCustomizationItemService" ref="diagnosisCustomizationItemService" />
+	</bean>
+	<bean id="diagnosisCustomizationDao" class="com.artonis.clinic.customize.dao.impl.DiagnosisCustomizationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- DiagnosisCustomizationItemService -->
+	<bean id="diagnosisCustomizationItemService" class="com.artonis.clinic.customize.service.impl.DiagnosisCustomizationItemServiceImpl"> 
+		<property name="dao" ref="diagnosisCustomizationItemDao" /> 
+	</bean>
+	<bean id="diagnosisCustomizationItemDao" class="com.artonis.clinic.customize.dao.impl.DiagnosisCustomizationItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

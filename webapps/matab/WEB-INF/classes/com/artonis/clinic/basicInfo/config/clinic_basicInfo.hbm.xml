@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.basicInfo.model" default-lazy="false">
+	<class name="Diagnosis" table="his_bas_diagnosis">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="diagnosis" type="string"/>
+		<property name="code" type="string"/>
+		<property name="status" type="int"/>
+		<property name="parent" type="long"/>
+		<property name="priority" type="int"/>
+	</class>
+	<class name="Habital" table="his1habital">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+	</class>
+	<class name="Operation" table="his1operation">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="isForAppointment" type="boolean"/>
+		<property name="status" type="integer"/>
+
+	</class>
+	<class name="Image" table="his1image">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="isForAppointment" type="boolean"/>
+		<property name="status" type="integer"/>
+
+	</class>
+	<class name="Group" table="his1group">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+
+	</class>
+	<class name="ServiceDepartment" table="his1service_department">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="service_id" type="long"/>
+		<property name="department_id" type="long"/>
+	</class>
+	<class name="Pos" table="his1pos">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="posName" type="string"/>
+		<property name="bankName" type="string"/>
+		<property name="accountNumber" type="string"/>
+	</class>
+	<class name="EmployeeContract" table="his1employee_contract">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employee_id" type="long"/>
+		<property name="fromDate" type="com.artonis.core.base.core.Date"/>
+		<property name="toDate" type="com.artonis.core.base.core.Date"/>
+		<property name="temporaryState" type="int"/>
+	</class>
+	<class name="ChiefComplaint" table="his1ChiefComplaint">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="status" type="int"/>
+	</class>
+	<class name="PhysicalExamination" table="his1physicalExamination">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="status" type="int"/>
+	</class>
+
+	<class name="ChiefComplaintDescription" table="his1ChiefComplaintDescription">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name_item" type="string"/>
+		<property name="code_item" type="string"/>
+		<property name="status_item" type="int"/>
+		<property name="cheifComplaint_id" type="long"/>
+	</class>
+	<class name="AnesthesiaType" table="his1anesthesia_type">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+	</class>
+
+	<class name="EmployeeServiceAmount" table="his1employeeServiceAmount">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employee_id" type="long"/>
+		<property name="fromDate" type="com.artonis.core.base.core.Date"/>
+		<property name="toDate" type="com.artonis.core.base.core.Date"/>
+	</class>
+	<class name="EmployeeServiceAmountItem" table="his1employeeServiceAmount_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeServiceAmount_id" type="long"/>
+		<property name="service_id" type="long"/>
+		<property name="surgeryRole" type="int"/>
+		<property name="price" type="double"/>
+	</class>
+
+	<class name="RvuModifiedCodeApply" table="his1rvuModifiedCodeApply">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="rvu_id" type="long"/>
+		<property name="modifiedCode_id" type="long"/>
+		<property name="patient_id" type="long"/>
+		<property name="finnance_registration_id" type="long"/>
+		<property name="isChange" type="boolean"/>
+		<property name="anesthesiaBaseValue" type="float"/>
+		<property name="technicalComponent" type="float"/>
+		<property name="professionalComponent" type="float"/>
+		<property name="unit" type="float"/>
+		<property name="percent" type="float" column="percent_"/>
+		<property name="isApplyOnAnesthesiaBaseValue" type="boolean"/>
+		<property name="isApplyOnProfessionalComponent" type="boolean"/>
+		<property name="isApplyOnTechnicalComponent" type="boolean"/>
+		<property name="finalAnesthesiaBaseValue" type="float"/>
+		<property name="finalProfessionalComponent" type="float"/>
+		<property name="finalTechnicalComponent" type="float"/>
+	</class>
+	<class name="InsuranceContract" table="his1insuranceContract">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insuranceOrganizationId" type="long"/>
+		<property name="fromDate" type="com.artonis.core.base.core.Date"/>
+		<property name="toDate" type="com.artonis.core.base.core.Date"/>
+	</class>
+	<class name="InsuranceContractDrug" table="his1insuranceContract_drug">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insuranceContractId" type="long"/>
+		<property name="genericCode" type="string"/>
+		<property name="brandCode" type="string"/>
+		<property name="companyCode" type="string"/>
+		<property name="name" type="string"/>
+		<property name="brandName" type="string"/>
+		<property name="figure" type="string"/>
+		<property name="dosage" type="string"/>
+		<property name="drugInsuranceSharePercent" column="insurance_share_percent" type="float"/>
+		<property name="drugServiceItemId" column="service_item_id" type="long"/>
+		<property name="drugInsuranceCost" column="insurance_cost" type="long"/>
+	</class>
+	<class name="InsuranceContractAccessories" table="his1insuranceContract_accessories">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insuranceContractId" type="long"/>
+		<property name="accessoriesGroup" type="long"/>
+		<property name="accessoriesCode" type="string"/>
+		<property name="name" type="string"/>
+		<property name="organizationCode" type="string"/>
+		<property name="accessoriesInsuranceSharePercent" column="insurance_share_percent" type="float"/>
+		<property name="accessoriesServiceItemId" column="service_item_id" type="long"/>
+		<property name="accessoriesInsuranceCost" column="insurance_cost" type="long"/>
+	</class>
+	
+	<class name="InsuranceContractRvu" table="his1insuranceContract_rvu">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insuranceContractId" type="long"/>
+		<property name="rvuId" column="rvu_id" type="long"/>
+		<property name="rvuInsuranceSharePercent" column="insurance_share_percent" type="float"/>
+		<property name="kaId" column="ka_id" type="long"/>
+	</class>
+	
+	<class name="InsuranceContractVisit" table="his1insuranceContract_visit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insuranceContractId" type="long"/>
+		<property name="visitServiceItemId" column="service_item_id" type="long"/>
+		<property name="visitInsuranceSharePercent" column="insurance_share_percent" type="float"/>
+		<property name="cost" type="long"/>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	
+	<class name="ServiceParentService" table="his1serviceParentService">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="service_id" type="long"/>
+		<property name="parentServiceId" type="long"/>
+	</class>
+	
+	<class name="ServiceGroup" table="his1serviceGroup">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+
+	<class name="PenBackground" table="his1penBackground">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="active" type="boolean"/>
+		<property name="background" type="string"/>
+	</class>
+</hibernate-mapping>

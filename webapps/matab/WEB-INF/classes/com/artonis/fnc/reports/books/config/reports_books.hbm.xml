@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.reports.books.model" default-lazy="false">
+	<class name="AccountBook" table="fnc4books">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="docNumber" type="long"/>
+		<property name="referenceNumber" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="bedehkar" type="long"/>
+		<property name="bestankar" type="long"/>
+		<property name="mandeh" type="long"/>
+		<property name="cumulativeMandeh" type="long"/>
+		<property name="accountCodeName" type="string"/>
+		<property name="document_Id" type="long"/>
+		<property name="floatAccountLevel1CodeName" type="string"/>
+		<property name="floatAccountLevel2CodeName" type="string"/>
+		<property name="floatAccountLevel3CodeName" type="string"/>
+		<property name="floatAccountLevel4CodeName" type="string"/>
+		<property name="description" type="string"/>
+		<property name="documentDescription" type="string"/>
+	</class>
+	<class name="FloatAccountBook" table="fnc4books">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="docNumber" type="long"/>
+		<property name="referenceNumber" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="bedehkar" type="long"/>
+		<property name="bestankar" type="long"/>
+		<property name="mandeh" type="long"/>
+		<property name="cumulativeMandeh" type="long"/>
+		<property name="accountCodeName" type="string"/>
+		<property name="document_Id" type="long"/>
+		<property name="floatAccountLevel1CodeName" type="string"/>
+		<property name="floatAccountLevel2CodeName" type="string"/>
+		<property name="floatAccountLevel3CodeName" type="string"/>
+		<property name="floatAccountLevel4CodeName" type="string"/>
+		<property name="description" type="string"/>
+		<property name="documentDescription" type="string"/>
+	</class>
+</hibernate-mapping>

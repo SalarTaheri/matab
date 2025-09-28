@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.lab.operation.model" default-lazy="false">
+	<class name="LabQueue" table="lab2LabQueue">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="patientId" column="patient_id" type="long"/>
+		<property name="doctorId" column="doctor_id" type="long"/>
+		<property name="medicalHistory" column="medicalhistory" type="string"/>
+		<property name="expirationDate" column="expirationdate" type="com.artonis.core.base.core.Date"/>
+		<property name="visitDate" column="visitDate" type="com.artonis.core.base.core.Date"/>
+		<property name="insuranceOrganizationId" column="insurance_organization_id" type="long"/>
+		<property name="bookPage" column="bookpage" type="int"/>
+		<property name="bookNumber" column="booknumber" type="string"/>
+		<property name="lmp" column="lmp" type="com.artonis.core.base.core.Date"/>
+		<property name="specialtyId" column="specialty_id" type="long"/>
+		<property name="factorId" column="factor_id" type="long"/>
+		<property name="receptionNumber" column="reception_number" type="int"/>
+		<property name="date" column="date" type="com.artonis.core.base.core.Date"/>
+		<property name="canChange" column="can_change" type="boolean"/>
+		<property name="printCount" column="print_count" type="int"/>
+		<property name="sampleCode" type="string"/>
+		<property name="responseDate" type="com.artonis.core.base.core.Date"/>
+	</class>
+	<class name="LabQueueParsipol" table="lab2queue_parsipol">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="patientId" column="patient_id" type="long"/>
+		<property column="parsipol_doctor_id" name="doctorId" type="int"/>
+		<property column="doctor_name" name="doctorName" type="string"/>
+		<property column="doctor_specialization" name="specialization" type="string"/>
+		<property column="insurance_num" name="insuranceNumber" type="string"/>
+		<property column="insurance_contract_id" name="insuranceContractId" type="int"/>
+		<property column="insurance_contract_name" name="insuranceContractName" type="string"/>
+		<property column="supp_insurance_contract_id" name="suppInsuranceContractId" type="int"/>
+		<property column="supp_insurance_contract_name" name="suppInsuranceContractName" type="string"/>
+		<property column="register_date" name="registerDate" type="com.artonis.core.base.core.Date"/>
+		<property column="subscription_number" name="subscriptionNumber" type="string"/>
+		<property column="pre_admit_id" name="preAdmitId" type="int"/>
+		<property column="hasRead" name="hasRead" type="boolean"/>
+		<property column="state" name="state" type="int"/>
+		<property column="stateTitle" name="stateTitle" type="string"/>
+		<property column="admitId" name="admitId" type="int"/>
+		<property column="app" name="app" type="int"/>
+		<property column="regTime" name="regTime" type="string"/>
+		<property name="financeRegistration_id" type="long"/>
+	</class>
+	<class name="TestResult" table="lab2test_result">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="labQueueId" column="labqueue_id" type="long"/>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="result" column="result" type="string"/>
+		<property name="date" column="date" type="com.artonis.core.base.core.Date"/>
+		<property name="normalRangeMin" column="normal_range_min" type="double"/>
+		<property name="normalRangeMax" column="normal_range_max" type="double"/>
+		<property name="warningRangeMin" column="warning_range_min" type="double"/>
+		<property name="warningRangeMax" column="warning_range_max" type="double"/>
+		<property name="possibleRangeMin" column="possible_range_min" type="double"/>
+		<property name="possibleRangeMax" column="possible_range_max" type="double"/>
+		<property name="measurementUnitId" column="measurement_unit_id" type="long"/>
+		<property name="descriptions" column="descriptions" type="string"/>
+	</class>
+</hibernate-mapping>

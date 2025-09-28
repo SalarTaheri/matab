@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<!-- UnitService -->
+	<bean id="unitDao" class="com.artonis.lab.basicInfo.dao.impl.UnitDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="unitService" class="com.artonis.lab.basicInfo.service.impl.UnitServiceImpl">
+		<property name="dao" ref="unitDao"/>
+	</bean>
+	<!-- TestService -->
+	<bean id="testService" class="com.artonis.lab.basicInfo.service.impl.TestServiceImpl">
+		<property name="dao" ref="testDao"/>
+	</bean>
+	<bean id="testDao" class="com.artonis.lab.basicInfo.dao.impl.TestDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- measurementUnitService -->
+	<bean id="measurementUnitService" class="com.artonis.lab.basicInfo.service.impl.MeasurementUnitServiceImpl">
+		<property name="dao" ref="measurementUnitDao"/>
+	</bean>
+	<bean id="measurementUnitDao" class="com.artonis.lab.basicInfo.dao.impl.MeasurementUnitDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- TestInsuranceOrganizationService -->
+	<bean id="testInsuranceOrganizationService" class="com.artonis.lab.basicInfo.service.impl.TestInsuranceOrganizationServiceImpl">
+		<property name="dao" ref="testInsuranceOrganizationDao"/>
+	</bean>
+	<bean id="testInsuranceOrganizationDao" class="com.artonis.lab.basicInfo.dao.impl.TestInsuranceOrganizationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- DoctorService -->
+	<bean id="doctorService" class="com.artonis.lab.basicInfo.service.impl.DoctorServiceImpl">
+		<property name="dao" ref="doctorDao"/>
+	</bean>
+	<bean id="doctorDao" class="com.artonis.lab.basicInfo.dao.impl.DoctorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- SpecialtyService -->
+	<bean id="specialtyService" class="com.artonis.lab.basicInfo.service.impl.SpecialtyServiceImpl">
+		<property name="dao" ref="specialtyDao"/>
+	</bean>
+	<bean id="specialtyDao" class="com.artonis.lab.basicInfo.dao.impl.SpecialtyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- NormalRangeService -->
+	<bean id="normalRangeService" class="com.artonis.lab.basicInfo.service.impl.NormalRangeServiceImpl">
+		<property name="dao" ref="normalRangeDao"/>
+	</bean>
+	<bean id="normalRangeDao" class="com.artonis.lab.basicInfo.dao.impl.NormalRangeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- NormalRangeItemService -->
+	<bean id="normalRangeItemService" class="com.artonis.lab.basicInfo.service.impl.NormalRangeItemServiceImpl">
+		<property name="dao" ref="normalRangeItemDao"/>
+	</bean>
+	<bean id="normalRangeItemDao" class="com.artonis.lab.basicInfo.dao.impl.NormalRangeItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- PanelService -->
+	<bean id="panelService" class="com.artonis.lab.basicInfo.service.impl.PanelServiceImpl">
+		<property name="dao" ref="panelDao"/>
+	</bean>
+	<bean id="panelDao" class="com.artonis.lab.basicInfo.dao.impl.PanelDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- PanelItemService -->
+	<bean id="panelItemService" class="com.artonis.lab.basicInfo.service.impl.PanelItemServiceImpl">
+		<property name="dao" ref="panelItemDao"/>
+	</bean>
+	<bean id="panelItemDao" class="com.artonis.lab.basicInfo.dao.impl.PanelItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>

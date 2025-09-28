@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- ReceiptChequeService -->
+	<bean id="receiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.ReceiptChequeServiceImpl"> 
+		<property name="dao" ref="receiptChequeDao" /> 
+	</bean>
+	<bean id="receiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.ReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ChequeStateService -->
+	<bean id="chequeStateService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.ChequeStateServiceImpl"> 
+		<property name="dao" ref="chequeStateDao" /> 
+	</bean>
+	<bean id="chequeStateDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.ChequeStateDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- InClearingReceiptChequeService -->
+	<bean id="inClearingReceiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.InClearingReceiptChequeServiceImpl"> 
+		<property name="dao" ref="inClearingReceiptChequeDao" /> 
+	</bean>
+	<bean id="inClearingReceiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.InClearingReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashedReceiptChequeService -->
+	<bean id="cashedReceiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.CashedReceiptChequeServiceImpl"> 
+		<property name="dao" ref="cashedReceiptChequeDao" /> 
+	</bean>
+	<bean id="cashedReceiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.CashedReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ClearedReceiptChequeService -->
+	<bean id="clearedReceiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.ClearedReceiptChequeServiceImpl"> 
+		<property name="dao" ref="clearedReceiptChequeDao" /> 
+	</bean>
+	<bean id="clearedReceiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.ClearedReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReturnedReceiptChequeService -->
+	<bean id="returnedReceiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.ReturnedReceiptChequeServiceImpl"> 
+		<property name="dao" ref="returnedReceiptChequeDao" /> 
+	</bean>
+	<bean id="returnedReceiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.ReturnedReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AssignedReceiptChequeService -->
+	<bean id="assignedReceiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.AssignedReceiptChequeServiceImpl"> 
+		<property name="dao" ref="assignedReceiptChequeDao" /> 
+	</bean>
+	<bean id="assignedReceiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.AssignedReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- BackReturnedReceiptChequeService -->
+	<bean id="backReturnedReceiptChequeService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.BackReturnedReceiptChequeServiceImpl"> 
+		<property name="dao" ref="backReturnedReceiptChequeDao" /> 
+	</bean>
+	<bean id="backReturnedReceiptChequeDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.BackReturnedReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ChequeStateHistoryService -->
+	<bean id="chequeStateHistoryService" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.service.impl.ChequeStateHistoryServiceImpl"> 
+		<property name="dao" ref="chequeStateHistoryDao" /> 
+	</bean>
+	<bean id="chequeStateHistoryDao" class="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.dao.impl.ChequeStateHistoryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

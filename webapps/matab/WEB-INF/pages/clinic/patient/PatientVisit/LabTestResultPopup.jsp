@@ -1,0 +1,28 @@
+<%@page import="org.springframework.web.util.UrlPathHelper"%>
+<%@taglib prefix="kendo" uri="/WEB-INF/kendo-taglibs.tld"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="base" tagdir="/WEB-INF/tags"%>
+<%@page contentType="text/html;charset=UTF-8"%>
+	<%
+	String x="popupVisitId="+(String)request.getParameter("popupVisitId");
+ %>
+	<base:mehrSys-grid-4-popup name="grid" transportReadUrl="${basePath}/grid-read?${x}" destroyUrl="${basePath}/grid-read" inlineEditing="true" showOperation="false" updateUrl="${basePath}/saveAndUpdate">
+		<base:my-grid-column title='his.clinic.visit.labTestResult.testName'  field="testName" width="50px"/>
+		<base:my-grid-column title='his.clinic.visit.labTestResult.value'  field="value" width="50px"/>
+       
+		<base:my-grid-schema-field name="testName" type="string" />
+		<base:my-grid-schema-field name="value" type="string" />
+	</base:mehrSys-grid-4-popup>
+<base:footer></base:footer>
+<script>
+$(document).ready(function() {
+		 var value = window.opener.document.getElementById("popupPatientId").value,
+		 	 grid = $("#grid").data("kendoGrid");
+		 
+         if (value) {
+             grid.dataSource.filter({ field: "patient_id", operator: "eq", value: value });
+         } else {
+             grid.dataSource.filter({});
+         }
+	});
+</script>

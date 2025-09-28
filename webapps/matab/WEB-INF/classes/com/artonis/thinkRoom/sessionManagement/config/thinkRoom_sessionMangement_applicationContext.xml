@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- ThinkRoomSessionService -->
+	<bean id="thinkRoomSessionService" class="com.artonis.thinkRoom.sessionManagement.service.impl.ThinkRoomSessionServiceImpl">
+		<property name="dao" ref="thinkRoomSessionDao" />
+	</bean>
+	<bean id="thinkRoomSessionDao" class="com.artonis.thinkRoom.sessionManagement.dao.impl.ThinkRoomSessionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- MemberSessionService -->
+	<bean id="memberSessionService" class="com.artonis.thinkRoom.sessionManagement.service.impl.MemberSessionServiceImpl">
+		<property name="dao" ref="memberSessionDao" />
+	</bean>
+	<bean id="memberSessionDao" class="com.artonis.thinkRoom.sessionManagement.dao.impl.MemberSessionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- ThinkRoomSessionNameService -->
+    <bean id="thinkRoomSessionNameService" class="com.artonis.thinkRoom.sessionManagement.service.impl.ThinkRoomSessionNameServiceImpl">
+        <property name="dao" ref="thinkRoomSessionNameDao" />
+    </bean>
+    <bean id="thinkRoomSessionNameDao" class="com.artonis.thinkRoom.sessionManagement.dao.impl.ThinkRoomSessionNameDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+</beans>

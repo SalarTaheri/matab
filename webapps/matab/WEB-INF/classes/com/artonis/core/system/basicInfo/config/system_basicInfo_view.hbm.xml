@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.core.system.basicInfo.view" default-lazy="false">
+
+    <class name="ComboFillerView" table="sys_bas_combofiller_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="module_id" type="long"/>
+        <property name="moduleName" type="string"/>
+        <property name="parentModule_id" type="long"/>
+        <property name="parentModuleName" type="string"/>
+
+    </class>
+
+	<class name="BusinessPartnerView" table="sys_bas_businesspartner_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="nameAndFamily" type="string"/>
+		<property name="title" type="int"/>
+		<property name="type" type="int"/>
+		<property name="citizenship" type="int"/>
+		<property name="nationalcode" type="string"/>
+		<property name="country_id" type="long"/>
+		<property name="province_id" type="long"/>
+		<property name="city_id" type="long"/>
+		<property name="phoneno" type="string"/>
+		<property name="faxno" type="string"/>
+		<property name="description" type="string"/>
+		<property name="mobileno" type="string"/>
+		<property name="emailaddress" type="string"/>
+		<property name="address" type="string"/>
+		<property name="preCodeCity" type="string"/>
+		<property name="foreignPersonNumber" type="string"/>
+		<property name="postalCode" type="string"/>
+	</class>
+
+	<class name="CityView" table="sys_bas_city_view" >
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="province_id" type="long"/>
+		<property name="name" type="string"/>
+		<property name="phoneCode" type="string"/>
+		<property name="code" type="string"/>
+		<property name="provinceName" type="string"/>
+	</class>
+</hibernate-mapping>

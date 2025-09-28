@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factorDoctorClinicPortionBasedDoctorAggregate" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7d5b29f-d331-4399-9ee8-6e33f465cf69">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="57"/>
+	<style name="style1">
+		<box>
+			<pen lineWidth="1.0" lineStyle="Double"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="style2">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="style3">
+		<box>
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="companyName" class="java.lang.String"/>
+	<parameter name="patients" class="java.lang.String"/>
+	<parameter name="services" class="java.lang.String"/>
+	<parameter name="mainDoctor" class="java.lang.String"/>
+	<parameter name="anesthesiaDoctor" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<parameter name="sumClinicPortion" class="java.lang.Long"/>
+	<parameter name="sumDoctorPortion" class="java.lang.Long"/>
+	<parameter name="groups" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="patientFullName" class="java.lang.String"/>
+	<field name="serviceName" class="java.lang.String"/>
+	<field name="drugCost" class="java.lang.Long"/>
+	<field name="drugCostInsurance" class="java.lang.Long"/>
+	<field name="equipmentCost" class="java.lang.Long"/>
+	<field name="equipmentCostInsurance" class="java.lang.Long"/>
+	<field name="clinicServiceCost" class="java.lang.Long"/>
+	<field name="clinicServiceCostInsurance" class="java.lang.Long"/>
+	<field name="mainDoctorFullName" class="java.lang.String"/>
+	<field name="mainDoctorTotalReceive" class="java.lang.Long"/>
+	<field name="mainDoctorPortion" class="java.lang.Long"/>
+	<field name="mainDoctorPortionInsurance" class="java.lang.Long"/>
+	<field name="mainClinicPortion" class="java.lang.Long"/>
+	<field name="mainClinicPortionInsurance" class="java.lang.Long"/>
+	<field name="assistantDoctorFullName" class="java.lang.String"/>
+	<field name="assistantDoctorTotalReceive" class="java.lang.Long"/>
+	<field name="assistantDoctorPortion" class="java.lang.Long"/>
+	<field name="assistantDoctorPortionInsurance" class="java.lang.Long"/>
+	<field name="assistantClinicPortion" class="java.lang.Long"/>
+	<field name="assistantClinicPortionInsurance" class="java.lang.Long"/>
+	<field name="anesthesiaDoctorFullName" class="java.lang.String"/>
+	<field name="anesthesiaDoctorTotalReceive" class="java.lang.Long"/>
+	<field name="anesthesiaDoctorPortion" class="java.lang.Long"/>
+	<field name="anesthesiaDoctorPortionInsurance" class="java.lang.Long"/>
+	<field name="anesthesiaClinicPortion" class="java.lang.Long"/>
+	<field name="anesthesiaClinicPortionInsurance" class="java.lang.Long"/>
+	<field name="receivedFromPatient" class="java.lang.Long"/>
+	<variable name="mainDoctor" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{mainDoctorPortion}+$F{mainDoctorPortionInsurance}]]></variableExpression>
+	</variable>
+	<variable name="assistantDoctor" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{assistantDoctorPortion}+$F{assistantDoctorPortionInsurance}]]></variableExpression>
+	</variable>
+	<variable name="anesthesiaDoctor" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{anesthesiaDoctorPortion}+$F{anesthesiaDoctorPortionInsurance}]]></variableExpression>
+	</variable>
+	<variable name="sumReceivedFromPatient" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{receivedFromPatient}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="07ae2164-16cb-4414-937b-30fa4216cc27" x="85" y="0" width="58" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[تاریخ گزارش:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5578c416-1788-49b5-8372-f58397492ca5" x="85" y="24" width="22" height="11"/>
+				<textElement>
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[کاربر:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="74afaaae-f547-4d91-a077-fc27d3708efa" x="0" y="0" width="85" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="78e4c891-cd2a-4f89-9ffe-40561349340f" x="0" y="24" width="85" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1435352a-9694-4562-85ef-ab46c1cb7347" x="221" y="22" width="360" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="132" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="dc7a34fc-2097-4e05-89ac-0a5a3664db53" x="194" y="0" width="389" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[گزارش تفکیکی هزینه های بیمار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de1649fb-447e-431f-81e1-2b6b0408d105" x="717" y="25" width="69" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[بیمار:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c9868755-66a1-49eb-a3b2-71c0febbb6e6" x="14" y="25" width="698" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{patients}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="4682c027-33b8-4d10-a882-818f01bb1437" mode="Transparent" x="14" y="45" width="341" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{services}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="4b62a5b4-aa55-44a4-bd4b-1acabd3b6d9c" mode="Transparent" x="14" y="67" width="698" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{mainDoctor}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="54f7d761-4a27-45e4-9ce7-88217fa47037" mode="Transparent" x="14" y="89" width="698" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{anesthesiaDoctor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="cc1ca9b6-17c0-4b29-85ea-d0511acc6be4" x="355" y="45" width="69" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[خدمت:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2717fdfa-b06f-4bb0-b826-fec1b7f8a683" x="717" y="89" width="69" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پزشک بیهوشی :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1b8158c6-74f8-41b1-819e-74d1c8ab694e" x="717" y="67" width="69" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پزشک اصلی :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="40d16598-dc4e-4cf6-bc53-5a0bbe72dfbf" x="496" y="111" width="46" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[از تاریخ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ef5342fd-9e1a-4904-9543-3a8d58ad21d5" x="397" y="111" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="70f1c111-4645-4146-a593-b6419ec7f130" x="231" y="110" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="34426c41-192b-401f-9ed6-ee5261bf1268" x="331" y="110" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[تا تاریخ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="60ad45b8-8812-4108-a726-58750592a2ca" x="717" y="47" width="69" height="20"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سر فصل خدمت:]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement uuid="c2a0c0a7-48d3-492a-88f3-395f2fcf2ae2" mode="Transparent" x="435" y="45" width="277" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{groups}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="91cd1e31-6793-4859-a7ac-71ff6eae267d" style="style2" x="616" y="0" width="47" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پرداحتی بیمار دارو]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3eb26232-b0e5-46d1-955f-cc7dd1b87d4b" style="style2" x="516" y="0" width="52" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پرداختی بیمار لوازم مصرفی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3cff40be-d211-4366-a133-8ccc0e47a71c" style="style2" x="173" y="0" width="62" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سهم پزشک اصلی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9efb3063-2689-4073-ab67-2809daace22f" style="style2" x="53" y="0" width="58" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سهم سازمان از پزشک اصلی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c665704a-f0da-4ef5-868d-6519c6b4b0af" style="style2" x="744" y="0" width="38" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[تاریخ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="59c8f8ae-eeab-458f-9cb8-65261b2fa935" style="style2" x="701" y="0" width="43" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[بیمار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe5f26f3-d40e-4f0e-b6e3-5b6d56dcfbf6" style="style2" x="299" y="0" width="56" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پزشک اصلی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="234779f4-a23e-471f-9a02-c00ebc712de0" style="style2" x="407" y="0" width="56" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[خدمات مرکز درمان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="978ea156-5f96-44e3-a096-bc7aa43a5d0e" style="style2" x="568" y="0" width="47" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سهم دارو از بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="de84d9f4-e225-4083-b6d4-8ef3bac89a9d" style="style2" x="462" y="0" width="54" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سهم لوازم مصرفی از بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8ea97a99-e6e3-4635-a13d-3a45b9dc02c3" style="style2" x="355" y="0" width="52" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="8"/>
+				</textElement>
+				<text><![CDATA[خدمات مرکز درمان از بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6ac61c01-bb1a-4bb2-96cf-cc94119607dc" style="style2" x="235" y="0" width="64" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پرداختی بیمار پزشک اصلی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8bd70680-1b9c-459b-8662-5c9bcd3373d5" style="style2" x="111" y="0" width="62" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سهم پزشک اصلی از بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2eb56d66-7118-4628-8aad-332bf6949859" style="style1" x="0" y="0" width="53" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="8"/>
+				</textElement>
+				<text><![CDATA[سهم سازمان از بیمه پزشک اصلی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="714a8a94-7503-40bc-a46b-24fad13ecd0d" style="style2" x="663" y="0" width="38" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[خدمت]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="40db6803-173e-4547-9059-e9f03996d007" style="style2" x="782" y="0" width="20" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[ردیف]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="97" splitType="Stretch">
+			<textField>
+				<reportElement uuid="9ab99fab-8e1d-4184-9225-ede598d6d363" style="style2" mode="Transparent" x="744" y="0" width="38" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="06d28b62-d17b-4a2c-8d59-6a85fa1f2947" style="style2" mode="Transparent" x="701" y="0" width="43" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientFullName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="1a230158-5913-4940-9acb-9b344c975168" style="style2" mode="Transparent" x="616" y="0" width="47" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drugCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="9bcaa702-d044-41b1-a144-6d6ce7332bd4" style="style2" mode="Transparent" x="516" y="0" width="52" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipmentCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="9fe832fc-a1e0-4130-b51c-8b3ccae479a1" style="style2" mode="Transparent" x="173" y="0" width="62" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainDoctorPortion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="bf79cf22-d1ac-4820-a391-7220541886fc" style="style2" mode="Transparent" x="53" y="0" width="58" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainClinicPortion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="9de760a4-8491-4765-be5d-b5185dffc6c9" mode="Transparent" x="516" y="62" width="52" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assistantDoctorPortionInsurance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="50af3242-e0dd-4eff-a9a7-0b9954194edd" mode="Transparent" x="299" y="62" width="56" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anesthesiaDoctorTotalReceive}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="992ec00a-9dae-42a3-89c8-c7725d5ff925" mode="Transparent" x="235" y="62" width="64" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anesthesiaDoctorPortion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="c91f7c24-09e6-42cb-b7dd-ea2b6620de14" mode="Transparent" x="355" y="62" width="52" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anesthesiaDoctorFullName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="1e479312-b6fb-45e7-8216-b5b7dab8db53" style="style2" mode="Transparent" x="299" y="0" width="56" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainDoctorFullName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="049159aa-b7e2-4c31-9ffe-ca3a6d7cc104" mode="Transparent" x="663" y="62" width="38" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assistantDoctorFullName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="bae5d2a4-cbac-42c8-ab05-476085268331" style="style2" mode="Transparent" x="407" y="0" width="56" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clinicServiceCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="2a577277-bd77-45e7-babb-a549578cb109" mode="Transparent" x="615" y="62" width="48" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assistantDoctorTotalReceive}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="49db22d5-a6c4-4c8c-b097-b699ffb5ce7a" mode="Transparent" x="0" y="62" width="53" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<leftPen lineWidth="1.5"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{receivedFromPatient}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="66bedbca-f527-4148-9181-665df53172d8" style="style2" mode="Transparent" x="568" y="0" width="47" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{drugCostInsurance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="65629874-9987-47a4-8434-b738a19ca993" style="style2" mode="Transparent" x="463" y="0" width="53" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{equipmentCostInsurance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="337df7b4-0c62-4611-8f08-e0ff96d47923" style="style2" mode="Transparent" x="355" y="0" width="52" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{clinicServiceCostInsurance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="2653e715-8c80-4aae-937e-307e98add73a" style="style2" mode="Transparent" x="235" y="0" width="64" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainDoctorTotalReceive}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="51cd7066-a5c7-4222-be87-dd13a8b4bd1c" style="style2" mode="Transparent" x="111" y="0" width="62" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainDoctorPortionInsurance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="5397a2a0-61e1-47fc-a14a-471d4d98d62d" style="style3" mode="Transparent" x="0" y="0" width="53" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainClinicPortionInsurance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="93ed8bdf-5b39-4813-bc20-2206bc6a3670" style="style2" x="516" y="31" width="52" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="10"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[سهم کمک جراح از بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02d50e40-dfd5-4011-a873-8df034dc5fff" style="style2" x="299" y="31" width="56" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پرداختی بیمار بیهوشی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="43647adf-b2f7-48ae-870b-63a4fd447a1f" style="style1" x="235" y="31" width="64" height="31"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سهم بیهوشی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1eb6d468-322f-43c7-b262-31cba16de68a" style="style2" x="663" y="31" width="38" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[کمک جراح]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6447ba89-d8c7-45c7-a112-626240f56eee" style="style2" x="355" y="31" width="52" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[پزشک بیهوشی]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f070c082-bff1-4a28-a5dc-fbf2f6c5b8ea" style="style2" x="615" y="31" width="48" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پرداختی بیمار کمک جراح]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="76ff6d47-dfbd-4ba7-8427-8397ac5d6fb3" style="style1" x="0" y="31" width="53" height="31"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[دریافتی از بیمار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ae806335-486e-4663-abc9-c7e4378ff2ed" style="style2" x="567" y="31" width="48" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="10"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[سهم کمک جراح ]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="b749598c-7f7b-4e5b-829f-366880e2f2be" mode="Transparent" x="568" y="62" width="47" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assistantDoctorPortion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="49c69f84-4c31-4865-b7d6-2ac3acd75a48" style="style2" x="463" y="31" width="53" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="10"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[سهم سازمان از کمک جراح]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="511256f0-9d36-4292-8ea4-d0616e0a9143" mode="Transparent" x="463" y="62" width="53" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assistantClinicPortion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ecbae1b0-aec7-4487-875d-41a6c80a2312" style="style2" x="407" y="31" width="56" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="10"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<text><![CDATA[سهم سازمان از بیمه کمک جراح]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="3ce51f4a-dcd2-4a64-a0c0-90b48ae377ec" mode="Transparent" x="407" y="62" width="56" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{assistantClinicPortionInsurance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="130c8241-a57e-467b-9322-06df67954642" style="style1" x="173" y="31" width="62" height="31"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="9"/>
+				</textElement>
+				<text><![CDATA[سهم بیهوشی از بیمه]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="2687ebb0-c935-415c-ab9f-7d62459b03ce" mode="Transparent" x="173" y="62" width="62" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anesthesiaDoctorPortionInsurance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fde48fdf-50b0-4a29-8cbb-196dede53f91" style="style1" x="111" y="31" width="62" height="31"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="9"/>
+				</textElement>
+				<text><![CDATA[سهم سازمان از بیهوشی]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="498c31a7-40a8-4571-80f7-c62e5b738879" mode="Transparent" x="111" y="62" width="62" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anesthesiaClinicPortion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e323c5c1-72b9-4f9a-9a61-315ce3afc19c" style="style1" x="53" y="31" width="58" height="31"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="9"/>
+				</textElement>
+				<text><![CDATA[سهم سازمان از بیمه بیهوشی]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0">
+				<reportElement uuid="0ceef5ee-8b1c-4e26-a1b5-88ba78fff2b1" mode="Transparent" x="53" y="62" width="58" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anesthesiaClinicPortionInsurance}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement uuid="d437557b-5dee-493e-a390-a6d600faa63a" style="style2" mode="Transparent" x="663" y="0" width="38" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="Tahoma" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\u202B".concat($F{serviceName})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5e84a64c-fe02-4a37-ae2e-670c2ba4f477" style="style2" mode="Transparent" x="782" y="0" width="20" height="31" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<bottomPen lineWidth="1.5"/>
+					<rightPen lineWidth="1.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="31" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c64f9e91-c359-40bb-ac28-15092fc6e8b3" x="393" y="14" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="89">
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="6168a6c3-96a7-448e-a7c0-7be98c688caf" mode="Transparent" x="516" y="7" width="157" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{mainDoctor}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="c36ae95d-6f27-4385-82e2-52ad6cab9460" mode="Transparent" x="53" y="7" width="185" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{assistantDoctor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ee949825-f1fd-41a8-824b-26eb5f60ce2b" x="242" y="7" width="96" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[درآمد کمک جراح:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e9a723f7-9769-4e2a-84bb-8f9a3e2ed68a" x="676" y="7" width="117" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[درآمد پزشک اصلی:]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="ab87d79a-e84f-4473-9cd2-4b21529c5c4c" mode="Transparent" x="516" y="31" width="157" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{anesthesiaDoctor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2242eb4f-7a60-4742-a475-266a798cd6e0" x="676" y="31" width="117" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[درآمد پزشک بیهوشی:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="17ac2162-552b-4f62-bb6b-ece686bea629" x="242" y="33" width="96" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[درآمد دریافتی بیمار:]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="00f10159-0122-492d-8404-7aa999893c15" mode="Transparent" x="54" y="33" width="185" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumReceivedFromPatient}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a16bcbc0-30a8-41dd-ae31-be4d5a60660b" x="671" y="56" width="117" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[درآمد کلی پزشکان:]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="d921826d-7dc8-4011-b0b5-631eba86d98f" mode="Transparent" x="514" y="56" width="157" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sumDoctorPortion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="659b8a62-95f5-4996-9c09-afa5e52ecc6f" x="242" y="58" width="96" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[درآمد کلینیک:]]></text>
+			</staticText>
+			<textField pattern="#,##0;-#,##0" isBlankWhenNull="false">
+				<reportElement uuid="d64dcd97-06e2-4a86-b5fe-2b6cbf11922d" mode="Transparent" x="80" y="58" width="157" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="B Nazanin" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sumClinicPortion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="308153a3-8d79-4a0e-a507-f2afbd74069f" x="395" y="69" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

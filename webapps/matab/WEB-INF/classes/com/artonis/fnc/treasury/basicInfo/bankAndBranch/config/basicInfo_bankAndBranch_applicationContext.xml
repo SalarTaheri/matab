@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- BranchService -->
+	<bean id="branchService" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.service.impl.BranchServiceImpl"> 
+		<property name="dao" ref="branchDao" /> 
+	</bean>
+	<bean id="branchDao" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.dao.impl.BranchDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- BankAccountService -->
+	<bean id="bankAccountService" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.service.impl.BankAccountServiceImpl"> 
+		<property name="dao" ref="bankAccountDao" /> 
+	</bean>
+	<bean id="bankAccountDao" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.dao.impl.BankAccountDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ChequeBookletService -->
+	<bean id="chequeBookletService" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.service.impl.ChequeBookletServiceImpl"> 
+		<property name="dao" ref="chequeBookletDao" /> 
+	</bean>
+	<bean id="chequeBookletDao" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.dao.impl.ChequeBookletDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ChequeBookletService -->
+	<bean id="chequeBookletItemService" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.service.impl.ChequeBookletItemServiceImpl"> 
+		<property name="dao" ref="chequeBookletItemDao" /> 
+	</bean>
+	<bean id="chequeBookletItemDao" class="com.artonis.fnc.treasury.basicInfo.bankAndBranch.dao.impl.ChequeBookletItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

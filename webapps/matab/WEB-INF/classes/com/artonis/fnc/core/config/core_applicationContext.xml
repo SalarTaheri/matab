@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none"> 
+	<!-- AccountCodeSettingService -->
+	<bean id="accountCodeSettingService" class="com.artonis.fnc.core.service.impl.AccountCodeSettingServiceImpl"> 
+		<property name="dao" ref="accountCodeSettingDao" /> 
+	</bean>
+	<bean id="accountCodeSettingDao" class="com.artonis.fnc.core.dao.impl.AccountCodeSettingDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- AccountCodingFloatAccountRelService -->
+	<bean id="accountCodingFloatAccountRelService" class="com.artonis.fnc.core.service.impl.AccountCodingFloatAccountRelServiceImpl"> 
+		<property name="dao" ref="accountCodingFloatAccountRelDao" /> 
+	</bean>
+	<bean id="accountCodingFloatAccountRelDao" class="com.artonis.fnc.core.dao.impl.AccountCodingFloatAccountRelDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- AccountCodingFloatDetailAccountService -->
+	<bean id="accountCodingFloatAccountService" class="com.artonis.fnc.core.service.impl.AccountCodingFloatAccountServiceImpl"> 
+		<property name="dao" ref="accountCodingFloatAccountDao" /> 
+	</bean>
+	<bean id="accountCodingFloatAccountDao" class="com.artonis.fnc.core.dao.impl.AccountCodingFloatAccountDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AccountCodingGroupService -->
+	<bean id="accountCodingGroupService" class="com.artonis.fnc.core.service.impl.AccountCodingGroupServiceImpl"> 
+		<property name="dao" ref="accountCodingGroupDao" /> 
+	</bean>
+	<bean id="accountCodingGroupDao" class="com.artonis.fnc.core.dao.impl.AccountCodingGroupDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+    <!-- AccountCodingService -->
+    <bean id="accountCodingService" class="com.artonis.fnc.core.service.impl.AccountCodingServiceImpl">
+        <property name="dao" ref="accountCodingDao" />
+    </bean>
+    <bean id="accountCodingDao" class="com.artonis.fnc.core.dao.impl.AccountCodingDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <!-- AccountOwnersItemService -->
+	<bean id="accountOwnersItemService" class="com.artonis.fnc.core.service.impl.AccountOwnersItemServiceImpl">
+		<property name="dao" ref="accountOwnersItemDao" />
+	</bean>
+	<bean id="accountOwnersItemDao" class="com.artonis.fnc.core.dao.impl.AccountOwnersItemDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- AccountOwnersService -->
+	<bean id="accountOwnersService" class="com.artonis.fnc.core.service.impl.AccountOwnersServiceImpl"> 
+		<property name="dao" ref="accountOwnersDao" /> 
+	</bean>
+	<bean id="accountOwnersDao" class="com.artonis.fnc.core.dao.impl.AccountOwnersDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- BankService -->
+	<bean id="bankService" class="com.artonis.fnc.core.service.impl.BankServiceImpl"> 
+		<property name="dao" ref="bankDao" /> 
+	</bean>
+	<bean id="bankDao" class="com.artonis.fnc.core.dao.impl.BankDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- FinanceYearService -->
+	<bean id="financeYearService" class="com.artonis.fnc.core.service.impl.FinanceYearServiceImpl"> 
+		<property name="dao" ref="financeYearDao" /> 
+	</bean>
+	<bean id="financeYearDao" class="com.artonis.fnc.core.dao.impl.FinanceYearDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- FloatAccountCodeSettingService -->
+	<bean id="floatAccountCodeSettingService" class="com.artonis.fnc.core.service.impl.FloatAccountCodeSettingServiceImpl"> 
+		<property name="dao" ref="floatAccountCodeSettingDao" /> 
+	</bean>
+	<bean id="floatAccountCodeSettingDao" class="com.artonis.fnc.core.dao.impl.FloatAccountCodeSettingDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- floatAccountService -->
+	<bean id="floatAccountService" class="com.artonis.fnc.core.service.impl.FloatAccountServiceImpl">
+		<property name="dao" ref="floatAccountDao" />
+	</bean>
+	<bean id="floatAccountDao" class="com.artonis.fnc.core.dao.impl.FloatAccountDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- CofferService -->
+	<bean id="cofferService" class="com.artonis.fnc.core.service.impl.CofferServiceImpl">
+		<property name="dao" ref="cofferDao" />
+	</bean>
+	<bean id="cofferDao" class="com.artonis.fnc.core.dao.impl.CofferDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

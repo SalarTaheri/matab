@@ -1,0 +1,45 @@
+
+
+.ui-listview-filter {
+
+    margin: 15px -15px 15px -15px;
+}
+.ui-popup>.ui-btn-left, .ui-popup>.ui-btn-right {
+	top: 5px;
+}
+.ui-popup>.ui-btn-right {
+	right: 24px;
+}
+
+/* .ui-select .ui-btn-icon-right.ui-li-has-count .ui-btn-inner {
+	padding-right: 80px;
+	position: absolute;
+} */
+/* .ui-input-search {
+ padding: 0 10px;
+ margin-bottom: 30px;
+} */
+.ui-mobile .ui-page {
+	/* min-height: 300px; */
+	font-size: medium; /* 15 !important; */
+}
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+	background: -moz-linear-gradient(top,  rgba(201,199,199,0) /*{a-page-background-start}*/, rgba(255,255,255,1) /*{a-page-background-end}*/); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(/*{a-page-background-start}*/,rgba(201,199,199,0)), color-stop(/*{a-page-background-end}*/,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(201,199,199,0) /*{a-page-background-start}*/,rgba(255,255,255,1) /*{a-page-background-end}*/); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(201,199,199,0) /*{a-page-background-start}*/,rgba(255,255,255,1) /*{a-page-background-end}*/); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(201,199,199,0) /*{a-page-background-start}*/,rgba(255,255,255,1) /*{a-page-background-end}*/); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(201,199,199,0) /*{a-page-background-start}*/,rgba(255,255,255,1) /*{a-page-background-end}*/); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00c9c7c7', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+.ui-page-theme-e .ui-btn, html .ui-bar-e .ui-btn, html .ui-body-e .ui-btn, html body .ui-group-theme-e .ui-btn, html head + body .ui-btn.ui-btn-e, .ui-page-theme-e .ui-btn:visited, html .ui-bar-e .ui-btn:visited, html .ui-body-e .ui-btn:visited, html body .ui-group-theme-e .ui-btn:visited, html head + body .ui-btn.ui-btn-e:visited {
+	
+	font-size: smaller;
+
+}
+
+
+h3.ui-collapsible-heading, h3.ui-collapsible-heading-collapsed{
+	font-size: 16px;
+}

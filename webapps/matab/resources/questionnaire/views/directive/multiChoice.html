@@ -1,0 +1,27 @@
+<div ng-if="!label">
+    <div class="checkbox checkbox-primary" ng-repeat="option in fixedOptions">
+        <label>
+            <input type="checkbox" value="{{option.value}}" ng-model="answer[field]" name="option_{{uniq_name}}" >
+            {{option.label}}
+        </label>
+    </div>
+</div>
+
+<div ng-if="label">
+    <div class="form-group">
+        <div class="col-lg-4 control-label">
+            {{currentQuestionNumber | NumberPadding:2}} - {{label}}
+        </div>
+        <div class="col-lg-8">
+            <div class="checkbox checkbox-primary" ng-repeat="option in fixedOptions">
+                <label ng-init="fieldX = field + '.' + option.id">
+                    <input type="checkbox" value="{{option.value}}" ng-model="answer[fieldX]" name="option_{{uniq_name}}" >
+                    {{option.label}}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-transclude></ng-transclude>
+

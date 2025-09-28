@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- PurchaseReceiptService -->
+	<bean id="purchaseReceiptService" class="com.artonis.inv.receipt.service.impl.PurchaseReceiptServiceImpl"> 
+		<property name="dao" ref="purchaseReceiptDao" /> 
+	</bean>
+	<bean id="purchaseReceiptDao" class="com.artonis.inv.receipt.dao.impl.PurchaseReceiptDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PurchaseReceiptGoodsService -->
+	<bean id="purchaseReceiptGoodsService" class="com.artonis.inv.receipt.service.impl.PurchaseReceiptGoodsServiceImpl"> 
+		<property name="dao" ref="purchaseReceiptGoodsDao" /> 
+	</bean>
+	<bean id="purchaseReceiptGoodsDao" class="com.artonis.inv.receipt.dao.impl.PurchaseReceiptGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PurchaseReceiptAdditionSubtractionService -->
+	<bean id="purchaseReceiptAdditionSubtractionService" class="com.artonis.inv.receipt.service.impl.PurchaseReceiptAdditionSubtractionServiceImpl"> 
+		<property name="dao" ref="purchaseReceiptAdditionSubtractionDao" /> 
+	</bean>
+	<bean id="purchaseReceiptAdditionSubtractionDao" class="com.artonis.inv.receipt.dao.impl.PurchaseReceiptAdditionSubtractionDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- DirectlyConsumptionReceiptService -->
+	<bean id="directlyConsumptionReceiptService" class="com.artonis.inv.receipt.service.impl.DirectlyConsumptionReceiptServiceImpl"> 
+		<property name="dao" ref="directlyConsumptionReceiptDao" /> 
+	</bean>
+	<bean id="directlyConsumptionReceiptDao" class="com.artonis.inv.receipt.dao.impl.DirectlyConsumptionReceiptDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- DirectlyConsumptionReceiptGoodsService -->
+	<bean id="directlyConsumptionReceiptGoodsService" class="com.artonis.inv.receipt.service.impl.DirectlyConsumptionReceiptGoodsServiceImpl"> 
+		<property name="dao" ref="directlyConsumptionReceiptGoodsDao" /> 
+	</bean>
+	<bean id="directlyConsumptionReceiptGoodsDao" class="com.artonis.inv.receipt.dao.impl.DirectlyConsumptionReceiptGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- DirectlyConsumptionReceiptAdditionSubtractionService -->
+	<bean id="directlyConsumptionReceiptAdditionSubtractionService" class="com.artonis.inv.receipt.service.impl.DirectlyConsumptionReceiptAdditionSubtractionServiceImpl"> 
+		<property name="dao" ref="directlyConsumptionReceiptAdditionSubtractionDao" /> 
+	</bean>
+	<bean id="directlyConsumptionReceiptAdditionSubtractionDao" class="com.artonis.inv.receipt.dao.impl.DirectlyConsumptionReceiptAdditionSubtractionDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

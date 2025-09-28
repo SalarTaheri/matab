@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.m169.basicInfo.view" default-lazy="false">
+    <class name="ServiceGoodsView" table="inv_bas_goods_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="specification" type="string"/>
+        <property name="metrics" type="string"/>
+    </class>
+    
+	<class name="ContractView" table="inv_m169_1_contract_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="type" type="int"/>
+		<property name="personId" type="long"/>
+		<property name="personName" type="string"/>
+		<property name="startDate" type="com.artonis.core.base.core.Date"/>
+		<property name="finishDate" type="com.artonis.core.base.core.Date"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+		<property name="contractNumber" type="string"/>
+	</class>
+	<class name="PersonView" table="inv_m169_1_person_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+	<property name="name" type="string"/>
+		<property name="family" type="string"/>
+		<property name="title" type="byte"/>
+		<property name="type" type="byte"/>
+		<property name="citizenship" type="byte"/>
+		<property name="nationalCode" type="string"/>
+		<property name="countryId" column="country_id" type="long"/>
+		<property name="provinceId" column="province_id" type="long"/>
+		<property name="cityId" column="city_id" type="long"/>
+		<property name="phoneNo" type="string"/>
+		<property name="faxNo" type="string"/>
+		<property name="clientCode" type="string"/>
+		<property name="description" type="string"/>
+		<property name="mobileNo" type="string"/>
+		<property name="emailAddress" type="string"/>
+		<property name="birthDate" type="com.artonis.core.base.core.Date"/>
+		<property name="economicNo" column="economic_no" type="string"/>
+		<property name="address" column="address" type="string"/>
+		<property name="preCodeCity" column="preCodeCity" type="string"/>
+		<property name="cityName" column="cityName" type="string"/>
+		<property name="provinceName" column="provinceName" type="string"/>
+		<property name="countryName" column="countryName" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="foreignPersonNumber" type="string"/>
+	</class>
+	<class name="CompanyPersonView" table="inv_m169_1_companyperson_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="personType" type="int"/>
+		<property name="companyType" type="int"/>
+		<property name="personCompanyName" type="string"/>
+		<property name="firstAndLastName" type="string"/>
+		<property name="registerNumber" type="string"/>
+		<property name="nationalId" type="string"/>
+		<property name="taxAffairs" type="string"/>
+		<property name="province_Id" type="long"/>
+		<property name="city_Id" type="long"/>
+		<property name="address" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="phoneNo" type="string"/>
+		<property name="priorEconomicCode" type="string"/>
+		<property name="newEconomicCode" type="string"/>
+		<property name="registrationState" type="int"/>
+		<property name="userName" type="string"/>
+		<property name="provinceName" type="string"/>
+		<property name="cityName" type="string"/>
+		<property name="includeBand" type="int"/>
+	</class>
+</hibernate-mapping>

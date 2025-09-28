@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- SettingService -->
+	<bean id="settingService" class="com.artonis.core.system.config.service.impl.SettingServiceImpl"> 
+		<property name="dao" ref="settingDao" /> 
+	</bean>
+	<bean id="settingDao" class="com.artonis.core.system.config.dao.impl.SettingDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

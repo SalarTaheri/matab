@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<!-- The DBCP DataSource org.apache.commons.dbcp.BasicDataSource-->
+	<bean id="dataSource" class="com.artonis.core.base.dataSource.DataSource" >
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+		<!--<property name="maxActive" value="25"/>
+			<property name="maxIdle" value="10"/>
+			<property name="maxWait" value="1000"/>
+			<property name="testOnBorrow" value="true"/>
+			<property name="testOnReturn" value="true"/>
+			<property name="minEvictableIdleTimeMillis"><value>300000</value></property>
+			<property name="timeBetweenEvictionRunsMillis"><value>60000</value></property>
+		-->
+	</bean>
+
+	<bean id="dataSourceSecondDatabase" class="com.artonis.core.base.dataSource.DataSource" >
+		<property name="driverClassName">
+			<value>${jdbc.secondDatabase.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.secondDatabase.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.secondDatabase.username}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.secondDatabase.password}</value>
+		</property>
+	</bean>
+
+</beans>

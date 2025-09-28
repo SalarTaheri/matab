@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.inv.core.model" default-lazy="false">
+	<class name="Goods" table="inv1goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="measureUnit" type="long"/>
+		<property name="standardized" type="int"/>
+		<property name="pricing" type="int"/>
+		<property name="description" type="string"/>
+		<property name="active" type="boolean"/>
+		<property name="type" type="int"/>
+		<property name="nameAndCode"
+          formula="name +':'+ code" />
+        <property name="goodsCategory_id" type="long"/>
+		<property name="expireDate" type="com.artonis.core.base.core.Date"/>
+		<property name="latinName" type="string"/>
+	</class>
+	<class name="ConsumptionSlip" table="inv4consumptionSlip">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="reference" type="string" />
+		<property name="serial" type="string" />
+		<property name="state" type="int" />
+		<property name="inventoryId" column="inventory_id" type="long" />
+		<property name="date" type="com.artonis.core.base.core.Date" />
+		<property name="dateInMilliSec" type="long" />
+		<property name="issuer" type="long" />
+		<property name="requestGoodsId" column="requestGoods_id" type="long" />
+		<property name="isSorted" type="boolean"/>
+		<property name="costCenterId" type="long"/>
+		<property name="transfereeId" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="RequestGoods" table="inv2requestGoods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="requestNumber" type="long"/>
+		<property name="requestDate" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="applicator" type="int"/>
+		<property name="exporterId" type="long"/>
+		<property name="inventoryId" type="long"/>
+		<property name="fromInventoryId" type="long"/>
+		<property name="costCenterId" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="ConsumptionSlipGoods" table="inv4ConsumptionSlip_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="amount" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="consumptionSlipId" column="consumptionSlip_id" type="long"/>
+		<property name="rate" type="float"/>
+		<property name="sum" type="long"/>
+	</class>
+	<class name="Inventory" table="inv1inventory">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="inventoryTypeId" column="inventory_type_id" type="long"/>
+		<property name="description" type="string"/>
+		<property name="centerInventory" type="boolean"/>
+		<property name="floatAccountId" type="long"/>
+		<property name="accountCodingId" type="long"/>
+		<property name="nameAndCode" formula="name +' '+ code" />
+	</class>
+	<class name="RequestGoodsGoods" table="inv2requestGoods_goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="requestGoodsId" type="long"/>
+		<property name="goodsId" type="long"/>
+		<property name="measureUnitId" type="long"/>
+		<property name="requestedAmount" type="int"/>
+		<property name="acceptedAmount" type="int"/>
+		<property name="itemState" type="int"/>
+		<property name="applicatorUserId" type="long"/>
+		<property name="lastAcceptorUserId" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="SalesSlip" table="inv4salesSlip">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="reference" type="string" />
+		<property name="serial" type="string" />
+		<property name="state" type="int" />
+		<property name="inventoryId" type="long" />
+		<property name="date" type="com.artonis.core.base.core.Date" />
+		<property name="dateInMilliSec" type="long" />
+		<property name="issuer" type="long" />
+		<property name="isSorted" type="boolean"/>
+		<property name="businessPartnerId" type="long"/>
+	</class>
+	<class name="SalesSlipGoods" table="inv4salesSlipGoods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" type="long"/>
+		<property name="amount" type="long"/>
+		<property name="measureUnitId" type="long"/>
+		<property name="salesSlipId" type="long"/>
+		<property name="rate" type="float"/>
+		<property name="sum" type="long"/>
+	</class>
+</hibernate-mapping>

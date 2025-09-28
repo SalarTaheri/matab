@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- DirectlyConsumptionReceiptService -->
+	<bean id="directlyConsumptionReceiptService" class="com.artonis.inv.operation.service.impl.DirectlyConsumptionReceiptServiceImpl"> 
+		<property name="dao" ref="directlyConsumptionReceiptDao" /> 
+	</bean>
+	<bean id="directlyConsumptionReceiptDao" class="com.artonis.inv.operation.dao.impl.DirectlyConsumptionReceiptDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- BeginPeriodReceiptService -->
+	<bean id="beginPeriodReceiptService" class="com.artonis.inv.operation.service.impl.BeginPeriodReceiptServiceImpl"> 
+		<property name="dao" ref="beginPeriodReceiptDao" /> 
+	</bean>
+	<bean id="beginPeriodReceiptDao" class="com.artonis.inv.operation.dao.impl.BeginPeriodReceiptDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- BeginPeriodReceiptGoodsService -->
+	<bean id="beginPeriodReceiptGoodsService" class="com.artonis.inv.operation.service.impl.BeginPeriodReceiptGoodsServiceImpl"> 
+		<property name="dao" ref="beginPeriodReceiptGoodsDao" /> 
+	</bean>
+	<bean id="beginPeriodReceiptGoodsDao" class="com.artonis.inv.operation.dao.impl.BeginPeriodReceiptGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- TemporaryReceiptService -->
+	<bean id="temporaryReceiptService" class="com.artonis.inv.operation.service.impl.TemporaryReceiptServiceImpl"> 
+		<property name="dao" ref="temporaryReceiptDao" /> 
+	</bean>
+	<bean id="temporaryReceiptDao" class="com.artonis.inv.operation.dao.impl.TemporaryReceiptDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- TemporaryReceiptGoodsService -->
+	<bean id="temporaryReceiptGoodsService" class="com.artonis.inv.operation.service.impl.TemporaryReceiptGoodsServiceImpl"> 
+		<property name="dao" ref="temporaryReceiptGoodsDao" /> 
+	</bean>
+	<bean id="temporaryReceiptGoodsDao" class="com.artonis.inv.operation.dao.impl.TemporaryReceiptGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- TransferBetweenInventoryService -->
+	<bean id="transferBetweenInventoryService" class="com.artonis.inv.operation.service.impl.TransferBetweenInventoryServiceImpl"> 
+		<property name="dao" ref="transferBetweenInventoryDao" /> 
+	</bean>
+	<bean id="transferBetweenInventoryDao" class="com.artonis.inv.operation.dao.impl.TransferBetweenInventoryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- TransferBetweenInventoryGoodsService -->
+	<bean id="transferBetweenInventoryGoodsService" class="com.artonis.inv.operation.service.impl.TransferBetweenInventoryGoodsServiceImpl"> 
+		<property name="dao" ref="transferBetweenInventoryGoodsDao" /> 
+	</bean>
+	<bean id="transferBetweenInventoryGoodsDao" class="com.artonis.inv.operation.dao.impl.TransferBetweenInventoryGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- KardexReconstructionService -->
+	<bean id="kardexReconstructionService" class="com.artonis.inv.operation.service.impl.KardexReconstructionServiceImpl">
+		<property name="dao" ref="kardexReconstructionDao" />
+	</bean>
+	<bean id="kardexReconstructionDao" class="com.artonis.inv.operation.dao.impl.KardexReconstructionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- KardexSortingService -->
+	<bean id="kardexSortingService" class="com.artonis.inv.operation.service.impl.KardexSortingServiceImpl">
+		<property name="dao" ref="kardexSortingDao" />
+	</bean>
+	<bean id="kardexSortingDao" class="com.artonis.inv.operation.dao.impl.KardexSortingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- GoodsPricingService -->
+	<bean id="goodsPricingService" class="com.artonis.inv.operation.service.impl.GoodsPricingServiceImpl">
+		<property name="dao" ref="goodsPricingDao" />
+	</bean>
+	<bean id="goodsPricingDao" class="com.artonis.inv.operation.dao.impl.GoodsPricingDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- GoodsSupplyService -->
+	<bean id="goodsSupplyService" class="com.artonis.inv.operation.service.impl.GoodsSupplyServiceImpl">
+		<property name="dao" ref="goodsSupplyDao" />
+	</bean>
+	<bean id="goodsSupplyDao" class="com.artonis.inv.operation.dao.impl.GoodsSupplyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- ClosingSlipService -->
+	<bean id="closingSlipService" class="com.artonis.inv.operation.service.impl.ClosingSlipServiceImpl">
+		<property name="dao" ref="closingSlipDao" />
+	</bean>
+	<bean id="closingSlipDao" class="com.artonis.inv.operation.dao.impl.ClosingSlipDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- ClosingSlipService -->
+	<bean id="closingSlipGoodsService" class="com.artonis.inv.operation.service.impl.ClosingSlipGoodsServiceImpl">
+		<property name="dao" ref="closingSlipGoodsDao" />
+	</bean>
+	<bean id="closingSlipGoodsDao" class="com.artonis.inv.operation.dao.impl.ClosingSlipGoodsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- ExpenditureService -->
+	<bean id="expenditureService" class="com.artonis.fnc.treasury.basicInfo.expenditure.service.impl.ExpenditureServiceImpl"> 
+		<property name="dao" ref="expenditureDao" /> 
+	</bean>
+	<bean id="expenditureDao" class="com.artonis.fnc.treasury.basicInfo.expenditure.dao.impl.ExpenditureDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ExpenditureFundService -->
+	<bean id="expenditureFundService" class="com.artonis.fnc.treasury.basicInfo.expenditure.service.impl.ExpenditureFundServiceImpl"> 
+		<property name="dao" ref="expenditureFundDao" /> 
+	</bean>
+	<bean id="expenditureFundDao" class="com.artonis.fnc.treasury.basicInfo.expenditure.dao.impl.ExpenditureFundDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ExpenditurefundExpenditureItemService -->
+	<bean id="expenditurefundExpenditureItemService" class="com.artonis.fnc.treasury.basicInfo.expenditure.service.impl.ExpenditurefundExpenditureItemServiceImpl"> 
+		<property name="dao" ref="expenditurefundExpenditureItemDao" /> 
+	</bean>
+	<bean id="expenditurefundExpenditureItemDao" class="com.artonis.fnc.treasury.basicInfo.expenditure.dao.impl.ExpenditurefundExpenditureItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ExpenditureFundExpenseFundItemService -->
+	<bean id="expenditureFundExpenseFundItemService" class="com.artonis.fnc.treasury.basicInfo.expenditure.service.impl.ExpenditureFundExpenseFundItemServiceImpl"> 
+		<property name="dao" ref="expenditureFundExpenseFundItemDao" /> 
+	</bean>
+	<bean id="expenditureFundExpenseFundItemDao" class="com.artonis.fnc.treasury.basicInfo.expenditure.dao.impl.ExpenditureFundExpenseFundItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ExpenditureFundAppendixItemService -->
+	<bean id="expenditureFundAppendixItemService" class="com.artonis.fnc.treasury.basicInfo.expenditure.service.impl.ExpenditureFundAppendixItemServiceImpl"> 
+		<property name="dao" ref="expenditureFundAppendixItemDao" /> 
+	</bean>
+	<bean id="expenditureFundAppendixItemDao" class="com.artonis.fnc.treasury.basicInfo.expenditure.dao.impl.ExpenditureFundAppendixItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

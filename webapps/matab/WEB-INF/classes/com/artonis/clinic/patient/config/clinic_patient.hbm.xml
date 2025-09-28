@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.patient.model" default-lazy="false">
+	<class name="Visit" table="his_pnt_visit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patient_id" type="long"/>
+		<property name="doctor_id" type="long"/>
+		<property name="visitDate" type="com.artonis.core.base.core.Date"/>
+		<property name="mongoVisit_id" type="string"/>
+	</class>
+	<class name="MedicalTestVisit" table="his_pnt_visit_medicaltest">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="visit_id" type="long"/>
+		<property name="medicalTest_id" type="long"/>
+		<property name="value" type="string"/>
+	</class>
+	<class name="AgentDoctor" table="his1agentDoctor">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="fatherName" type="string"/>
+		<property name="nationalCode" type="string"/>
+		<property name="identityNumber" type="string"/>
+		<property name="birthDate" type="com.artonis.core.base.core.Date"/>
+		<property name="sex" type="long"/>
+		<property name="medicalCouncilCode" type="string"/>
+	</class>
+	<class name="PatientFile" table="his_pnt_patientFile">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patientId" type="long"/>
+		<property name="fileData" type="binary"/>
+		<property name="fileName" type="string"/>
+		<property name="fileType" type="integer"/>
+		<property name="visitQueueId" type="long"/>
+		<property name="mongoVisitId" type="string"/>
+		<property name="saveTime" type="long"/>
+		<property name="lastChangeTime" type="long"/>
+		<property name="creatorUser" type="long"/>
+	</class>
+	<class name="PatientAttachedFile" table="his_pnt_patientAttachedFile">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patientId" type="long"/>
+		<property name="fileData" type="binary"/>
+		<property name="fileName" type="string"/>
+		<property name="fileType" type="integer"/>
+		<property name="saveTime" type="long"/>
+		<property name="lastChangeTime" type="long"/>
+		<property name="creatorUser" type="long"/>
+	</class>
+</hibernate-mapping>

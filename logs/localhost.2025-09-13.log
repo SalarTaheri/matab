@@ -1,0 +1,5 @@
+13-Sep-2025 15:20:31.087 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Spring WebApplicationInitializers detected on classpath: [com.artonis.core.common.base.spring.MyWebApplicationInitializer@319e6b43]
+13-Sep-2025 15:20:52.572 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring root WebApplicationContext
+13-Sep-2025 15:21:27.958 INFO [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log Initializing Spring FrameworkServlet 'mvc-dispatcher'
+13-Sep-2025 23:10:47.450 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Destroying Spring FrameworkServlet 'mvc-dispatcher'
+13-Sep-2025 23:10:47.544 INFO [localhost-startStop-2] org.apache.catalina.core.ApplicationContext.log Closing Spring root WebApplicationContext

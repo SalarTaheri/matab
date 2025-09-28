@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.research.view" default-lazy="false">
+	<class name="RegistrationView" table="his4registration_view">
+		<id name="id" type="long"/>
+		<property name="patient_id" type="long"/>
+		<property name="registerationDate" type="com.artonis.core.base.core.Date"/>
+		<property name="release" type="boolean"/>
+		<property name="user_id" type="long"/>
+		<property name="patientFullName" type="string"/>
+		<property name="patientFileNumber" type="string"/>
+		<property name="departmentList" type="string"/>
+	</class>
+
+</hibernate-mapping>

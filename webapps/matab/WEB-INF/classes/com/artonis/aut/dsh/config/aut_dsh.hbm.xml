@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.aut.dsh.model" default-lazy="false">
+	<class name="Sender" table="aut1sender">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="senderUser_id" type="long"/>
+		<property name="letter_id" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+	</class>
+	<class name="Attach" table="aut1attach">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+        <property name="letter_id" type="long"/>
+        <property name="fileAddress" type="string"/>
+        <property name="attachName" type="string"/>
+    </class>
+	<class name="Letter" table="aut1letter">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="letter" type="string"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="subject" type="string"/>
+	</class>
+	<class name="Receiver" table="aut1receiver">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="letter_id" type="long"/>
+		<property name="receiverUser_id" type="long"/>
+		<property name="hasRead" type="boolean"/>
+	</class>
+</hibernate-mapping>

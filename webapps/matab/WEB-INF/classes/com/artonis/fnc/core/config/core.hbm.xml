@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.fnc.core.model" default-lazy="false">
+	<class name="AccountCodeSetting" table="fnc3accountcodesetting">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="layerName" type="int"/>
+		<property name="codeLength" type="int"/>
+		<property name="lastLayer" type="boolean"/>
+	</class>
+    <class name="AccountCoding" table="fnc1accountcoding">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="code" type="string"/>
+        <property name="name" type="string"/>
+        <property name="parent_id" type="long"/>
+        <property name="level" type="int"/>
+        <property name="isLeaf" type="boolean"/>
+        <property name="accountgroup_id" type="long"/>
+        <property name="accountType_id" type="long"/>
+        <property name="gainLossType" type="int"/>
+        <property name="nature" type="int"/>
+        <property name="oppositeAccountCodingId" type="long"/>
+        <property name="amountable" type="boolean"/>
+        <property name="followUpDate" type="boolean"/>
+        <property name="exchange" type="boolean"/>
+        <property name="currencyExchange" type="boolean"/>
+        <property name="analysable" type="boolean"/>
+        <property name="inActive" type="boolean"/>
+        <property name="inActiveDate" type="com.artonis.core.base.core.Date"/>
+		<property name="contraryNature" type="boolean"/>
+	</class>
+	<class name="AccountCodingFloatAccount" table="fnc1accountcoding_floataccount">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="account_id" type="long"/>
+		<property name="floatDetailAccount_id" type="long"/>
+		<property name="level" type="int"/>
+	</class>
+    <class name="AccountCodingFloatAccountRel" table="fnc1acc_floatacc_rel">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="account_id" type="long"/>
+		<property name="floatDetailAccount_id" type="long"/>
+		<property name="level" type="int"/>
+	</class>
+	<class name="AccountCodingGroup" table="fnc1accountcoding_group">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="accounttype_id" type="long"/>
+		<property name="hasChild" type="boolean"/>
+		<property name="nature" type="int"/>
+		<property name="gainLossType" type="int"/>
+	</class>
+	<class name="AccountOwners" table="fnc1accountowners">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="int"/>
+		<property name="groupe" type="int"/>
+		<property name="floatAccountGroup_id" type="long"/>
+		<property name="floatAccountGroupNature_id" type="long"/>
+	</class>
+	<class name="AccountOwnersItem" table="fnc1accountownersitem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="accountCoding_id" type="long"/>
+		<property name="accountowners_id" type="long"/>
+		<property name="level" type="int"/>
+	</class>
+	<class name="Bank" table="fnc3bank">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	<class name="FinanceYear" table="fnc1financeyear">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+        <property name="startDate" type="com.artonis.core.base.core.Date"/>
+        <property name="endDate" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="closed" type="boolean"/>
+		<property name="toll" type="float"/>
+		<property name="tax" type="float"/>
+	</class>
+	<class name="FloatAccount" table="fnc1floataccount">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="parent_id" type="long"/>
+		<property name="level" type="int"/>
+		<property name="hasChild" type="boolean"/>
+		<property name="groupNature_id" type="int"/>
+		<property name="type" type="int"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="FloatAccountCodeSetting" table="fnc3floataccountcodesetting">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="layerNumber" type="int"/>
+		<property name="codeLength" type="int"/>
+	</class>
+	<class name="Coffer" table="fnc3coffer">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="type" type="int"/>
+		<property name="expenditureCoffer" type="long"/>
+		<property name="floatAccount_id" type="long"/>
+		<property name="accountCoding_id" type="long"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.basicInfo.model" default-lazy="false">
+	<class name="InventoryDocuments" table="inv1inventory_documents">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="inventory_id" type="long"/>
+		<property name="documentsIssued" type="int"/>
+	</class>
+	<class name="InventoryEmployee" table="inv1inventory_employee">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="inventory_id" type="long"/>
+		<property name="employee_id" type="long"/>
+	</class>
+	<class name="GoodsPhysicalPlace" table="inv1goods_physicalPlace">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="inventory_id" type="long"/>
+	</class>
+	<class name="GoodsBarCode" table="inv1good_barcode">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="barcode" type="string"/>
+		<property name="label" type="string"/>
+	</class>
+	<class name="GoodsSubMeasureUnit" table="inv1Goods_SubMeasureUnit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="convertCoefficient" type="long"/>
+	</class>
+	<class name="GoodsInventoryControl" table="inv1Goods_inventoryControl">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="min_" type="long"/>
+		<property name="max_" type="long"/>
+		<property name="amountOrder" type="long"/>
+		<property name="pointOfAppeal" type="long"/>
+	</class>
+	<class name="MeasureUnit" table="inv1measureunit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="measureUnit" type="string"/>
+		<property name="scale" type="int"/>
+	</class>
+	<class name="GoodsCategory" table="inv1goodscategory">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="goodsTypeId" column="goods_type_id" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="GoodsGroup" table="inv1goodsgroup">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="parent_id" type="long"/>
+		<property name="description" type="string"/>
+    	<property name="hasChild" type="boolean"/>
+	</class>
+	<class name="InventoryPhysicalLocation" table="inv1inventory_physicallocation">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="physicalLocationName" type="string"/>
+		<property name="physicalLocationCode" type="string"/>
+		<property name="physicalLocationActive" type="boolean"/>
+		<property name="physicalLocationDescription" type="string"/>
+		<property name="inventory_id" type="long"/>
+	</class>
+	<class name="InventoryGoods" table="inv1inventory_goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="inventory_id" type="long"/>
+	</class>
+	<class name="InventoryType" table="inv1inventoryType">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="GoodsType" table="inv1goodsType">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="GoodsCategoryAccountingItem" table="inv1GoodsCategoryAccountingItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="accountCodingId" column="accountCoding_id" type="long"/>
+		<property name="goodsCategoryId" column="goodsCategory_id" type="long"/>
+	</class>
+	<class name="GoodsCategoryAccountingItemDocument" table="inv1GoodsCategoryAccountingItemDocument">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsCategoryAccountingItemId" type="long"/>
+		<property name="inventoryDocumentId" type="int"/>
+	</class>
+	<class name="SurplusDeficit" table="inv1surplusDeficit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="type" type="int"/>
+		<property name="accountCodingId" column="accountCoding_id" type="long"/>
+		<property name="descriptions" type="string"/>
+	</class>
+	<class name="InventorySetting" table="inv1setting">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="registerNegativeStock" type="byte"/>
+	</class>
+	<class name="GoodsTemplate" table="inv1goodsTemplate">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="user_id" type="long"/>
+		<property name="orderNumber" type="int"/>
+	</class>
+	<class name="GoodsTemplateItem" table="inv1goodsTemplateItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsTemplate_id" type="long"/>
+	</class>
+</hibernate-mapping>

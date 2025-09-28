@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none"> 
+	<!-- CompanyService -->
+	<bean id="companyService" class="com.artonis.hrm.core.service.impl.CompanyServiceImpl">
+		<property name="dao" ref="companyDao" />
+	</bean>
+	<bean id="companyDao" class="com.artonis.hrm.core.dao.impl.CompanyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- EmployeeService -->
+	<bean id="employeeService" class="com.artonis.hrm.core.service.impl.EmployeeServiceImpl">
+		<property name="dao" ref="employeeDao" />
+		<property name="employeeHisPartnerDao" ref="employeeHisPartnerDao" />
+	</bean>
+	<bean id="employeeDao" class="com.artonis.hrm.core.dao.impl.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="employeeHisPartnerDao" class="com.artonis.hrm.core.dao.impl.EmployeeHisPartnerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactorySecondDatabase" />
+	</bean>
+	<!-- OperatingUnitService -->
+	<bean id="operatingUnitService" class="com.artonis.hrm.core.service.impl.OperatingUnitServiceImpl"> 
+		<property name="dao" ref="operatingUnitDao" /> 
+	</bean>
+	<bean id="operatingUnitDao" class="com.artonis.hrm.core.dao.impl.OperatingUnitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

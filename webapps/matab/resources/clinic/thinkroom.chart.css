@@ -1,0 +1,11 @@
+
+.ui-listview-filter {
+
+    margin: 15px -15px 15px -15px;
+}
+.ui-popup>.ui-btn-left, .ui-popup>.ui-btn-right {
+	top: 5px;
+}
+.ui-popup>.ui-btn-right {
+	right: 24px;
+}

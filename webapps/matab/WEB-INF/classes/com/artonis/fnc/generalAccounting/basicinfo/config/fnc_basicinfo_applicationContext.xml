@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- CustomizeAccountService -->
+	<bean id="customizeAccountService" class="com.artonis.fnc.generalAccounting.basicinfo.service.impl.CustomizeAccountServiceImpl"> 
+		<property name="dao" ref="customizeAccountDao" /> 
+	</bean>
+	<bean id="customizeAccountDao" class="com.artonis.fnc.generalAccounting.basicinfo.dao.impl.CustomizeAccountDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CustomizeAccountRelatedAccountCodingService -->
+	<bean id="customizeAccountRelatedAccountCodingService" class="com.artonis.fnc.generalAccounting.basicinfo.service.impl.CustomizeAccountRelatedAccountCodingServiceImpl"> 
+		<property name="dao" ref="customizeAccountRelatedAccountCodingDao" /> 
+	</bean>
+	<bean id="customizeAccountRelatedAccountCodingDao" class="com.artonis.fnc.generalAccounting.basicinfo.dao.impl.CustomizeAccountRelatedAccountCodingDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ExchangeService -->
+	<bean id="exchangeService" class="com.artonis.fnc.generalAccounting.basicinfo.service.impl.ExchangeServiceImpl"> 
+		<property name="dao" ref="exchangeDao" /> 
+	</bean>
+	<bean id="exchangeDao" class="com.artonis.fnc.generalAccounting.basicinfo.dao.impl.ExchangeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GeneralAccountingConfigService -->
+	<bean id="generalAccountingConfigService" class="com.artonis.fnc.generalAccounting.basicinfo.service.impl.GeneralAccountingConfigServiceImpl"> 
+		<property name="dao" ref="generalAccountingConfigDao" /> 
+	</bean>
+	<bean id="generalAccountingConfigDao" class="com.artonis.fnc.generalAccounting.basicinfo.dao.impl.GeneralAccountingConfigDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- GeneralAccountingInstallerService -->
+	<bean id="generalAccountingInstallerService" class="com.artonis.fnc.generalAccounting.basicinfo.service.impl.GeneralAccountingInstallerServiceImpl"> 
+		<property name="dao" ref="generalAccountingInstallerDao" /> 
+	</bean>
+	<bean id="generalAccountingInstallerDao" class="com.artonis.fnc.generalAccounting.basicinfo.dao.impl.GeneralAccountingInstallerDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

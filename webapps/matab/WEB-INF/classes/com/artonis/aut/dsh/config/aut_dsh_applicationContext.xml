@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- SenderService -->
+	<bean id="senderService" class="com.artonis.aut.dsh.service.impl.SenderServiceImpl"> 
+		<property name="dao" ref="senderDao" /> 
+	</bean>
+	<bean id="senderDao" class="com.artonis.aut.dsh.dao.impl.SenderDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AttachService -->
+	<bean id="attachService" class="com.artonis.aut.dsh.service.impl.AttachServiceImpl"> 
+		<property name="dao" ref="attachDao" /> 
+	</bean>
+	<bean id="attachDao" class="com.artonis.aut.dsh.dao.impl.AttachDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- LetterService -->
+	<bean id="letterService" class="com.artonis.aut.dsh.service.impl.LetterServiceImpl"> 
+		<property name="dao" ref="letterDao" /> 
+	</bean>
+	<bean id="letterDao" class="com.artonis.aut.dsh.dao.impl.LetterDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReceiverService -->
+	<bean id="receiverService" class="com.artonis.aut.dsh.service.impl.ReceiverServiceImpl"> 
+		<property name="dao" ref="receiverDao" /> 
+	</bean>
+	<bean id="receiverDao" class="com.artonis.aut.dsh.dao.impl.ReceiverDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

@@ -1,0 +1,137 @@
+
+.survey-example h1 {
+  background-color: purple
+}
+
+.form-horizontal .control-label{
+    text-align: left;
+}
+
+.form-horizontal .checkbox{
+    padding-top: 5px!important;
+    display: inline-block;
+}
+.form-horizontal .radio{
+    display: inline-block;
+    padding-top: 6px!important;
+    margin-bottom: 0px!important;
+}
+
+.radio label{
+    padding-left: 30px!important;
+    padding-right: 15px;
+}
+.checkbox label{
+    padding-right: 15px;
+}
+.partial-control > .form-control-wrapper,
+.partial-label
+{
+    display: inline-block;
+}
+
+.disabled {
+    z-index: 1000;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.survey-page-header {
+    background-color: #fff;
+    z-index: 1000;
+    padding-top: 10px;
+}
+
+.nav-list li.active {
+    background-color: #dedede;
+    position: relative;
+}
+
+survey-group  .form-group{
+    padding-left: 10px!important;
+}
+/*************/
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    border-bottom: 1px dashed #428bca;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code {
+    border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+.bs-callout-default {
+    border-left-color: #777;
+}
+.bs-callout-default h4 {
+    color: #777;
+}
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+    color: #428bca;
+}
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+    color: #5cb85c;
+}
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+    color: #d9534f;
+}
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+    color: #f0ad4e;
+}
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+    color: #5bc0de;
+}
+/****************/
+
+
+
+.k-autocomplete, .k-combobox, .k-datepicker, .k-timepicker, .k-datetimepicker, .k-numerictextbox, .k-dropdown, .k-selectbox, .k-textbox{
+	width: auto!important;
+}
+
+.border-survey-card-color{
+	border-color: #2e6da4;
+	cursor: pointer;
+}
+.survey-kanban{
+	margin-bottom: 5px;
+}
+.acordstyle{
+	background: #337ab7;
+	border-color: #2e6da4;
+	color: rgb(255, 255, 255);
+	font-size: 16px !important;
+	padding-left: 2.2em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.survey-table-title-font{
+	font-size: 15px !important;font-weight: bold;
+}

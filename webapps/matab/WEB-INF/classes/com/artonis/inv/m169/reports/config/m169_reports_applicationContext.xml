@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- PurchaseReportService -->
+	<bean id="purchaseReportService" class="com.artonis.inv.m169.reports.service.impl.PurchaseReportServiceImpl"> 
+		<property name="dao" ref="purchaseReportDao" /> 
+	</bean>
+	<bean id="purchaseReportDao" class="com.artonis.inv.m169.reports.dao.impl.PurchaseReportDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- SaleReportService -->
+	<bean id="saleReportService" class="com.artonis.inv.m169.reports.service.impl.SaleReportServiceImpl"> 
+		<property name="dao" ref="saleReportDao" /> 
+	</bean>
+	<bean id="saleReportDao" class="com.artonis.inv.m169.reports.dao.impl.SaleReportDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PurchaseContractReportService -->
+	<bean id="purchaseContractReportService" class="com.artonis.inv.m169.reports.service.impl.PurchaseContractReportServiceImpl"> 
+		<property name="dao" ref="purchaseContractReportDao" /> 
+	</bean>
+	<bean id="purchaseContractReportDao" class="com.artonis.inv.m169.reports.dao.impl.PurchaseContractReportDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- RefusalReportService -->
+	<bean id="refusalReportService" class="com.artonis.inv.m169.reports.service.impl.RefusalReportServiceImpl"> 
+		<property name="dao" ref="refusalReportDao" /> 
+	</bean>
+	<bean id="refusalReportDao" class="com.artonis.inv.m169.reports.dao.impl.RefusalReportDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

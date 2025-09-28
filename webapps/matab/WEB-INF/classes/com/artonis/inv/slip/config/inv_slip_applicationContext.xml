@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+
+	<!-- CustomizeConsumptionSlipService -->
+	<bean id="customizeConsumptionSlipService" class="com.artonis.inv.slip.service.impl.CustomizeConsumptionSlipServiceImpl"> 
+		<property name="dao" ref="customizeConsumptionSlipDao" /> 
+	</bean>
+	<bean id="customizeConsumptionSlipDao" class="com.artonis.inv.slip.dao.impl.CustomizeConsumptionSlipDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+
+	<!-- EmployeeGroupService -->
+	<bean id="employeeGroupService" class="com.artonis.hrm.employee.service.impl.EmployeeGroupServiceImpl">
+		<property name="dao" ref="employeeGroupDao" /> 
+	</bean>
+	<bean id="employeeGroupDao" class="com.artonis.hrm.employee.dao.impl.EmployeeGroupDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+
+	<bean id="employeeMongoService" class="com.artonis.hrm.employee.service.impl.EmployeeMongoServiceImpl">
+<!--			<property name="dao" ref="employeeMongoDao" />-->
+		<property name="dao" ref="mongoTemplate" />
+	</bean>
+	 <bean id="employeeMongoDao" class="com.artonis.hrm.employee.dao.impl.EmployeeMongoDaoImpl">
+	 
+	</bean>
+	
+<!--	<bean class="org.springframework.remoting.rmi.RmiServiceExporter">-->
+<!--		<property name="serviceName" value="employeeService" />-->
+<!--		<property name="service" ref="employeeService" />-->
+<!--		<property name="serviceInterface" value="erp.hrm.emp.employee.service.EmployeeService" />-->
+<!--		<property name="registryPort" value="7070" />-->
+<!--	</bean>-->
+	<!-- EmployeeFamilyItemService -->
+	<bean id="EmployeeFamilyItemService" class="com.artonis.hrm.employee.service.impl.EmployeeFamilyItemServiceImpl"> 
+		<property name="dao" ref="EmployeeFamilyItemDao" /> 
+	</bean>
+	<bean id="EmployeeFamilyItemDao" class="com.artonis.hrm.employee.dao.impl.EmployeeFamilyItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>
+
+

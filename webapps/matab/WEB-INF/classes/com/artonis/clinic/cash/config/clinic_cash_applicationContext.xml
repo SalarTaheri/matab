@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- CashVisitService -->
+	<bean id="cashVisitService" class="com.artonis.clinic.cash.service.impl.CashVisitServiceImpl"> 
+		<property name="dao" ref="cashVisitDao" /> 
+	</bean>
+	<bean id="cashVisitDao" class="com.artonis.clinic.cash.dao.impl.CashVisitDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashService -->
+	<bean id="cashService" class="com.artonis.clinic.cash.service.impl.CashServiceImpl"> 
+		<property name="dao" ref="cashDao" /> 
+	</bean>
+	<bean id="cashDao" class="com.artonis.clinic.cash.dao.impl.CashDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashVisitItemTypeService -->
+	<bean id="cashVisitItemTypeService" class="com.artonis.clinic.cash.service.impl.CashVisitItemTypeServiceImpl"> 
+		<property name="dao" ref="cashVisitItemTypeDao" /> 
+	</bean>
+	<bean id="cashVisitItemTypeDao" class="com.artonis.clinic.cash.dao.impl.CashVisitItemTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- DoctorVisitCostService -->
+	<bean id="doctorVisitCostService" class="com.artonis.clinic.cash.service.impl.DoctorVisitCostServiceImpl"> 
+		<property name="dao" ref="doctorVisitCostDao" /> 
+	</bean>
+	<bean id="doctorVisitCostDao" class="com.artonis.clinic.cash.dao.impl.DoctorVisitCostDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

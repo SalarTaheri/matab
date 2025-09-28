@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.infra.codeGenerator.model" default-lazy="false">
+    <class name="Table" table="infra_codegenerator_table_view">
+     	<id name="id" column="ordinal_position" type="long"/>
+		<property name="table_schema" type="string"/>
+		<property name="table_name" type="string"/>
+		<property name="column_name" type="string"/>
+		<property name="data_type" type="string"/>
+		<property name="column_type" type="string"/>
+    </class>
+</hibernate-mapping>

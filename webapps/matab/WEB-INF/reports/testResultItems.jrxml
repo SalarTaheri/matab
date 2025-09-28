@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-06T14:53:05 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testResultItems" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="20" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ab2ecb0-9317-4f4f-a867-7629373c3d7d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<field name="testName" class="java.lang.String"/>
+	<field name="testCode" class="java.lang.String"/>
+	<field name="result" class="java.lang.String"/>
+	<field name="normalRangeMin" class="java.lang.String"/>
+	<field name="normalRangeMax" class="java.lang.String"/>
+	<field name="warningRangeMin" class="java.lang.String"/>
+	<field name="warningRangeMax" class="java.lang.String"/>
+	<field name="possibleRangeMin" class="java.lang.String"/>
+	<field name="possibleRangeMax" class="java.lang.String"/>
+	<field name="measurementUnitName" class="java.lang.String"/>
+	<field name="descriptions" class="java.lang.String"/>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="230" height="20" uuid="defa868e-baad-42cc-879c-c9cc56c40e33">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{testName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="0" width="80" height="20" uuid="00b95f89-a534-46fc-8a48-fac27b7dbd01">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{result}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="177" height="20" uuid="80f3471a-fc9a-44bc-bcf0-d3e6b4a6cd54">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{normalRangeMin} + " - " + $F{normalRangeMax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="70" height="20" uuid="aeb2f0bb-3c94-4498-b62e-a48194803a9f">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{measurementUnitName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

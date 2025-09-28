@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.bankingBill.view" default-lazy="false">
+	<class name="BankingBillView" table="fnc3bankingbill_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="type" type="int"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="serial" type="string"/>
+		<property name="state" type="int"/>
+		<property name="receiverpayerItem_id" type="long"/>
+		<property name="recepayerAccountCoding_id" type="long"/>
+		<property name="rp_floataccountLevel1_id" type="long"/>
+		<property name="rp_floataccountLevel2_id" type="long"/>
+		<property name="rp_floataccountLevel3_id" type="long"/>
+		<property name="rp_floataccountLevel4_id" type="long"/>
+		<property name="recepayerAccountCoding_name" type="string"/>
+		<property name="rp_floataccountLevel1_name" type="string"/>
+		<property name="rp_floataccountLevel2_name" type="string"/>
+		<property name="rp_floataccountLevel3_name" type="string"/>
+		<property name="rp_floataccountLevel4_name" type="string"/>
+		<property name="bankaccountItem_id" type="long"/>
+		<property name="operationType" type="int"/>
+		<property name="bankAccount_id" type="long"/>
+		<property name="bankAccount_number" type="string"/>
+		<property name="bankaccountAccountCoding_id" type="long"/>
+		<property name="bankaccountAccountCoding_name" type="string"/>
+		<property name="bankaccount_floatAccountLevel1_id" type="long"/>
+		<property name="bankaccount_floatAccountLevel1_name" type="string"/>
+		<property name="bankaccount_floatAccountLevel2_id" type="long"/>
+		<property name="bankaccount_floatAccountLevel2_name" type="string"/>
+		<property name="bankaccount_floatAccountLevel3_id" type="long"/>
+		<property name="bankaccount_floatAccountLevel3_name" type="string"/>
+		<property name="bankaccount_floatAccountLevel4_id" type="long"/>
+		<property name="bankaccount_floatAccountLevel4_name" type="string"/>
+		<property name="price" type="long"/>
+		<property name="bankaccount_description" type="string"/>
+	</class>
+	<class name="BankingBilReceiverPayerItemView" table="fnc3bankingbill_ReceiverPayer_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bankingbill_id" type="long"/>
+		<property name="recepayerAccountCoding_id" type="long"/>
+		<property name="recepayerAccountCoding_name" type="string"/>
+		<property name="floataccountLevel1_id" type="long"/>
+		<property name="floataccountLevel1_name" type="string"/>
+		<property name="floataccountLevel2_id" type="long"/>
+		<property name="floataccountLevel2_name" type="string"/>
+		<property name="floataccountLevel3_id" type="long"/>
+		<property name="floataccountLevel3_name" type="string"/>
+		<property name="floataccountLevel4_id" type="long"/>
+		<property name="floataccountLevel4_name" type="string"/>
+	</class>
+	<class name="BankingBillBankAccountItemView" table="fnc3bankingbill_bankaccount_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bankingbill_id" type="long"/>
+		<property name="operationType" type="int"/>
+		<property name="bankAccount_id" type="long"/>
+		<property name="bankAccount_number" type="string"/>
+		<property name="bankaccountAccountCoding_id" type="long"/>
+		<property name="bankaccountAccountCoding_name" type="string"/>
+		<property name="floatAccountLevel1_id" type="long"/>
+		<property name="floatAccountLevel1_name" type="string"/>
+		<property name="floatAccountLevel2_id" type="long"/>
+		<property name="floatAccountLevel2_name" type="string"/>
+		<property name="floatAccountLevel3_id" type="long"/>
+		<property name="floatAccountLevel3_name" type="string"/>
+		<property name="floatAccountLevel4_id" type="long"/>
+		<property name="floatAccountLevel4_name" type="string"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+	</class>
+</hibernate-mapping>

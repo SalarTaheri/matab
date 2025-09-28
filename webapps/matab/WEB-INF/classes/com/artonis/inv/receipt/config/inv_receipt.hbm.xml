@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.receipt.model" default-lazy="false">
+	<class name="PurchaseReceipt" table="inv3purchaseReceipt">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="reference" type="string"/>
+		<property name="serial" type="string"/>
+		<property name="state" type="int"/>
+		<property name="inventory_id" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="dateInMilliSec" type="long" />
+		<property name="exporter" type="long"/>
+		<property name="financeYear_id" type="long"/>
+		<property name="businessPartner_id" type="long"/>
+		<property name="isSorted" type="boolean"/>
+		<property name="referenceId" type="long"/>
+		<property name="referenceSerial" type="long"/>
+		<property name="referenceType" type="int"/>
+	</class>
+	<class name="PurchaseReceiptGoods" table="inv3purchaseReceipt_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsAmount" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="purchaseReceipt_id" type="long"/>
+		<property name="rate" type="double"/>
+		<property name="sum" type="double"/>
+	</class>
+	<class name="PurchaseReceiptAdditionSubtraction" table="inv3purchaseReceipt_additionSubtraction">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="surplusDeficitId" column="surplusDeficit_id" type="long"/>
+		<property name="price" type="long"/>
+		<property name="valueAddedtax" type="int"/>
+		<property name="tax" type="long"/>
+		<property name="toll" type="long"/>
+		<property name="purchaseReceipt_id" type="long"/>
+	</class>
+	<class name="DirectlyConsumptionReceipt" table="inv3directlyconsumptionreceipt">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="string"/>
+		<property name="reference" type="string"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="businessPartner_id" type="long"/>
+		<property name="exporter" type="long"/>
+		<property name="financeYear_id" type="long"/>
+	</class>
+	<class name="DirectlyConsumptionReceiptGoods" table="inv3directlyConsumptionReceipt_Goods">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsAmount" type="long"/>
+		<property name="costCenter_id" type="long"/>
+		<property name="directlyConsumptionReceipt_id" type="long"/>
+	</class>
+	<class name="DirectlyConsumptionReceiptAdditionSubtraction" table="inv3directlyConsumptionReceipt_additionSubtraction">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="additionSubtraction" type="int"/>
+		<property name="price" type="long"/>
+		<property name="valueAddedtax" type="int"/>
+		<property name="tax" type="long"/>
+		<property name="toll" type="long"/>
+		<property name="directlyConsumptionReceipt_id" type="long"/>
+	</class>
+</hibernate-mapping>

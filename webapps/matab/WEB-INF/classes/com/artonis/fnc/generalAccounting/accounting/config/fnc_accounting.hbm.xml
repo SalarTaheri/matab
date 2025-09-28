@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.generalAccounting.accounting.model" default-lazy="false">
+	<class name="AccountCodingGroupNature" table="fnc1accountcoding_groupnature">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+	</class>
+	<class name="AccountCodingType" table="fnc1accountcoding_type">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="accountGroupNature_id" type="long"/>
+	</class>
+	<class name="AccountCodingGroupType" table="fnc1accountcoding_grouptype">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+	</class>
+	<class name="FloatAccountGroupNature" table="fnc1floataccount_groupnature">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+	</class>
+	<class name="FloatAccountDomain" table="fnc1floataccountdomain">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="floatAccountId" type="long"/>
+		<property name="codeLength" type="int"/>
+		<property name="startSerial" type="int"/>
+		<property name="finishSerial" type="int"/>
+		<property name="desc_" type="string"/>
+	</class>
+	<class name="FloatAccountRelatedFloatAccountGroup" table="fnc1floatAccountRelatedFloatAccountGroup">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="floatAccountId" type="long"/>
+		<property name="floatAccountGroupId" type="long"/>
+	</class>
+</hibernate-mapping>

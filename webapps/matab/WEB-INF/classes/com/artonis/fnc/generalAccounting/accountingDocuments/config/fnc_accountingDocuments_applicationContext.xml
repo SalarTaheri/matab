@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- DocumentService -->
+	<bean id="documentService" class="com.artonis.fnc.generalAccounting.accountingDocuments.service.impl.DocumentServiceImpl"> 
+		<property name="dao" ref="documentDao" /> 
+	</bean>
+	<bean id="documentDao" class="com.artonis.fnc.generalAccounting.accountingDocuments.dao.impl.DocumentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- DocumentItemService -->
+	<bean id="documentItemService" class="com.artonis.fnc.generalAccounting.accountingDocuments.service.impl.DocumentItemServiceImpl"> 
+		<property name="dao" ref="documentItemDao" /> 
+	</bean>
+	<bean id="documentItemDao" class="com.artonis.fnc.generalAccounting.accountingDocuments.dao.impl.DocumentItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- DocumentFloatAccountItemService -->
+	<bean id="documentFloatAccountItemService" class="com.artonis.fnc.generalAccounting.accountingDocuments.service.impl.DocumentFloatAccountItemServiceImpl"> 
+		<property name="dao" ref="documentFloatAccountItemDao" /> 
+	</bean>
+	<bean id="documentFloatAccountItemDao" class="com.artonis.fnc.generalAccounting.accountingDocuments.dao.impl.DocumentFloatAccountItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- DocumentItemViewService -->
+	<bean id="documentItemViewService" class="com.artonis.fnc.generalAccounting.accountingDocuments.service.impl.DocumentItemViewServiceImpl"> 
+		<property name="dao" ref="documentItemViewDao" /> 
+	</bean>
+	<bean id="documentItemViewDao" class="com.artonis.fnc.generalAccounting.accountingDocuments.dao.impl.DocumentItemViewDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- automaticDocumentService -->
+	<bean id="automaticDocumentService" class="com.artonis.fnc.generalAccounting.accountingDocuments.service.impl.AutomaticDocumentServiceImpl"> 
+		<property name="dao" ref="automaticDocumentDao" /> 
+	</bean>
+	<bean id="automaticDocumentDao" class="com.artonis.fnc.generalAccounting.accountingDocuments.dao.impl.AutomaticDocumentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

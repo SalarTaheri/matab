@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- InterdictService -->
+	<bean id="interdictService" class="com.artonis.hrm.recruitment.service.impl.InterdictServiceImpl"> 
+		<property name="dao" ref="interdictDao" /> 
+	</bean>
+	<bean id="interdictDao" class="com.artonis.hrm.recruitment.dao.impl.InterdictDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- RecruitHokmService -->
+	<bean id="recruitHokmService" class="com.artonis.hrm.recruitment.service.impl.RecruitHokmServiceImpl"> 
+		<property name="dao" ref="recruitHokmDao" /> 
+	</bean>
+	<bean id="recruitHokmDao" class="com.artonis.hrm.recruitment.dao.impl.RecruitHokmDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- WagefactorInterdictService -->
+	<bean id="wagefactorInterdictService" class="com.artonis.hrm.recruitment.service.impl.WagefactorInterdictServiceImpl"> 
+		<property name="dao" ref="wagefactorInterdictDao" /> 
+	</bean>
+	<bean id="wagefactorInterdictDao" class="com.artonis.hrm.recruitment.dao.impl.WagefactorInterdictDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

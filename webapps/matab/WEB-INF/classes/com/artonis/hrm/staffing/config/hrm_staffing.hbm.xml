@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.hrm.staffing.model" default-lazy="false">
+	<class name="OutputfactorRecruitment" table="hrm_stf_outputfactor_recruit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factor_id" type="long"/>
+		<property name="recruitmentType_id" type="long"/>
+		<property name="calctype" type="int"/>
+		<property name="formula_id" type="long"/>
+		<property name="taxable" type="boolean"/>
+		<property name="countinus" type="boolean"/>
+		<property name="backpayable" type="boolean"/>
+		<property name="showinfeesh" type="boolean"/>
+		<property name="insuranceanle" type="boolean"/>
+		
+	</class>
+	<class name="RecruitmentType" table="hrm_stf_recruitmenttype">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	<class name="WageFactor" table="hrm_stf_wagefactor">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="group_" type="int"/>
+	</class>
+	<class name="WageFactorBenefitsRecruitmentType" table="hrm_stf_wf_benefits_recruit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factor_id" type="long"/>
+		<property name="calctype" type="int"/>
+		<property name="formula_id" type="long"/>
+		<property name="recruitmentType_id" type="long"/>
+		<property name="taxable" type="boolean"/>
+		<property name="insuranceable" type="boolean"/>
+		<property name="showinfeesh" type="boolean"/>
+		<property name="backpayable" type="boolean"/>
+		<property name="countinus" type="boolean"/>
+	</class>
+	<class name="WageFactorDeductionsRecruitmentType" table="hrm_stf_wf_deductions_recruit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factor_id" type="long"/>
+		<property name="calctype" type="int"/>
+		<property name="formula_id" type="long"/>
+		<property name="recruitmentType_id" type="long"/>
+		<property name="taxable" type="boolean"/>
+		<property name="insuranceable" type="boolean"/>
+		<property name="showinfeesh" type="boolean"/>
+		<property name="backpayable" type="boolean"/>
+		<property name="countinus" type="boolean"/>
+		
+	</class>
+	<class name="WageFactorEmployerObligationsRecruitmentType" table="hrm_stf_wf_employer_obligations_recruit">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factor_id" type="long"/>
+		<property name="calctype" type="int"/>
+		<property name="formula_id" type="long"/>
+		<property name="recruitmentType_id" type="long"/>
+		<property name="taxable" type="boolean"/>
+		<property name="insuranceable" type="boolean"/>
+		<property name="showinfeesh" type="boolean"/>
+		<property name="backpayable" type="boolean"/>
+		<property name="countinus" type="boolean"/>
+		
+	</class>
+</hibernate-mapping>

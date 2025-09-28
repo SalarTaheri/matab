@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+
+    <bean id="appointmentMongoService" class="com.artonis.clinic.appointment.service.impl.AppointmentMongoServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="appointmentMongoDao" class="com.artonis.clinic.appointment.dao.impl.AppointmentMongoDaoImpl">
+
+    </bean>
+
+    <bean id="appointmentService" class="com.artonis.clinic.appointment.service.impl.AppointmentServiceImpl">
+        <property name="dao" ref="appointmentDao" />
+        <property name="appointmentMongoService" ref="appointmentMongoService" />
+    </bean>
+    <bean id="appointmentDao" class="com.artonis.clinic.appointment.dao.impl.AppointmentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+	<bean id="appointmentStartup" class="com.artonis.clinic.appointment.AppointmentStartup">
+         <property name="appointmentConfigService" ref="appointmentConfigService"/>
+    </bean>
+
+    <bean id="appointmentVisitMongoService" class="com.artonis.clinic.appointment.service.impl.AppointmentVisitMongoServiceImpl">
+        <!--			<property name="dao" ref="employeeMongoDao" />-->
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="appointmentVisitMongoDao" class="com.artonis.clinic.appointment.dao.impl.AppointmentVisitMongoDaoImpl">
+
+    </bean>
+
+    <bean id="appointmentTemplateService" class="com.artonis.clinic.appointment.service.impl.AppointmentTemplateServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="appointmentTemplateDao" class="com.artonis.clinic.appointment.dao.impl.AppointmentTemplateDaoImpl">
+
+    </bean>
+    
+    <bean id="countryMongoService" class="com.artonis.clinic.appointment.service.impl.CountryMongoServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="countryMongoDao" class="com.artonis.clinic.appointment.dao.impl.CountryMongoDaoImpl">
+    </bean>    
+
+    <bean id="provinceMongoService" class="com.artonis.clinic.appointment.service.impl.ProvinceMongoServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="provinceMongoDao" class="com.artonis.clinic.appointment.dao.impl.ProvinceMongoDaoImpl">
+    </bean>    
+
+    <bean id="cityMongoService" class="com.artonis.clinic.appointment.service.impl.CityMongoServiceImpl">
+        <property name="dao" ref="mongoTemplate" />
+    </bean>
+    <bean id="cityMongoDao" class="com.artonis.clinic.appointment.dao.impl.CityMongoDaoImpl">
+    </bean>    
+	<!-- AppointmentPermissionService -->
+	<bean id="appointmentPermissionService" class="com.artonis.clinic.appointment.service.impl.AppointmentPermissionServiceImpl"> 
+		<property name="dao" ref="appointmentPermissionDao" /> 
+	</bean>
+	<bean id="appointmentPermissionDao" class="com.artonis.clinic.appointment.dao.impl.AppointmentPermissionDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AppointmentPermissionItemService -->
+	<bean id="appointmentPermissionItemService" class="com.artonis.clinic.appointment.service.impl.AppointmentPermissionItemServiceImpl"> 
+		<property name="dao" ref="appointmentPermissionItemDao" /> 
+	</bean>
+	<bean id="appointmentPermissionItemDao" class="com.artonis.clinic.appointment.dao.impl.AppointmentPermissionItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- HourTemplateService -->
+	<bean id="hourTemplateService" class="com.artonis.clinic.appointment.service.impl.HourTemplateServiceImpl"> 
+		<property name="dao" ref="hourTemplateDao" /> 
+	</bean>
+	<bean id="hourTemplateDao" class="com.artonis.clinic.appointment.dao.impl.HourTemplateDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- HourTemplateTimeService -->
+	<bean id="hourTemplateTimeService" class="com.artonis.clinic.appointment.service.impl.HourTemplateTimeServiceImpl"> 
+		<property name="dao" ref="hourTemplateTimeDao" /> 
+	</bean>
+	<bean id="hourTemplateTimeDao" class="com.artonis.clinic.appointment.dao.impl.HourTemplateTimeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

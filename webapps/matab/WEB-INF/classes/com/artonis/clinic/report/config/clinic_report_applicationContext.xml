@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none"> 
+
+	<!-- DoctorServicePercentReportService -->
+	<bean id="doctorServicePercentReportService" class="com.artonis.clinic.report.service.impl.DoctorServicePercentReportServiceImpl"> 
+		<property name="dao" ref="doctorServicePercentReportDao" /> 
+	</bean>
+	<bean id="doctorServicePercentReportDao" class="com.artonis.clinic.report.dao.impl.DoctorServicePercentReportDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+</beans>

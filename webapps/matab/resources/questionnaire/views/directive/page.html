@@ -1,0 +1,67 @@
+<!--<div class="well"  scroll-spy>-->
+<div class="well survey-page" >
+<table id="testTable"
+	summary="Code page support in different versions of MS Windows."
+	rules="groups" frame="hsides" border="2">
+</table>
+    <div  class="survey-page-header" sticky offset="60" body-class="well">
+        <div class="pull-right">
+            <a ng-click="nextRecord()" class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-info">
+                <i class="mdi-navigation-arrow-back"></i>
+            </a>
+            
+            <a class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-info">
+                <i >
+                	<span id="recordNumber">0</span>
+                </i>
+            </a>
+            
+            <a ng-click="previousRecord()" class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-info">
+                <i class="mdi-navigation-arrow-forward"></i>
+            </a>
+
+            <a ng-click="save()" class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-success">
+                <i class="mdi-file-cloud-done"></i>
+            </a>
+            <a ng-click="load()" class="btn btn-fab btn-fab-mini  btn-sm btn-warning">
+                <i class="mdi-file-cloud-download"></i>
+            </a>
+            <a ng-click="exportToExcel()" class="btn btn-fab btn-fab-mini  btn-sm btn-warning">
+                <i class="mdi-communication-import-export"></i>
+            </a>
+            <a ng-click="clean()" class="btn btn-fab btn-fab-mini  btn-sm btn-warning">
+                <i class="mdi-file-cloud-off"></i>
+            </a>
+            <a  ng-click="backUrl()" class="btn btn-fab btn-fab-mini  btn-sm btn-material-red-A700">
+                <i class="mdi-action-exit-to-app"></i>
+            </a>
+        </div>
+        <div >
+        	<h2>{{title}}</h2>
+        </div>
+        
+    </div>
+
+    <div class="row">
+        <div class="col-lg-9 ">
+            <form class="form-horizontal">
+                <ng-transclude></ng-transclude>
+            </form>
+        </div>
+        <div class="col-lg-3 ">
+            <br/>
+            <div class="sidebar-nav"  sticky offset="135">
+                <div class="panel panel-default" >
+                    <ul class="nav nav-list">
+                        <!--<li  ng-repeat="section in sections" ng-class="{'active': '{{section}}' == currSection}" class="withripple">-->
+                        <!--<li  ng-repeat="section in sections"  ng-class="{'active': '{{section}}' == currSection}" spy="{{section | ToValidId}}" class="withripple">-->
+                        <li  ng-repeat="section in sections"  ng-class="{'active': '{{section}}' == currSection}"  class="withripple">
+                            <a ng-click="goToSection(section)">{{section}}</a>
+                            <!--<a ng-click="goToSection(section)">{{section}}</a>-->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

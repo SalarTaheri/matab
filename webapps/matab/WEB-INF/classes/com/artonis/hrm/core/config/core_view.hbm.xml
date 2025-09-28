@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.hrm.core.view" default-lazy="false">
+    <class name="CompanyView" table="hrm_ent_company_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+		<property name="code" type="string"/>
+		<property name="systemCode" type="string"/>
+		<property name="name" type="string"/>
+		<property name="parent_id" type="long"/>
+		<property name="rank" type="int"/>
+		<property name="state" type="int"/>
+		<property name="description" type="string"/>
+		<property name="legalNumber" type="string"/>
+		<property name="province_id" type="long"/>
+		<property name="city_id" type="long"/>
+		<property name="phoneNumber" type="string"/>
+		<property name="faxNumber" type="string"/>
+		<property name="webSite" type="string"/>
+		<property name="email" type="string"/>
+		<property name="postalCode" type="string"/>
+		<property name="address" type="string"/>
+		<property name="picAddress" type="string"/>
+		<property name="companyType" type="int"/>
+		<property name="cityName" type="string"/>
+		<property name="provinceName" type="string"/>
+    </class>
+    <class name="OperatingUnitView" table="hrm_ent_operatingunit_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="company_id" type="long"/>
+		<property name="parent_id" type="long"/>
+		<property name="companyName" type="string"/>
+		<property name="parentOperatingUnitName" type="string"/>
+    </class>
+</hibernate-mapping>

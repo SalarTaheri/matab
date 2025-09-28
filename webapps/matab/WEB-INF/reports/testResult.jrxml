@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2016-03-05T18:25:22 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testResult" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1a68c37b-482a-478b-8bca-ec73ab9af5b0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<template><![CDATA["StyleTemplate.jrtx"]]></template>
+	<parameter name="labQueue" class="com.artonis.lab.operation.view.LabQueueView"/>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[Unit Name]]></fieldDescription>
+	</field>
+	<field name="testResults" class="java.util.Set"/>
+	<title>
+		<band height="109" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="280" y="0" width="164" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="cda46a1a-a74d-40c9-bab6-261184882421"/>
+				<box padding="0" topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getFirstName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="0" width="80" height="20" uuid="0f127884-7594-4d8c-975e-cd45029266e2"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[نام:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="170" height="20" uuid="243083bc-f67c-4b95-870a-3a8c6b5c18e7"/>
+				<textFieldExpression><![CDATA[$P{currentDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="0" width="80" height="20" uuid="40c78f62-55f0-498f-88e5-8173499d0e76"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[تاریخ چاپ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="20" width="80" height="20" uuid="69bbb66e-dc75-47ed-bc38-7bb09e7c721a"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[نام خانوادگی:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="20" width="164" height="20" uuid="ade1ba58-0f79-4c1a-b720-d48669acb3aa"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getLastName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="40" width="80" height="20" uuid="505cb08b-782e-4494-96d5-24fd3365519d"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[پزشک:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="40" width="164" height="19" uuid="8c1457b0-247c-48e5-a292-8c33b63d0289"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getDoctorName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="60" width="80" height="20" uuid="491fb21c-63e7-42ab-a128-e7d592d14103"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[سن:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="60" width="164" height="20" uuid="d1142c41-3148-4173-8290-099c73c65099"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getAge()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="60" width="80" height="20" uuid="c0f53bd8-50de-4408-b465-3c437d51a969"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[جنسیت:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="60" width="170" height="20" uuid="b61a6bd9-5e1d-4c2e-9a27-844a200b5d75"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getSexName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="80" width="80" height="20" uuid="89acf62b-a8d1-422b-87ef-a25702b15a87"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[نوع پذیرش:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="80" width="164" height="20" uuid="74afdf29-768b-421a-a015-abea9ecf7635"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getInsuranceOrganizationName()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="80" width="80" height="20" uuid="7458679e-51bc-405a-a241-2b8e17e45110"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[سابقه بیماری:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="80" width="170" height="20" uuid="c66d3965-e692-4544-a22a-f6f8fbc8d70f"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getMedicalHistory()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="40" width="80" height="20" uuid="434dc958-79ee-4d00-99dd-ae5dfdab7778"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[بدهی:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="40" width="170" height="20" uuid="85c98504-0998-4379-b021-a416bf1b1730"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getDebt()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="20" width="80" height="20" uuid="03f949b2-f418-4ccf-8f9c-a79795f9c8ae"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[شماره پذیرش:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="170" height="19" uuid="857cb0b9-8d05-4aa3-8e47-5226edbb12bf"/>
+				<textFieldExpression><![CDATA[$P{labQueue}.getReceptionNumber()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="112" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="19" width="550" height="21" uuid="61940f7f-3fba-416c-9682-34accb148c74"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-10" y="43" width="570" height="1" uuid="6ed22adc-82ba-4f51-9ebf-d5fd720c9e10">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<subreport>
+				<reportElement x="-20" y="81" width="595" height="31" uuid="5db56fb4-8c50-48a6-8e2a-300a746022b4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{testResults})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["testResultItems.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="310" y="50" width="70" height="30" uuid="e7ea10be-2441-4eb6-9435-77520ccf8685"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="230" y="50" width="80" height="30" uuid="360ea6da-6497-4a0e-a648-4b68ef47176b"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Result]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="230" height="30" uuid="6179a52e-b5d3-4b08-9c53-11c5f17e01dd"/>
+				<textElement textAlignment="Left">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Test]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="50" width="177" height="30" uuid="4a1e15c7-6d49-454c-b033-ec925dbfd6ee"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Normal Range]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,1319 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.clinic.core.view" default-lazy="false">
+	<class name="EmployeeContractItemView" table="his1employee_contract_item_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeContract_id" type="long"/>
+		<property name="service_id" type="long"/>
+		<property name="service_name" type="string"/>
+		<property name="percent" column="percent_" type="int"/>
+        <property name="isVariablePercent" type="boolean"/>
+        <property name="type"  type="int"/>
+        <property name="price"  type="long"/>
+	</class>
+	<class name="FactorAggregateOperatingBasedEmployeeAndRoleView" >
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeId" type="long"/>
+		<property name="surgeryRoleId" type="int"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="serviceId" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="count" column="count_" type="long"/>
+	</class>
+	<class name="FactorAggregateOperatingBasedEmployeeAndServiceView" >
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeId" type="long"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="serviceId" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="count" column="count_" type="long"/>
+	</class>
+    <class name="FactorClinicEquipmentDepartmentAggregateView">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="department_id" type="long"/>
+        <property name="department_name" type="string"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="quantity" type="float"/>
+    </class>
+    <class name="PatientFinanceRegistrationNewCaseView">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctor_fullname" type="string"/>
+        <property name="service_id" type="long"/>
+        <property name="service_name" type="string"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+
+    </class>
+    <class name="FactorClinicEquipmentDepartmentView" table="his3factor_clinic_equipment_department_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="department_id" type="long"/>
+        <property name="department_name" type="string"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="quantity" type="float"/>
+    </class>
+    <class name="FactorClinicEquipmentDetailDepartmentView" table="his3factor_clinic_equipment_detail_department_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="department_id" type="long"/>
+        <property name="department_name" type="string"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="quantity" type="float"/>
+        <property name="service_item_id" type="long"/>
+        <property name="service_item_name" type="string"/>
+        <property name="reference" type="string"/>
+        <property name="serial" type="string"/>
+        <property name="goods_id" type="long"/>
+        <property name="consumptionSlipDate" type="com.artonis.core.base.core.Date"/>
+    </class>
+    <class name="FactorClinicEquipmentDetailDepartmentAggregateView">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="department_id" type="long"/>
+        <property name="department_name" type="string"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="quantity" type="float"/>
+        <property name="service_item_id" type="long"/>
+        <property name="service_item_name" type="string"/>
+    </class>
+    <class name="FactorClinicTreatmentServiceAggregateView">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="service_item_id" type="long"/>
+        <property name="service_item_name" type="string"/>
+        <property name="serviceItemBasicAmount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="quantity" type="double"/>
+    </class>
+    <class name="FactorClinicTreatmentServiceView" table="his3factor_clinic_treatmentService_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="service_item_id" type="long"/>
+        <property name="service_id" type="long"/>
+        <property name="service_item_name" type="string"/>
+        <property name="service_name" type="string"/>
+        <property name="serviceItemBasicAmount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="quantity" type="float"/>
+    </class>
+    <class name="FactorDoctorClinicPortionBasedDoctorAggregateView" table="his3factor_doctor_clinic_portion_based_doctor_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="doctor_lastName" type="string"/>
+    </class>
+    <class name="FactorDoctorClinicPortionBasedDoctorBehboodAggregateView" table="his3factor_doctor_clinic_portion_based_doctor_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="doctor_lastName" type="string"/>
+    </class>
+    <class name="FactorDoctorClinicPortionBasedDoctorGroupAggregateView" table="his3factor_doctor_clinic_portion_based_doctor_group_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="group_id" type="long"/>
+        <property name="group_name" type="string"/>
+    </class>
+    <class name="FactorDoctorClinicPortionBasedDoctorGroupView" table="his3factor_doctor_clinic_portion_based_doctor_group_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="group_id" type="long"/>
+        <property name="group_name" type="string"/>
+    </class>
+    <class name="FactorDoctorClinicPortionBasedDoctorView" table="his3factor_doctor_clinic_portion_based_doctor_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="doctor_lastName" type="string"/>
+    </class>
+    <class name="FactorDoctorClinicPortionBasedEquipmentAggregateView" table="his3factor_doctor_clinic_portion_based_equipment_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="service_item_id" type="long"/>
+        <property name="service_item_name" type="string"/>
+        <property name="quantity" type="float"/>
+        <property name="serviceItemBasicAmount" type="long"/>
+        <property name="discountAmountSum" type="double"/>
+    </class>
+	<class name="FactorDoctorClinicPortionBasedEquipmentView" table="his3factor_doctor_clinic_portion_based_equipment_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="service_item_id" type="long"/>
+        <property name="service_item_name" type="string"/>
+        <property name="quantity" type="float"/>
+        <property name="serviceItemBasicAmount" type="long"/>
+        <property name="discountAmountSum" type="double"/>
+        <property name="goods_id" type="long"/>
+        <property name="goods_name" type="string"/>
+        <property name="reference" type="string"/>
+        <property name="serial" type="string"/>
+        <property name="consumptionSlipDate" type="com.artonis.core.base.core.Date"/>
+    </class>
+    <class name="FactorDoctorClinicPortionView" table="his3factor_doctor_clinic_portion_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="discountLocation" type="int"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="patientCount" type="long"/>
+        <property name="percent_" type="double"/>
+        <property name="service_item_name" type="string"/>
+        <property name="service_item_id" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="isVariablePercent" type="boolean"/>
+    </class>
+    <class name="FactorDoctorClinicPortionDetailView" table="his3factor_doctor_clinic_portion_detail_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="bothDiscount" type="double"/>
+        <property name="clinicDiscount" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+        <property name="clinicPortionReceiveCostSum" type="double"/>
+        <property name="discountLocation" type="int"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctorDiscount" type="double"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="doctorPortionReceiveCostSum" type="double"/>
+        <property name="insuranceAmountSum" type="double"/>
+        <property name="percent_" type="double"/>
+        <property name="service_item_name" type="string"/>
+        <property name="service_item_id" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="double"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="isVariablePercent" type="boolean"/>
+        <property name="patient_id" type="long"/>
+        <property name="patientFirstName" type="string"/>
+        <property name="patientLastName" type="string"/>
+        <property name="insuranceName" type="string"/>
+        <property name="insurance_id" type="long"/>
+    </class>
+    <class name="FactorDoctorPortionAggregateView" table="his3factor_doctor_portion_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="doctor_id" type="long"/>
+		<property name="doctor_lastName" type="string"/>
+		<property name="doctorPortionDiscountAmountSum" type="double"/>
+		<property name="doctorPortionInsuranceSum" type="double"/>
+		<property name="doctorPortionReceiveCostSum" type="double"/>
+		<property name="patientCount" type="long"/>
+		<property name="service_item_id" type="long"/>
+		<property name="service_item_name" type="string"/>
+		<property name="totalReceiveCostSum" type="double"/>
+		<property name="serviceItemAmountSum" type="double"/>
+		<!--<property name="date" type="com.artonis.core.base.core.Date"/>-->
+	</class>
+    <class name="FactorDoctorPortionView" table="his3factor_doctor_portion_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<!--<property name="countCancel" type="long"/>-->
+		<property name="countDoOperation" type="long"/>
+		<property name="doctor_id" type="long"/>
+		<property name="doctor_lastName" type="string"/>
+		<property name="doctorPortionDiscountAmountSum" type="double"/>
+		<property name="doctorPortionInsuranceSum" type="double"/>
+		<property name="doctorPortionReceiveCostSum" type="double"/>
+		<property name="patientCount" type="long"/>
+		<property name="service_item_id" type="long"/>
+		<property name="service_item_name" type="string"/>
+		<property name="totalReceiveCostSum" type="double"/>
+		<property name="serviceItemAmountSum" type="double"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+	</class>
+    <class name="FactorInsuranceView" table="his3Factor_Insurance_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="doctorId" column="doctor_id" type="long"/>
+		<property name="doctorName" column="doctor_name" type="string"/>
+        <property name="doctorPortionInsurance" type="double"/>
+        <property name="clinicPortionInsurance" type="double"/>
+		<property name="insuranceName" column="insurance_name" type="string"/>
+    </class>
+    <class name="FactorPatientCountAggregationPerDoctorGroupView" table="his3factor_patientcount_per_doctor_group_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="group_id" type="long"/>
+        <property name="group_name" type="string"/>
+        <property name="sumInsuranceCost" type="double"/>
+        <property name="sumTotalCost" type="double"/>
+        <property name="sumTotalDiscounts" type="double"/>
+        <property name="sumPaymentableCost" type="double"/>
+    </class>
+    <class name="FactorPatientCountPerDoctorGroupView" table="his3factor_patientcount_per_doctor_group_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="group_id" type="long"/>
+        <property name="group_name" type="string"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="sumInsuranceCost" type="double"/>
+        <property name="sumTotalCost" type="double"/>
+        <property name="sumTotalDiscounts" type="double"/>
+        <property name="sumPaymentableCost" type="double"/>
+    </class>
+    <class name="FactorPatientCountPerDoctorServiceUserView" table="his3factor_patientcount_per_doctor_service_user_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="service_id" type="long"/>
+        <property name="service_name" type="string"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="sumInsuranceCost" type="double"/>
+        <property name="sumTotalCost" type="double"/>
+        <property name="sumTotalDiscounts" type="double"/>
+        <property name="sumPaymentableCost" type="double"/>
+        <property name="countCancel" type="long"/>
+        <property name="cancel" type="boolean"/>
+        <property name="cashierUserId" type="long"/>
+        <property name="cashierUsername" type="string"/>
+        <property name="cashierEmployeeId" type="long"/>
+        <property name="cashierFirstName" type="string"/>
+        <property name="cashierLastName" type="string"/>
+    </class>
+    <class name="FactorPatientCountPerDoctorServiceView" table="his3factor_patientcount_per_doctor_service_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientCount" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="doctor_lastName" type="string"/>
+        <property name="service_id" type="long"/>
+        <property name="service_name" type="string"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="sumInsuranceCost" type="double"/>
+        <property name="sumTotalCost" type="double"/>
+        <property name="sumTotalDiscounts" type="double"/>
+        <property name="sumPaymentableCost" type="double"/>
+        <property name="countCancel" type="long"/>
+        <property name="cancel" type="boolean"/>
+    </class>
+    <class name="FactorPaymentPerPatientUserView" table="his3factor_payment_per_patient_user_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patient_id" type="long"/>
+		<property name="patientFirstName" type="string"/>
+		<property name="patientLastName" type="string"/>
+        <property name="patientFullName" type="string"/>
+        <property name="patientFileNumber" type="string"/>
+		<property name="sumPayment" type="long"/>
+		<property name="sumReceipt" type="long"/>
+		<property name="release" type="boolean"/>
+		<property name="totalCost" type="long"/>
+		<property name="type" type="int"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="factorNumber" type="long"/>
+        <property name="sumCashPayment" type="long"/>
+        <property name="sumPosPayment" type="long"/>
+        <property name="sumRounded" type="long"/>
+        <property name="cashierUser_id" type="long"/>
+        <property name="cashierUsername" type="string"/>
+        <property name="cashireFirstName" type="string"/>
+        <property name="cashierLastName" type="string"/>
+    </class>
+    <class name="FactorPaymentPerPatientView" table="his3factor_payment_per_patient_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patient_id" type="long"/>
+		<property name="patientFirstName" type="string"/>
+		<property name="patientLastName" type="string"/>
+        <property name="patientFullName" type="string"/>
+        <property name="patientFileNumber" type="string"/>
+		<property name="sumPayment" type="long"/>
+		<property name="sumReceipt" type="long"/>
+		<property name="release" type="boolean"/>
+		<property name="totalCost" type="long"/>
+		<property name="type" type="int"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="factorNumber" type="long"/>
+        <property name="sumCashPayment" type="long"/>
+        <property name="sumPosPayment" type="long"/>
+        <property name="sumRounded" type="long"/>
+    </class>
+	<class name="FactorPaymentView" table="his3factor_payment_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factor_id" type="long"/>
+		<property name="type" type="int"/>
+		<property name="receipt" type="long"/>
+		<property name="payment" type="long"/>
+		<property name="pos_id" type="long"/>
+		<property name="posName" type="string"/>
+		<property name="billNumber" type="string"/>
+		<property name="cashierUser_id" type="long"/>
+		<property name="username" type="string"/>
+		<property name="firstname" type="string"/>
+		<property name="lastname" type="string"/>
+		<property name="isPrintFactor" type="boolean"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="coffer_id" type="long"/>
+	</class>
+    <class name="FactorServiceView">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patient_id" type="long"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="factor_id" type="long"/>
+        <property name="serviceItemAmountSum" type="long"/>
+        <property name="totalReceiveCostSum" type="long"/>
+        <property name="discountAmountSum" type="long"/>
+        <property name="insuranceAmountSum" type="long"/>
+        <property name="patientFullName" type="string"/>
+        <property name="patientFileNumber" type="string"/>
+        <property name="serviceNameList" type="string"/>
+        <property name="doctorNameList" type="string"/>
+    </class>
+    <class name="FactorView" table="his3factor_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patient_id" type="long"/>
+        <property name="cashierUser_id" type="long"/>
+        <property name="registrationUser_id" type="long"/>
+        <property name="financeReg" column="finance_reg_state" type="boolean"/>
+        <property name="ready" column="ready_state" type="boolean"/>
+        <property name="doOperation" column="do_operation_state" type="boolean"/>
+        <property name="sendToCash" column="send_to_cash" type="boolean"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="patientFullName" type="string"/>
+        <property name="patientFileNumber" type="string"/>
+        <property name="firstname" type="string"/>
+        <property name="lastname" type="string"/>
+        <property name="totalCost" type="long"/>
+        <property name="department_id"  type="long"/>
+		<property name="type"  type="int"/>
+		<property name="release"  type="boolean"/>
+		<property name="serviceNameList"  type="string"/>
+		<property name="doctorNameList"  type="string"/>
+		<property name="patientOldFileNumber" type="string"/>
+		<property name="patientNationalCode" type="string"/>
+		<property name="financeyear_id" type="long"/>
+		<property name="serial" type="long"/>
+		<property name="closed" type="boolean"/>
+    </class>
+	<class name="FinanceRegistrationItemView" table="his3financeregistrationitem_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="finnance_registation_id" type="long"/> 
+		<property name="service_item_id" type="long"/> 
+		<property name="doctor_id" type="long"/> 
+		<property name="firstname" type="string"/> 
+		<property name="lastname" type="string"/> 
+		<property name="name" type="string"/> 
+		<property name="type" type="int"/> 
+		<property name="code" type="string"/> 
+		<property name="cost" type="long"/>
+		<property name="isAnesthesiaService" type="boolean"/>
+		<property name="hasAllowChangeQuantity" type="boolean"/>
+		<property name="priorityOnPatientBill" type="integer"/>
+		<property name="quantity" type="float"/>
+		<property name="insuranceAmount" type="float"/>
+		<property name="insurancePersent" type="double"/>
+		<property name="discountAmount" type="float"/>
+		<property name="discountPersent" type="float"/>
+		<property name="serviceItemBasicAmount" type="float"/>
+		<property name="serviceItemAmount" type="long"/>
+		<property name="discountLocation" type="int"/>
+		<property name="employeeContract_id" type="long"/>
+		<property name="isPrimaryOperation" type="boolean"/>
+		<property name="doOperation" type="boolean"/>
+		<property name="ready" type="boolean"/>
+		<property name="service_item_cost_group_id" type="long"/>
+		<property name="service_item_cost_group_name" type="string"/>
+		<property name="service_item_cost_group_bill_id" type="long"/>
+		<property name="service_item_cost_group_bill_name" type="string"/>
+		<property name="goods_id" type="long"/>
+		<property name="goods_name" type="string"/>
+		<property name="consumption_slip_goods_id" type="long"/>
+		<property name="service_item_cost_group_patient_bill_id" type="long"/>
+		<property name="service_item_cost_group_patient_bill_name" type="string"/>
+		<property name="service_item_cost_group_detail_bill_id" type="long"/>
+		<property name="service_item_cost_group_detail_bill_name" type="string"/>
+		<property name="isNotShowInFishPrint" type="boolean"/>
+		<property name="isNotShowInPatientBill" type="boolean"/>
+		<property name="isNotShowInDetailBill" type="boolean"/>
+		<property name="isShowAsTree" type="boolean"/>
+		<property name="goods_measureUnit" type="string"/>
+		<property name="rvu_id" type="long"/>
+		<property name="technicalComponent" type="float"/>
+		<property name="professionalComponent" type="float"/>
+        <property name="insuranceAcceptablePrice" type="float"/>
+        <property name="franshiz" type="float"/>
+        <property name="difference" type="float"/>
+        <property name="isVariablePercent" type="boolean"/>
+        <property name="doctorPercentPortion" type="float"/>
+        <property name="doctorPricePortion" type="long"/>
+        <property name="clinicPricePortion" type="long"/>
+        <property name="rvuCode" type="string"/>
+        <property name="insurance_itemType" type="int"/>
+        <property name="insurancePortion" type="long"/>
+        <property name="patientPortion" type="long"/>
+        <property name="differenceTotal" type="long"/>
+        <property name="professional_ka_id" type="long"/>
+        <property name="professional_ka_price" type="long"/>
+        <property name="professional_ka_total" type="long"/>
+        <property name="professional_ka_price_acceptable_insurance" type="long"/>
+        <property name="professional_ka_total_acceptable_insurance" type="long"/>
+
+	</class>
+	<class name="FinanceRegistrationView" table="his3financeRegistration_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patient_id" type="long"/>
+		<property name="insurance_type_1" type="long"/>
+		<property name="insuranceName" type="string"/>
+		<property name="serviceName" type="string"/>
+		<property name="service_id" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="insurance_type_2" type="long"/>
+		<property name="user_id" type="long"/>
+		<property name="insurance_type_1_num" type="string"/>
+		<property name="insurance_type_2_num" type="string"/>
+		<property name="totalCost" type="long"/>
+		<property name="factor_id" type="long"/>
+		<property name="insurancePercent" type="double"/>
+		<property name="totalDiscounts" type="long"/>
+		<property name="department_id" type="long"/>
+		<property name="departmentName" type="string"/>
+		<property name="doctor_id" type="long"/>
+		<property name="doOperation" type="boolean"/>
+		<property name="ready" type="boolean"/>
+		<property name="firstname" type="string"/>
+		<property name="lastname" type="string"/>
+		<property name="turn" type="int"/>
+		<property name="regTurn" type="int"/>
+		<property name="appointmentMongo_id" type="string"/>
+		<property name="isPrintFactor" type="boolean"/>
+		<property name="cancel" type="boolean"/>
+		<property name="patientFileNumber" type="string"/>
+		<property name="patientFirstName" type="string"/>
+		<property name="patientLastName" type="string"/>
+		<property name="patientFullName" type="string"/>
+		<property name="visitTime" type="string"/>
+		<property name="visitUser" type="string"/>
+		<property name="presenceTime" type="java.sql.Time"/>
+        <property name="payableCost" type="long"/>
+        <property name="payableCostWithoutRound" type="long"/>
+        <property name="roundBaseOn" type="int"/>
+	</class>
+    <class name="GroupStateView" table="his1group_state_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="group_id" type="long"/>
+		<property name="state_id" type="long"/>
+		<property name="priority" type="int"/>
+		<property name="stateName" type="string"/>
+		<property name="stateCode" type="int"/>
+		<property name="isFinal" type="boolean"/>
+		<property name="isVisit" type="boolean"/>
+	</class>
+	<class name="PatientView" table="his_pnt_patient_view">
+		<id name="id" type="long"/>
+		<property name="doctor_id" type="long" update="false"/>
+		<property name="firstname" type="string" update="false"/>
+		<property name="lastname" type="string" update="false"/>
+		<property name="filenumber" type="string" update="false"/>
+		<property name="fathername" type="string" update="false"/>
+		<property name="age" type="int" update="false"/>
+		<property name="job" type="string" update="false"/>
+		<property name="tel1" type="string" update="false"/>
+		<property name="tel2" type="string" update="false"/>
+		<property name="cellphon" type="string" update="false"/>
+		<property name="placeofbirth" type="string" update="false"/>
+		<property name="livesin" type="string" update="false"/>
+		<property name="sex" type="int" update="false"/>
+		<property name="maritalstatus" type="int" update="false"/>
+		<property name="address" type="string" update="false"/>
+		<property name="date" type="com.artonis.core.base.core.Date" update="false"/>
+        <property name="identitynumber" type="string" update="false"/>
+        <property name="doctorName" type="string" update="false"/>
+    	<property name="doctorFam" type="string" update="false"/>
+    	<property name="birthYear" type="int" update="false"/>
+    	<property name="searchField" type="string" update="false"/>
+    	<property name="job_id" type="long" update="false"/>
+        <property name="province_id" type="long" update="false"/>
+        <property name="city_id" type="long" update="false"/>
+        <property name="cityName" type="string" update="false"/>
+        <property name="birthplace_province_id" type="long" update="false"/>
+        <property name="birthplace_city_id" type="long" update="false"/>
+        <property name="birthplaceCityName" type="string" update="false"/>
+        <property name="attachFileListBarSep" type="string" update="false"/>
+        <property name="insurance_type_1_id" type="long" update="false"/>
+        <property name="insurance_type_1_name" type="string" update="false"/>
+        <property name="insurance_type_1_num" type="string" update="false"/>
+        <property name="insurance_type_2_id" type="long" update="false"/>
+        <property name="insurance_type_2_name" type="string" update="false"/>
+        <property name="insurance_type_2_num" type="string" update="false"/>
+		<property name="nationalCode" type="string"/>
+        <property name="englishFirstName" type="string"/>
+        <property name="englishLastName" type="string"/>
+        <property name="oldFileNumber" type="string"/>
+        <property name="filenumberLong" type="long" update="false"/>
+        <property name="insuranceCode" type="string"/>
+        <property name="description" type="string"/>
+        <property name="commonCode" type="string"/>
+        <property name="birthDate" type="com.artonis.core.base.core.Date" update="false"/>
+        <property name="isHide" type="boolean" update="false"/>
+        <property name="externalId" type="long" update="false"/>
+        <property name="isSendSms" type="boolean" update="false"/>
+	</class>
+	<class name="ProficiencyServiceItemView" table="his1proficiency_service_item_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="proficiency_id" type="long"/>
+		<property name="proficiencyName" type="string"/>
+	</class>
+	<class name="ServiceItemCostInsuranceView" table="his1service_item_cost_insurance_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="service_item_cost_id" column="serviceItemCostId" type="long"/>
+		<property name="insuranceorganization_id" column="insuranceOrganizationId" type="long"/>
+		<property name="off_precent" column="offPrecent" type="double"/>
+		<property name="original_cost" column="originalCost" type="long"/>
+		<property name="serviceId" type="long"/>
+		<property name="groupId" type="long"/>
+		<property name="insurance_cost" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="insuranceName" type="string"/>
+		<property name="insuranceCode" type="string"/>
+		<property name="insuranceType" type="int"/>
+		<property name="fromDate" type="com.artonis.core.base.core.Date"/>
+		<property name="toDate" type="com.artonis.core.base.core.Date"/>
+	</class>
+	<class name="ServiceItemView" table="his1service_item_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="type" type="int"/>
+		<property name="cost" type="long"/>
+		<property name="code" type="string"/>
+		<property name="k_id" type="long"/>
+		<property name="technicalPercent" type="float" />
+		<property name="professionalPercent" type="float" />
+		<property name="hasK" type="int" />
+		<property name="goods_id" type="long" />
+		<property name="nameOrGoodsName" type="string" />
+		<property name="measureUnit" type="string" />
+		<property name="service_item_group_fish_id"  type="long" />
+		<property name="service_item_group_fish_name"  type="string" />
+		<property name="service_item_group_bill_id"  type="long" />
+		<property name="service_item_group_bill_name"  type="string" />
+		<property name="service_item_group_patient_bill_id"  type="long" />
+		<property name="service_item_group_patient_bill_name"  type="string" />
+		<property name="service_item_group_detail_bill_id"  type="long" />
+		<property name="service_item_group_detail_bill_name"  type="string" />
+		<property name="isNotShowInFishPrint" type="boolean" />
+		<property name="isNotShowInPatientBill" type="boolean" />
+		<property name="isNotShowInDetailBill" type="boolean" />
+        <property name="isAnesthesiaService" type="boolean" />
+        <property name="priorityOnPatientBill" type="integer" />
+        <property name="hasAllowChangeQuantity" type="boolean" />
+	</class>
+    <class name="ServiceItemInsuranceView" table="his1service_item_insurance_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="type" type="int"/>
+		<property name="cost" type="long"/>
+		<property name="professional_ka_cost" type="long"/>
+		<property name="technical_ka_cost" type="long"/>
+		<property name="code" type="string"/>
+		<property name="professional_ka_id" type="long"/>
+		<property name="technical_ka_id" type="long"/>
+		<property name="rvu_id" type="long"/>
+		<property name="technicalPercent" type="float" />
+		<property name="professionalPercent" type="float" />
+		<property name="hasK" type="int" />
+		<property name="goods_id" type="long" />
+		<property name="nameOrGoodsName" type="string" />
+		<property name="measureUnit" type="string" />
+		<property name="service_item_group_fish_id"  type="long" />
+		<property name="service_item_group_fish_name"  type="string" />
+		<property name="service_item_group_bill_id"  type="long" />
+		<property name="service_item_group_bill_name"  type="string" />
+		<property name="service_item_group_patient_bill_id"  type="long" />
+		<property name="service_item_group_patient_bill_name"  type="string" />
+		<property name="service_item_group_detail_bill_id"  type="long" />
+		<property name="service_item_group_detail_bill_name"  type="string" />
+		<property name="isNotShowInFishPrint" type="boolean" />
+		<property name="isNotShowInPatientBill" type="boolean" />
+		<property name="isNotShowInDetailBill" type="boolean" />
+		<property name="insurance_id" type="long" />
+		<property name="insuranceName" type="string" />
+		<property name="franshiz_cost" type="double" />
+		<property name="franshiz_percent" type="double" />
+		<property name="notCalculateBasedOnFreeIns" type="boolean" />
+        <property name="insurance_itemType" type="int" />
+        <property name="isAnesthesiaService" type="boolean" />
+        <property name="hasAllowChangeQuantity" type="boolean" />
+    </class>
+	<class name="SurgeryView" table="his3surgery_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="surgeryType" type="int"/>
+		<property name="service_id" type="long"/>
+		<property name="surgeon_employee_id" type="long"/>
+		<property name="surgeon_assistant1_employee_id" type="long"/>
+		<property name="surgeon_assistant2_employee_id" type="long"/>
+		<property name="anesthesiologist_employee_id" type="long"/>
+		<property name="anesthesia_technicians_employee_id" type="long"/>
+		<property name="anesthesiaType_id" type="long"/>
+		<property name="technician1_employee_id" type="long"/>
+		<property name="technician2_employee_id" type="long"/>
+		<property name="nurse_operating_employee_id" type="long"/>
+		<property name="nurse_assistant_employee_id" type="long"/>
+		<property name="nurse_recovery_employee_id" type="long"/>
+		<property name="scrub1_employee_id" type="long"/>
+		<property name="scrub2_employee_id" type="long"/>
+		<property name="sirculer1_employee_id" type="long"/>
+		<property name="sirculer2_employee_id" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="start_time" type="string"/>
+		<property name="end_time" type="string"/>
+		<property name="description" type="string"/>
+		<property name="register_employee_id" type="long"/>
+		<property name="service_name" type="string"/>
+		<property name="anesthesia_technicians_employee_fullname" type="string"/>
+		<property name="surgeon_employee_fullname" type="string"/>
+		<property name="surgeon_assistant1_employee_fullname" type="string"/>
+		<property name="surgeon_assistant2_employee_fullname" type="string"/>
+		<property name="anesthesiologist_employee_fullname" type="string"/>
+		<property name="technician1_employee_fullname" type="string"/>
+		<property name="technician2_employee_fullname" type="string"/>
+		<property name="nurse_operating_employee_fullname" type="string"/>
+		<property name="nurse_assistant_employee_fullname" type="string"/>
+		<property name="nurse_recovery_employee_fullname" type="string"/>
+		<property name="scrub1_employee_fullname" type="string"/>
+		<property name="scrub2_employee_fullname" type="string"/>
+		<property name="sirculer1_employee_fullname" type="string"/>
+		<property name="sirculer2_employee_fullname" type="string"/>
+		<property name="register_employee_fullname" type="string"/>
+		<property name="radiography" type="boolean"/>
+		<property name="patology" type="boolean"/>
+		<property name="bloodreserve" type="boolean"/>
+		<property name="anesthesiaType_name" type="string"/>
+        <property name="finnance_registration_id" type="long"/>
+        <property name="patient_id" type="long"/>
+        <property name="patientFullName" type="string"/>
+        <property name="surgeryRvuCodes" type="string"/>
+        <property name="surgeryRvuValues" type="string"/>
+	</class>
+	<class name="UserDepartmentView" table="his1user_department_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="user_id" type="long"/> 
+		<property name="department_id" type="long"/> 
+		<property name="code" type="string"/> 
+		<property name="name" type="string"/> 
+		<property name="username" type="string"/> 
+		<property name="firstname" type="string"/>
+		<property name="lastname" type="string"/>
+		<property name="personnelCode" type="string"/>
+	</class>
+    <class name="VisitQueueMedicaltestView" table="his_pnt_visitqueue_medicaltest_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="testName" type="string"/>
+		<property name="visitQueue_id" type="long"/>
+		<property name="medicalTest_id" type="long"/>
+		<property name="value" type="string"/>
+		<property name="mongoVisit_id" type="string"/>
+		<property name="patient_id" type="long"/>
+		<property name="visitDate" type="com.artonis.core.base.core.Date"/>
+	</class>
+    <class name="VisitQueueUserLogView" table="his_pnt_visitqueue_userLog_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="visitQueueId" column="visitQueue_id" type="long"/>
+		<property name="userId" column="user_id" type="long"/>
+		<property name="username" type="string"/>
+		<property name="newStateId" column="newState_id" type="long"/>
+		<property name="newStateName" column="newState_name" type="string"/>
+		<property name="timeMillis" type="long"/>
+	</class>
+	<class name="VisitQueueView" table="his_pnt_visitqueue_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="patient_id" type="long"/>
+		<property name="doctor_id" type="long"/>
+		<property name="visitDate" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="doctorName" type="string"/>
+		<property name="doctorFam" type="string"/>
+		<property name="patientName" type="string"/>
+		<property name="patientFam" type="string"/>
+		<property name="fileNumber" type="string"/>
+		<property name="searchField" type="string"/>
+		<property name="mongoVisit_id" type="string"/>
+        <property name="weight" type="float"/>
+        <property name="bloodPressure" type="string"/>
+        <property name="cashType" type="int"/>
+        <property name="service_id" type="long"/>
+        <property name="serviceName" type="string"/>
+        <property name="totalReceiveCost" type="double"/>
+        <property name="serviceItemAmount" type="long"/>
+        <property name="discountAmount" type="double"/>
+        <property name="doctorPortionReceiveCost" type="double"/>
+        <property name="doctorPortionDiscountAmount" type="double"/>
+        <property name="turn" type="int"/>
+        <property name="registrationTurn" type="int"/>
+        <property name="appointmentVisitTime" type="string"/>
+        <property name="department_id" type="long"/>
+        <property name="patientFullName" type="string"/>
+        <property name="stateName" type="string"/>
+        <property name="visitUser" type="string"/>
+        <property name="isAnswerLabtest" type="boolean"/>
+        <property name="isQuestionDrug" type="boolean"/>
+        <property name="isFoundPatientFile" type="boolean"/>
+        <property name="birthYear" type="int"/>
+        <property name="sex" type="int"/>
+        <property name="englishPatientFirstName" type="string"/>
+        <property name="englishPatientLastName" type="string"/>
+        <property name="serviceNickName" type="string"/>
+        <property name="quantity" type="float"/>
+        <property name="friId" type="long"/>
+        <property name="hasSonographyFile" type="boolean"/>
+    </class>
+    <class name="ServiceGroupView" table="his1service_group_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="groupName" type="string"/>
+        <property name="group_id" type="long"/>
+        <property name="appointmentable" type="int"/>
+		<property name="appointmentTitle" type="string"/>
+		<property name="serviceGroupId" type="long"/>
+		<property name="nickName" type="string"/>
+		<property name="priority" type="int"/>
+    </class>
+	<class name="FactorAggregateCostOperatingBasedEmployeeAndRoleView" >
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeId" type="long"/>
+		<property name="surgeryRoleId" type="int"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="serviceId" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="count" column="count_" type="long"/>
+		<property name="price" type="double"/>
+	</class>
+	<class name="FactorAggregateCostOperatingBasedEmployeeAndServiceView" >
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeId" type="long"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="serviceId" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="count" column="count_" type="long"/>
+		<property name="price" type="double"/>
+	</class>
+    <class name="FactorAggregateCostOperatingBasedEmployeeView" >
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employeeId" type="long"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="count" column="count_" type="long"/>
+		<property name="price" type="double"/>
+	</class>
+
+    <class name="FinanceRegistrationItemDetailedView" table="his3financeregistrationitem_detailed_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="finnance_registation_id" type="long"/> 
+		<property name="doctor_id" type="long"/>
+		<property name="serviceItemId" type="long"/>
+		<property name="serviceItemName" type="string"/>
+		<property name="serviceItemType" type="int"/>
+		<property name="cost" type="long"/>
+		<property name="quantity" type="float"/>
+		<property name="insuranceAmount" type="long"/>
+		<property name="insurancePersent" type="double"/>
+		<property name="discountAmount" type="float"/>
+		<property name="discountPersent" type="float"/>
+		<property name="serviceItemBasicAmount" type="long"/>
+		<property name="serviceItemAmount" type="long"/>
+		<property name="patient_id" type="long"/>
+		<property name="patientFileNumber" type="string"/>
+		<property name="patientFullName" type="string"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="paymentableAmount" type="long"/>
+	</class>
+	
+	<class name="InsuranceItemView" table="his1insurance_item_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serviceitem_id" type="long"/>
+		<property name="insurance_id" type="long"/>
+		<property name="rvu_id" type="long"/>
+		<property name="professional_ka_id" type="long"/>
+		<property name="technical_ka_id" type="long"/>
+		<property name="itemType" type="int"/>
+		<property name="itemName" type="string"/>
+		<property name="nameBussines" type="string"/>
+		<property name="generic_code" type="string"/>
+		<property name="org_code" type="string"/>
+		<property name="brand_code" type="string"/>
+		<property name="figure" type="int"/>
+		<property name="dosage" type="string"/>
+		<property name="franshiz_percent" type="double"/>
+		<property name="franshiz_cost" type="double"/>
+		<property name="cost" type="double"/>
+		<property name="groups" type="int"/>
+		<property name="limit" type="double"/>
+		<property name="fromdate" type="com.artonis.core.base.core.Date"/>
+		<property name="todate" type="com.artonis.core.base.core.Date"/>
+		<property name="rvu_code" type="string"/>
+		<property name="rvu_value" type="string"/>
+		<property name="professional_ka_code" type="long"/>
+		<property name="professional_ka_name" type="string"/>
+		<property name="professional_ka_price" type="long"/>
+        <property name="technical_ka_code" type="long"/>
+		<property name="technical_ka_name" type="string"/>
+		<property name="technical_ka_price" type="long"/>
+		<property name="serviceItemName" type="string"/>
+		<property name="serviceItemType" type="int"/>
+		<property name="serviceItemCode" type="string"/>
+		<property name="serviceTypeCode" type="string"/>
+		<property name="goods_name" type="string"/>
+		<property name="technicalPercent" type="float"/>
+		<property name="professionalPercent" type="float"/>
+		<property name="nameOrGoodsName" type="string"/>
+	</class>
+
+    <class name="InsuranceLimitView" table="his1insuranceLimit_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+        <property name="insurance_id" type="long"/>
+        <property name="basedOn"  type="int"/>
+        <property name="group_id" type="long"/>
+        <property name="group_name" type="string"/>
+        <property name="price" type="long"/>
+        <property name="isApplyOnTotalFactor" type="boolean"/>
+
+	</class>
+	
+	<class name="FactorDepartmentView" table="his3factorDepartment_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factor_id" type="long"/>
+		<property name="department_id" type="long"/>
+		<property name="registrationUser_id" type="long"/>
+		<property name="releaseable" type="boolean"/>
+		<property name="departmentName" type="string"/>
+	</class>
+
+    <class name="InsurancePerPatientView" table="his3insurance_per_patient_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insurance_id" type="long"/>
+		<property name="insurance_type_1_num" type="string"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="insurancePortion" type="long"/>
+		<property name="patientFullName" type="string"/>
+		<property name="patientPortion" type="long"/>
+		<property name="insuranceName" type="string"/>
+		<property name="totalPrescription" type="long"/>
+
+	</class>
+    <class name="InsuranceWithDetailPerPatientView" table="his3insurance_with_detail_per_patient_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insurance_id" type="long"/>
+		<property name="insurance_type_1_num" type="string"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="servicePrice" type="long"/>
+		<property name="accessoriesPrice" type="long"/>
+		<property name="anesthesiologistPrice" type="long"/>
+		<property name="drugsPrice" type="long"/>
+		<property name="fileNumber" type="string"/>
+		<property name="firstname" type="string"/>
+		<property name="lastname" type="string"/>
+		<property name="insuranceName" type="string"/>
+		<property name="serviceName" type="string"/>
+		<property name="totalPrice" type="long"/>
+		<property name="doctor" type="string"/>
+
+	</class>
+
+    <class name="AgentDoctorPerPatientView" table="his1agentDoctor_per_patient_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="agentDoctorFirstName" type="string"/>
+		<property name="agentDoctorLastName" type="string"/>
+		<property name="agentDoctorFullName" type="string"/>
+		<property name="agentDoctorId" type="long"/>
+		<property name="patient_id" type="long"/>
+		<property name="patientFileNumber" type="string"/>
+		<property name="patientFirstName" type="string"/>
+		<property name="patientLastName" type="string"/>
+		<property name="service_id" type="long"/>
+		<property name="serviceName" type="string"/>
+		<property name="totalCost" type="long"/>
+		<property name="totalDiscounts" type="long"/>
+		<property name="totalPayable" type="long"/>
+
+	</class>
+
+    <class name="AgentDoctorAggregateView" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="agentDoctorFirstName" type="string"/>
+        <property name="agentDoctorLastName" type="string"/>
+        <property name="agentDoctorFullName" type="string"/>
+        <property name="agentDoctorId" type="long"/>
+        <property name="totalPayable" type="long"/>
+        <property name="countPatient" type="long"/>
+    </class>
+
+    <class name="FactorAggregatePaymentPerPatientView" table="his3factorAggregatePaymentPerPatientView">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="sumPayment" type="long"/>
+        <property name="sumReceipt" type="long"/>
+        <property name="totalExistCash" type="long"/>
+        <property name="sumCashPayment" type="long"/>
+        <property name="sumPosPayment" type="long"/>
+        <property name="factorTotalCost" type="long"/>
+    </class>
+
+    <class name="VisitQueueHisPartnerView" table="his_pnt_visitqueue_hisPartner_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patient_id" type="long"/>
+        <property name="doctor_id" type="long"/>
+        <property name="visitDate" type="com.artonis.core.base.core.Date"/>
+        <property name="state" type="int"/>
+        <property name="doctorName" type="string"/>
+        <property name="doctorFam" type="string"/>
+        <property name="patientName" type="string"/>
+        <property name="patientFam" type="string"/>
+        <property name="fileNumber" type="string"/>
+        <property name="searchField" type="string"/>
+        <property name="mongoVisit_id" type="string"/>
+        <property name="weight" type="float"/>
+        <property name="bloodPressure" type="string"/>
+        <property name="service_id" type="long"/>
+        <property name="serviceName" type="string"/>
+        <property name="patientFullName" type="string"/>
+        <property name="stateName" type="string"/>
+        <property name="visitUser" type="string"/>
+        <property name="isAnswerLabtest" type="boolean"/>
+        <property name="isQuestionDrug" type="boolean"/>
+        <property name="isFoundPatientFile" type="boolean"/>
+        <property name="birthYear" type="int"/>
+        <property name="sex" type="int"/>
+        <property name="englishPatientFirstName" type="string"/>
+        <property name="englishPatientLastName" type="string"/>
+        <property name="serviceNickName" type="string"/>
+        <property name="age" type="int"/>
+        <property name="visitQueueTurn" type="float"/>
+        <property name="priority" type="int"/>
+        <property name="city_id" type="long"/>
+        <property name="cityName" type="string"/>
+        <property name="insuranceName" type="string"/>
+    </class>
+
+    <class name="ServiceItemCostView" table="his1service_item_cost_vview">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="service_id" type="long"/>
+        <property name="service_name" type="string"/>
+        <property name="group_id" type="long"/>
+        <property name="group_name" type="string"/>
+        <property name="fromDate" type="com.artonis.core.base.core.Date"/>
+        <property name="toDate" type="com.artonis.core.base.core.Date"/>
+        <property name="totalCost" column="cost" type="long"/>
+    </class>
+
+    <class name="ServiceItemCostDetailView" table="his1service_item_cost_detail_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="serviceId" type="long"/>
+        <property name="serviceName" type="string"/>
+        <property name="groupId" type="long"/>
+        <property name="groupName" type="string"/>
+        <property name="fromDate" type="com.artonis.core.base.core.Date"/>
+        <property name="toDate" type="com.artonis.core.base.core.Date"/>
+        <property name="totalCost"  type="float"/>
+        <property name="cost"  type="long"/>
+        <property name="quantity"  type="float"/>
+        <property name="siceId"  type="long"/>
+        <property name="equipmentGroupName"  type="string"/>
+        <property name="code"  type="string"/>
+    </class>
+
+    <class name="ServiceItemCostEquipmentView" table="his1service_item_cost_equipment_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="service_item_cost_id" type="long"/>
+        <property name="serviceitem_id" type="long"/>
+        <property name="serviceitem_text" column="serviceitem_name" type="string"/>
+        <property name="serviceitemCode" column="serviceitem_code" type="string"/>
+        <property name="cost" type="long"/>
+        <property name="quantity" type="float"/>
+        <property name="totalCostEquipment" column="totalCost" type="float"/>
+        <property name="service_item_cost_group_equipment_id" column="service_item_cost_group_id" type="long" />
+        <property name="service_item_cost_group_equipment_txt" column="service_item_cost_group_txt" type="string" />
+        <property name="service_item_cost_group_bill_equipment_id" column="service_item_cost_group_bill_id" type="long" />
+        <property name="service_item_cost_group_bill_equipment_txt" column="service_item_cost_group_bill_txt" type="string" />
+        <property name="service_item_cost_group_patient_bill_equipment_id" column="service_item_cost_group_patient_bill_id" type="long" />
+        <property name="service_item_cost_group_patient_bill_equipment_txt" column="service_item_cost_group_patient_bill_txt" type="string" />
+        <property name="service_item_cost_group_detail_bill_equipment_id" column="service_item_cost_group_detail_bill_id" type="long" />
+        <property name="service_item_cost_group_detail_bill_equipment_id_txt" column="service_item_cost_group_detail_bill_txt" type="string" />
+        <property name="isNotShowInFishPrint" type="boolean" />
+        <property name="isNotShowInPatientBill" type="boolean" />
+        <property name="isNotShowInDetailBill" type="boolean" />
+        <property name="isShowAsTree" type="boolean" />
+    </class>
+
+    <class name="ServiceItemCostOperationView" table="his1service_item_cost_operation_view">
+        <id name="id" type="long">
+            <generator class="native"/>
+        </id>
+        <property name="service_item_cost_id" type="long"/>
+        <property name="operation_serviceitem_id" column="serviceitem_id" type="long"/>
+        <property name="operation_serviceitem_text" column="serviceitem_name" type="string"/>
+        <property name="operation_quantity" column="quantity" type="float"/>
+        <property name="operation_cost" column="cost" type="long"/>
+        <property name="operation_totalCost" column="totalCost" type="float"/>
+        <property name="isPrimaryOperation" type="boolean"/>
+        <property name="service_item_cost_group_operation_id" column="service_item_cost_group_id" type="long"/>
+        <property name="service_item_cost_group_operation_txt" column="service_item_cost_group_txt" type="string"/>
+        <property name="isNotShowInFishPrint" type="boolean"/>
+        <property name="service_item_cost_group_bill_operation_id" column="service_item_cost_group_bill_id" type="long"/>
+        <property name="service_item_cost_group_bill_operation_txt" column="service_item_cost_group_bill_txt" type="string"/>
+        <property name="service_item_cost_group_patient_bill_operation_id" column="service_item_cost_group_patient_bill_id" type="long"/>
+        <property name="service_item_cost_group_patient_bill_operation_txt" column="service_item_cost_group_patient_bill_txt" type="string"/>
+        <property name="isNotShowInPatientBill" type="boolean"/>
+        <property name="service_item_cost_group_detail_bill_operation_id" column="service_item_cost_group_detail_bill_id" type="long"/>
+        <property name="service_item_cost_group_detail_bill_operation_txt" column="service_item_cost_group_detail_bill_txt" type="string"/>
+        <property name="isNotShowInDetailBill" type="boolean"/>
+        <property name="isShowAsTree" type="boolean"/>
+        <property name="serviceitemCode" column="serviceitem_code" type="string"/>
+        <property name="new_rvu_id"  type="long"/>
+        <property name="operation_professional_ka_cost" column="professional_ka_cost" type="long" />
+        <property name="operation_technical_ka_cost" column="technical_ka_cost" type="long" />
+    </class>
+
+    <class name="FactorPatientFundView" table="his3factorPatientFund_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="patientId" type="long"/>
+        <property name="patientFileNumber" type="string"/>
+        <property name="patientFirstName" type="string"/>
+        <property name="patientLastName" type="string"/>
+        <property name="factorId" type="long"/>
+        <property name="factorDate" type="com.artonis.core.base.core.Date"/>
+        <property name="totalCost" type="long"/>
+        <property name="financeRegistrationState" type="int"/>
+        <property name="factorPaymentDate" type="com.artonis.core.base.core.Date"/>
+        <property name="receipt" type="long"/>
+        <property name="payment" type="long"/>
+        <property name="posId" type="long"/>
+        <property name="posName" type="string"/>
+    </class>
+
+    <class name="ServiceItemCostCurrentItemsView" table="his1serviceItemCostCurrentItems_view">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="type" type="string"/>
+        <property name="itemId" type="long"/>
+        <property name="serviceItemId" type="long"/>
+        <property name="serviceItemCostId" type="long"/>
+        <property name="quantity" type="float"/>
+        <property name="serviceName" type="string"/>
+        <property name="serviceCode" type="string"/>
+        <property name="itemTotalCost" type="long"/>
+        <property name="totalCost" type="long"/>
+    </class>
+
+</hibernate-mapping>

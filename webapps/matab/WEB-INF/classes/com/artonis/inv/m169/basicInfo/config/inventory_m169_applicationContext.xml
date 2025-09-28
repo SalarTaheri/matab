@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+	
+	<!-- ServiceGoodsService -->
+	<bean id="serviceGoodsService" class="com.artonis.inv.m169.basicInfo.service.impl.ServiceGoodsServiceImpl">
+		<property name="dao" ref="serviceGoodsDao" />
+	</bean>
+	<bean id="serviceGoodsDao" class="com.artonis.inv.m169.basicInfo.dao.impl.ServiceGoodsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- SeasonVatService -->
+	<bean id="seasonVatService" class="com.artonis.inv.m169.basicInfo.service.impl.SeasonVatServiceImpl"> 
+		<property name="dao" ref="seasonVatDao" /> 
+	</bean>
+	<bean id="seasonVatDao" class="com.artonis.inv.m169.basicInfo.dao.impl.SeasonVatDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+
+	<!-- PersonService -->
+	<bean id="personService" class="com.artonis.inv.m169.basicInfo.service.impl.PersonServiceImpl"> 
+		<property name="dao" ref="personDao" /> 
+	</bean>
+	<bean id="personDao" class="com.artonis.inv.m169.basicInfo.dao.impl.PersonDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ContractService -->
+	<bean id="contractService" class="com.artonis.inv.m169.basicInfo.service.impl.ContractServiceImpl"> 
+		<property name="dao" ref="contractDao" /> 
+	</bean>
+	<bean id="contractDao" class="com.artonis.inv.m169.basicInfo.dao.impl.ContractDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CompanyPersonService -->
+	<bean id="companyPersonService" class="com.artonis.inv.m169.basicInfo.service.impl.CompanyPersonServiceImpl"> 
+		<property name="dao" ref="companyPersonDao" /> 
+	</bean>
+	<bean id="companyPersonDao" class="com.artonis.inv.m169.basicInfo.dao.impl.CompanyPersonDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- M169ProvinceService -->
+	<bean id="m169ProvinceService" class="com.artonis.inv.m169.basicInfo.service.impl.M169ProvinceServiceImpl"> 
+		<property name="dao" ref="m169ProvinceDao" /> 
+	</bean>
+	<bean id="m169ProvinceDao" class="com.artonis.inv.m169.basicInfo.dao.impl.M169ProvinceDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- M169CityService -->
+	<bean id="m169CityService" class="com.artonis.inv.m169.basicInfo.service.impl.M169CityServiceImpl"> 
+		<property name="dao" ref="m169CityDao" /> 
+	</bean>
+	<bean id="m169CityDao" class="com.artonis.inv.m169.basicInfo.dao.impl.M169CityDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>
+
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- AccountCodingGroupNatureService -->
+	<bean id="accountCodingGroupNatureService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.AccountCodingGroupNatureServiceImpl"> 
+		<property name="dao" ref="accountCodingGroupNatureDao" /> 
+	</bean>
+	<bean id="accountCodingGroupNatureDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.AccountCodingGroupNatureDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AccountCodingTypeService -->
+	<bean id="accountCodingTypeService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.AccountCodingTypeServiceImpl"> 
+		<property name="dao" ref="accountCodingTypeDao" /> 
+	</bean>
+	<bean id="accountCodingTypeDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.AccountCodingTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AccountCodingGroupTypeService -->
+	<bean id="accountCodingGroupTypeService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.AccountCodingGroupTypeServiceImpl"> 
+		<property name="dao" ref="accountCodingGroupTypeDao" /> 
+	</bean>
+	<bean id="accountCodingGroupTypeDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.AccountCodingGroupTypeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- FloatAccountGroupNatureService -->
+	<bean id="floatAccountGroupNatureService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.FloatAccountGroupNatureServiceImpl"> 
+		<property name="dao" ref="floatAccountGroupNatureDao" /> 
+	</bean>
+	<bean id="floatAccountGroupNatureDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.FloatAccountGroupNatureDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AccountAndAccountGroupService -->
+	<bean id="accountCodingAndAccountCodingGroupService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.AccountCodingAndAccountCodingGroupServiceImpl"> 
+		<property name="dao" ref="accountCodingAndAccountCodingGroupDao" /> 
+	</bean>
+	<bean id="accountCodingAndAccountCodingGroupDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.AccountCodingAndAccountCodingGroupDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- AllFloatAccountService -->
+	<bean id="allFloatAccountService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.AllFloatAccountServiceImpl"> 
+		<property name="dao" ref="allFloatAccountDao" /> 
+	</bean>
+	<bean id="allFloatAccountDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.AllFloatAccountDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- FloatAccountDomain-->
+	<bean id="floatAccountDomainService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.FloatAccountDomainServiceImpl"> 
+		<property name="dao" ref="floatAccountDomainDao" /> 
+	</bean>
+	<bean id="floatAccountDomainDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.FloatAccountDomainDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>  
+	<!-- FloatAccountRelatedFloatAccountGroupService -->
+	<bean id="floatAccountRelatedFloatAccountGroupService" class="com.artonis.fnc.generalAccounting.accounting.service.impl.FloatAccountRelatedFloatAccountGroupServiceImpl"> 
+		<property name="dao" ref="floatAccountRelatedFloatAccountGroupDao" /> 
+	</bean>
+	<bean id="floatAccountRelatedFloatAccountGroupDao" class="com.artonis.fnc.generalAccounting.accounting.dao.impl.FloatAccountRelatedFloatAccountGroupDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

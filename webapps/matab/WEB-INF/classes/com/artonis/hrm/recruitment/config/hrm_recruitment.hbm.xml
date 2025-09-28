@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.hrm.recruitment.model" default-lazy="false">
+	<class name="Interdict" table="hrm_rec_interdict">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="string"/>
+		<property name="recruithokm_id" type="long"/>
+		<property name="implDate" type="java.sql.Date"/>
+		<property name="expireDate" type="java.sql.Date"/>
+		<property name="registerDate" type="java.sql.Date"/>
+	</class>
+	<class name="RecruitHokm" table="hrm_rec_recruithokm">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employee_id" type="long"/>
+		<property name="company_id" type="long"/>
+		<property name="operatingUnit_id" type="long"/>
+		<property name="organizationUnit_id" type="long"/>
+		<property name="job_id" type="long"/>
+		<property name="position_id" type="long"/>
+		<property name="taxManifactory_id" type="long"/>
+		<property name="insuranceManifactory_id" type="long"/>
+		<property name="costcenter_id" type="long"/>
+		<property name="implDate" type="java.sql.Date"/>
+		<property name="expireDate" type="java.sql.Date"/>
+		<property name="registerDate" type="java.sql.Date"/>
+		<property name="serial" type="string"/>
+		<property name="description" type="string"/>
+		<property name="name" type="string"/>
+		<property name="recruitmentType_id" type="long"/>
+	</class>
+	<class name="WagefactorInterdict" table="hrm_rec_wagefactor_interdict">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="interdict_id" type="long"/>
+		<property name="wagefactor_id" type="long"/>
+		<property name="calcType" type="int"/>
+		<property name="value" type="double"/>
+	</class>
+</hibernate-mapping>

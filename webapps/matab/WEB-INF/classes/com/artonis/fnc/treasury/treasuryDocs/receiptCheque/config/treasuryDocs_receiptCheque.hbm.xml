@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.model" default-lazy="false">
+	<class name="ReceiptCheque" table="fnc3rbillreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="long"/>
+		<property name="bank_Id" type="long"/>
+		<property name="branch_Id" type="long"/>
+		<property name="bankAccount_Id" type="long"/>
+		<property name="maturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="receiptChequeAccountCode_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel1_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel2_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel3_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel4_Id" type="long"/>
+		<property name="receiptChequePrice" type="long"/>
+		<property name="receiptChequeDescription" type="string"/>
+		<property name="receiptBill_Id" type="long"/>
+	</class>
+	<class name="ChequeState" table="fnc3chequestate">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="state" type="int"/>
+		<property name="receiptCheque_Id" type="long"/>
+		<property name="paymentCheque_Id" type="long"/>
+	</class>
+	<class name="InClearingReceiptCheque" table="fnc3inclearingreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="inClearingDate" type="com.artonis.core.base.core.Date"/>
+		<property name="inClearingAccountCoding_Id" type="long"/>
+		<property name="inClearingFloatAccountLevel1_Id" type="long"/>
+		<property name="inClearingFloatAccountLevel2_Id" type="long"/>
+		<property name="inClearingFloatAccountLevel3_Id" type="long"/>
+		<property name="inClearingFloatAccountLevel4_Id" type="long"/>
+		<property name="inClearingDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+	<class name="CashedReceiptCheque" table="fnc3cashedreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="cashedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="cashedAccountCoding_Id" type="long"/>
+		<property name="cashedFloatAccountLevel1_Id" type="long"/>
+		<property name="cashedFloatAccountLevel2_Id" type="long"/>
+		<property name="cashedFloatAccountLevel3_Id" type="long"/>
+		<property name="cashedFloatAccountLevel4_Id" type="long"/>
+		<property name="cashedDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+	<class name="ClearedReceiptCheque" table="fnc3clearedreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="clearedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="clearedAccountCoding_Id" type="long"/>
+		<property name="clearedFloatAccountLevel1_Id" type="long"/>
+		<property name="clearedFloatAccountLevel2_Id" type="long"/>
+		<property name="clearedFloatAccountLevel3_Id" type="long"/>
+		<property name="clearedFloatAccountLevel4_Id" type="long"/>
+		<property name="clearedDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+	<class name="ReturnedReceiptCheque" table="fnc3returnedreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="returnedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="returnedAccountCoding_Id" type="long"/>
+		<property name="returnedFloatAccountLevel1_Id" type="long"/>
+		<property name="returnedFloatAccountLevel2_Id" type="long"/>
+		<property name="returnedFloatAccountLevel3_Id" type="long"/>
+		<property name="returnedFloatAccountLevel4_Id" type="long"/>
+		<property name="returnedDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+	<class name="AssignedReceiptCheque" table="fnc3assignedreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="assignedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="assignedAccountCoding_id" type="long"/>
+		<property name="assignedFloatAccountLevel1_Id" type="long"/>	
+		<property name="assignedFloatAccountLevel2_Id" type="long"/>
+		<property name="assignedFloatAccountLevel3_Id" type="long"/>
+		<property name="assignedFloatAccountLevel4_Id" type="long"/>
+		<property name="chequeState_Id" type="long"/>
+		<property name="assignedDescription" type="string"/>
+	</class>
+	<class name="BackReturnedReceiptCheque" table="fnc3backreturnedreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bakingDate" type="com.artonis.core.base.core.Date"/>
+		<property name="bakingDescription" type="string"/>
+		<property name="chequeState_Id" type="long"/>
+	</class>
+</hibernate-mapping>

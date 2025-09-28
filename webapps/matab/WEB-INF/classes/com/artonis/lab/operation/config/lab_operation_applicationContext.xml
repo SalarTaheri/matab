@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+	<!-- LabQueueService -->
+	<bean id="labQueueService" class="com.artonis.lab.operation.service.impl.LabQueueServiceImpl">
+		<property name="dao" ref="labQueueDao"/>
+	</bean>
+	<bean id="labQueueDao" class="com.artonis.lab.operation.dao.impl.LabQueueDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- LabQueueParsipolService -->
+	<bean id="labQueueParsipolService" class="com.artonis.lab.operation.service.impl.LabQueueParsipolServiceImpl">
+		<property name="dao" ref="labQueueParsipolDao"/>
+	</bean>
+	<bean id="labQueueParsipolDao" class="com.artonis.lab.operation.dao.impl.LabQueueParsipolDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- TestResultService -->
+	<bean id="testResultService" class="com.artonis.lab.operation.service.impl.TestResultServiceImpl">
+		<property name="dao" ref="testResultDao"/>
+	</bean>
+	<bean id="testResultDao" class="com.artonis.lab.operation.dao.impl.TestResultDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>

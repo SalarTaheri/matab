@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.treasuryDocs.receiptCheque.view" default-lazy="false">
+	<class name="ReceiptChequeView" table="fnc3receiptcheque_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="long"/>
+		<property name="receiptChequeSerial" type="long"/>
+		<property name="bankName" type="string"/>
+		<property name="branchName" type="string"/>
+		<property name="bankAccountName" type="string"/>
+		<property name="sarresidDate" column="maturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="receiptChequeAccountCode_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel1_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel2_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel3_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel4_Id" type="long"/>
+		<property name="receiptChequePrice" type="long"/>
+		<property name="receiptChequeDescription" type="string"/>
+		<property name="receiptBill_Id" type="long"/>
+		<property name="billserial" type="long"/>
+		<property name="billDate" type="com.artonis.core.base.core.Date"/>
+		<property name="chequeState" type="int"/>
+		<property name="chequeType" type="int"/>
+	</class>
+	<class name="ChequeStateHistoryView" table="fnc3chequeStatehistory_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="state" type="int"/>
+		<property name="accountCodingName" type="string"/>
+		<property name="date_"  type="com.artonis.core.base.core.Date"/>
+		<property name="docNumber" type="long"/>
+		<property name="documentId" type="long"/>
+		<property name="receiptChequeId" type="long"/>
+		<property name="paymentChequeId" type="long"/>
+	</class>
+</hibernate-mapping>

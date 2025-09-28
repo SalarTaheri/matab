@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- salaryPeriodService -->
+
+	<!-- WageService -->
+	<bean id="wageService" class="com.artonis.hrm.salaryCalculation.service.impl.WageServiceImpl"> 
+		<property name="dao" ref="wageDao" /> 
+	</bean>
+	<bean id="wageDao" class="com.artonis.hrm.salaryCalculation.dao.impl.WageDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- WageItemService -->
+	<bean id="wageItemService" class="com.artonis.hrm.salaryCalculation.service.impl.WageItemServiceImpl"> 
+		<property name="dao" ref="wageItemDao" /> 
+	</bean>
+	<bean id="wageItemDao" class="com.artonis.hrm.salaryCalculation.dao.impl.WageItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

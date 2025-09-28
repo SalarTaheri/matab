@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+
+
+	<!-- CityService -->
+	<bean id="cityService" class="com.artonis.core.system.basicInfo.service.impl.CityServiceImpl">
+		<property name="dao" ref="cityDao" />
+	</bean>
+	<bean id="cityDao" class="com.artonis.core.system.basicInfo.dao.impl.CityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- ProvinceService -->
+	<bean id="provinceService" class="com.artonis.core.system.basicInfo.service.impl.ProvinceServiceImpl">
+		<property name="dao" ref="provinceDao" />
+	</bean>
+	<bean id="provinceDao" class="com.artonis.core.system.basicInfo.dao.impl.ProvinceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	<!-- ComboFillerService -->
+	<bean id="comboFillerService" class="com.artonis.core.system.basicInfo.service.impl.ComboFillerServiceImpl">
+		<property name="dao" ref="comboFillerDao" />
+	</bean>
+	<bean id="comboFillerDao" class="com.artonis.core.system.basicInfo.dao.impl.ComboFillerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	<!-- ComboFillerValueService -->
+	<bean id="comboFillerValueService" class="com.artonis.core.system.basicInfo.service.impl.ComboFillerValueServiceImpl">
+		<property name="dao" ref="comboFillerValueDao" />
+	</bean>
+	<bean id="comboFillerValueDao" class="com.artonis.core.system.basicInfo.dao.impl.ComboFillerValueDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	<!-- CountryService -->
+	<bean id="countryService" class="com.artonis.core.system.basicInfo.service.impl.CountryServiceImpl"> 
+		<property name="dao" ref="countryDao" /> 
+	</bean>
+	<bean id="countryDao" class="com.artonis.core.system.basicInfo.dao.impl.CountryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <!-- ModuleService -->
+    <bean id="moduleService" class="com.artonis.core.system.basicInfo.service.impl.ModuleServiceImpl">
+        <property name="dao" ref="moduleDao" />
+    </bean>
+    <bean id="moduleDao" class="com.artonis.core.system.basicInfo.dao.impl.ModuleDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+	<!-- BusinessPartnerService -->
+	<bean id="businessPartnerService" class="com.artonis.core.system.basicInfo.service.impl.BusinessPartnerServiceImpl"> 
+		<property name="dao" ref="businessPartnerDao" /> 
+	</bean>
+	<bean id="businessPartnerDao" class="com.artonis.core.system.basicInfo.dao.impl.BusinessPartnerDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>
+
+

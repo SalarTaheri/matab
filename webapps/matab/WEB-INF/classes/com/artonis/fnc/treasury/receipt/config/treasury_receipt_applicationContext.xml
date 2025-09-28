@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- ReceiptBillService -->
+	<bean id="receiptBillService" class="com.artonis.fnc.treasury.receipt.service.impl.ReceiptBillServiceImpl"> 
+		<property name="dao" ref="receiptBillDao" /> 
+	</bean>
+	<bean id="receiptBillDao" class="com.artonis.fnc.treasury.receipt.dao.impl.ReceiptBillDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReceiptBillPayerService -->
+	<bean id="receiptBillPayerService" class="com.artonis.fnc.treasury.receipt.service.impl.ReceiptBillPayerServiceImpl"> 
+		<property name="dao" ref="receiptBillPayerDao" /> 
+	</bean>
+	<bean id="receiptBillPayerDao" class="com.artonis.fnc.treasury.receipt.dao.impl.ReceiptBillPayerDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReceiptBillCashReceiptService -->
+	<bean id="receiptBillCashReceiptService" class="com.artonis.fnc.treasury.receipt.service.impl.ReceiptBillCashReceiptServiceImpl"> 
+		<property name="dao" ref="receiptBillCashReceiptDao" /> 
+	</bean>
+	<bean id="receiptBillCashReceiptDao" class="com.artonis.fnc.treasury.receipt.dao.impl.ReceiptBillCashReceiptDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReceiptBillReceiptChequeService -->
+	<bean id="receiptBillReceiptChequeService" class="com.artonis.fnc.treasury.receipt.service.impl.ReceiptBillReceiptChequeServiceImpl"> 
+		<property name="dao" ref="receiptBillReceiptChequeDao" /> 
+	</bean>
+	<bean id="receiptBillReceiptChequeDao" class="com.artonis.fnc.treasury.receipt.dao.impl.ReceiptBillReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- ReceiptBillBankingBillService -->
+	<bean id="receiptBillBankingBillService" class="com.artonis.fnc.treasury.receipt.service.impl.ReceiptBillBankingBillServiceImpl"> 
+		<property name="dao" ref="receiptBillBankingBillDao" /> 
+	</bean>
+	<bean id="receiptBillBankingBillDao" class="com.artonis.fnc.treasury.receipt.dao.impl.ReceiptBillBankingBillDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

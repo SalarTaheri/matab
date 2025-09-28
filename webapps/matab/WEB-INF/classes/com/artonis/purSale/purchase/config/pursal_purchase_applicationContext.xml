@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- purchaseInvoiceService -->
+	<bean id="purchaseInvoiceService" class="com.artonis.purSale.purchase.service.impl.PurchaseInvoiceServiceImpl"> 
+		<property name="dao" ref="purchaseInvoiceDao" /> 
+	</bean>
+	<bean id="purchaseInvoiceDao" class="com.artonis.purSale.purchase.dao.impl.PurchaseInvoiceDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- purchaseInvoiceItemService -->
+	<bean id="purchaseInvoiceItemService" class="com.artonis.purSale.purchase.service.impl.PurchaseInvoiceItemServiceImpl"> 
+		<property name="dao" ref="purchaseInvoiceItemDao" /> 
+	</bean>
+	<bean id="purchaseInvoiceItemDao" class="com.artonis.purSale.purchase.dao.impl.PurchaseInvoiceItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.onlineAppointment.model" default-lazy="false">
+	<class name="RecieveDataDateRange" table="his3recieveDataDateRange">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="recivedDate" type="com.artonis.core.base.core.Date"/>
+		<property name="operationCurrentMilliSecond" type="long"/>
+	</class>
+</hibernate-mapping>

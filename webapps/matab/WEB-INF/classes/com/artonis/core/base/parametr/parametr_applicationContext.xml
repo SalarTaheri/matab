@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no"
+	default-dependency-check="none"><!-- DAO -->
+
+	<bean id="allParam" class="com.artonis.core.base.parametr.AllParam">
+ 
+		<!-- java.util.List -->
+		<property name="paramList">
+			<list>
+				<ref bean="personnelCodeParam" />
+			</list>
+		</property>
+	</bean>
+		
+	<bean id="personnelCodeParam" class="com.artonis.hrm.core.parametr.PersonnelCodeParam">
+	</bean>
+
+</beans>
+
+

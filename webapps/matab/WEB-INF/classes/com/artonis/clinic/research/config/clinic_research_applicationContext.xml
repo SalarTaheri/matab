@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd"> 
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- RegistrationService -->
+	<bean id="registrationService" class="com.artonis.clinic.research.service.impl.RegistrationServiceImpl"> 
+		<property name="dao" ref="registrationDao" /> 
+	</bean>
+	<bean id="registrationDao" class="com.artonis.clinic.research.dao.impl.RegistrationDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- RegistrationDepartmentService -->
+	<bean id="registrationDepartmentService" class="com.artonis.clinic.research.service.impl.RegistrationDepartmentServiceImpl"> 
+		<property name="dao" ref="registrationDepartmentDao" /> 
+	</bean>
+	<bean id="registrationDepartmentDao" class="com.artonis.clinic.research.dao.impl.RegistrationDepartmentDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- SurveyFormService -->
+	<bean id="surveyFormService" class="com.artonis.clinic.research.service.impl.SurveyFormServiceImpl"> 
+		<property name="dao" ref="surveyFormDao" /> 
+	</bean>
+	<bean id="surveyFormDao" class="com.artonis.clinic.research.dao.impl.SurveyFormDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- SurveyFormItemService -->
+	<bean id="surveyFormItemService" class="com.artonis.clinic.research.service.impl.SurveyFormItemServiceImpl"> 
+		<property name="dao" ref="surveyFormItemDao" /> 
+	</bean>
+	<bean id="surveyFormItemDao" class="com.artonis.clinic.research.dao.impl.SurveyFormItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="researchReportMakerService" class="com.artonis.clinic.research.service.impl.ResearchReportMakerServiceImpl">
+	</bean>
+</beans>

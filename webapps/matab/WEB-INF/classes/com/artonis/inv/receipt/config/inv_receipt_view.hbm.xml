@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.receipt.view" default-lazy="false">
+	<class name="PurchaseReceiptView" table="inv3purchaseReceipt_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="reference" type="string"/>
+		<property name="referenceAsLong" type="long" column="reference" insert="false" update="false"/>
+		<property name="serial" type="string"/>
+		<property name="serialAsLong" type="long" column="serial" insert="false" update="false"/>
+		<property name="state" type="int"/>
+		<property name="inventory_id" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="exporter" type="long"/>
+		<property name="financeyear_id" type="long"/>
+		<property name="businessPartner_id" type="long"/>
+		<property name="inventoryName" type="string"/>
+		<property name="exporterName" type="string"/>
+		<property name="businessPartnerName" type="string"/>
+		<property name="referenceType" type="int"/>
+		<property name="referenceId" type="long"/>
+		<property name="referenceSerial" type="long"/>
+		<property name="docNumber" type="string"/>
+	</class>
+	<class name="PurchaseReceiptGoodsView" table="inv3purchaseReceiptGoods_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsAmount" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="measureUnitName" column="measureUnit_name" type="string"/>
+		<property name="purchaseReceipt_id" type="long"/>
+		<property name="goodsCodeName" type="string"/>
+		<property name="rate" type="double"/>
+		<property name="sum" type="double"/>
+		<property name="convertCoefficient" type="long"/>
+		<property name="goodsName" type="string"/>
+		<property name="goodsCode" type="string"/>
+	</class>
+	<class name="PurchaseReceiptAdditionSubtractionView" table="inv3purchaseReceiptadditionSubtraction_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="surplusDeficitId" column="surplusDeficit_id" type="long"/>
+		<property name="surplusDeficitName" column="surplusDeficit_name" type="string"/>
+		<property name="price" type="long"/>
+		<property name="valueAddedtax" type="int"/>
+		<property name="tax" type="long"/>
+		<property name="toll" type="long"/>
+		<property name="purchaseReceipt_id" type="long"/>
+	</class>
+	<class name="DirectlyConsumptionReceiptView" table="inv3directlyconsumptionreceipt_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="string"/>
+		<property name="reference" type="string"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="state" type="int"/>
+		<property name="businessPartner_id" type="long"/>
+		<property name="exporter" type="long"/>
+		<property name="financeYear_id" type="long"/>
+		<property name="businesspartnerName" type="string"/>
+		<property name="exportername" type="string"/>
+	</class>
+	<class name="DirectlyConsumptionReceiptGoodsView" table="inv3directlyConsumptionReceiptGoods_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="goodsAmount" type="long"/>
+		<property name="costCenter_id" type="long"/>
+		<property name="directlyConsumptionReceipt_id" type="long"/>
+		<property name="goodsCodeName" type="string"/>
+		<property name="costCenterName" type="string"/>
+	</class>
+	<class name="DirectlyConsumptionReceiptAdditionSubtractionView" table="inv3directlyConsumptionReceiptadditionSubtraction_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="additionSubtraction" type="int"/>
+		<property name="price" type="long"/>
+		<property name="valueAddedtax" type="int"/>
+		<property name="tax" type="long"/>
+		<property name="toll" type="long"/>
+		<property name="directlyConsumptionReceipt_id" type="long"/>
+	</class>
+	<class name="AllReceiptView" table="inv3allReceipt_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="documentName" type="string"/>
+		<property name="documentType" type="int"/>
+		<property name="documentId" type="long"/>
+		<property name="documentDate" type="com.artonis.core.base.core.Date"/>
+		<property name="documentState" type="int"/>
+		<property name="documentSerial" type="string"/>
+		<property name="documentReference" type="string"/>
+		<property name="dateInMilliSec" type="long"/>
+		<property name="isSorted" type="boolean"/>
+		<property name="inventoryId" type="long"/>
+		<property name="inventoryName" type="string"/>
+		<property name="issuerId" type="long"/>
+		<property name="issuerFirstName" type="string"/>
+		<property name="issuerLastName" type="string"/>
+		<property name="pageSystemCode" type="string"/>
+	</class>
+	<class name="AllReceiptWithGoodsView" table="inv3allReceiptWithGoods_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="documentName" type="string"/>
+		<property name="documentType" type="int"/>
+		<property name="documentId" type="long"/>
+		<property name="documentDate" type="com.artonis.core.base.core.Date"/>
+		<property name="documentState" type="int"/>
+		<property name="documentSerial" type="string"/>
+		<property name="documentReference" type="string"/>
+		<property name="dateInMilliSec" type="long"/>
+		<property name="isSorted" type="boolean"/>
+		<property name="inventoryId" type="long"/>
+		<property name="inventoryName" type="string"/>
+		<property name="issuerId" type="long"/>
+		<property name="issuerFirstName" type="string"/>
+		<property name="issuerLastName" type="string"/>
+		<property name="pageSystemCode" type="string"/>
+		<property name="goodsId" type="long"/>
+		<property name="goodsName" type="string"/>
+		<property name="incomingAmount" type="long"/>
+		<property name="outgoingAmount" type="long"/>
+	</class>
+</hibernate-mapping>

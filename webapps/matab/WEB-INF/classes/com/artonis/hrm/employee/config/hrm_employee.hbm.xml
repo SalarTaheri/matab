@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.hrm.employee.model" default-lazy="false">
+<!--    <class name="erp.hrm.emp.employee.Employee" table="hrm_emp_Employee" >-->
+    <class name="EmployeeGroup" table="hrm2employeegroup">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="description" type="string"/>
+    </class>
+	<class name="EmployeeFamilyItem" table="hrm2employee_family">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="employee_id" type="long"/>
+		<property name="firstName_" column="firstName" type="string"/>
+		<property name="lastName_" column="lastName" type="string"/>
+		<property name="fatherName_" column="fatherName" type="string"/>
+		<property name="nationalCode_" column="nationalCode" type="string"/>
+		<property name="identityNumber_" column="identityNumber" type="string"/>
+		<property name="birthDate_" column="birthDate" type="com.artonis.core.base.core.Date"/>
+		<property name="sex_" column="sex" type="int"/>
+		<property name="relation_id" type="long"/>
+		<property name="sponsorshipType" type="int"/>
+		<property name="fromDate" type="com.artonis.core.base.core.Date"/>
+		<property name="toDate" type="com.artonis.core.base.core.Date"/>
+		<property name="insurance" type="int"/>
+		<property name="fromDateInsurance" type="com.artonis.core.base.core.Date"/>
+		<property name="toDateInsurance" type="com.artonis.core.base.core.Date"/>
+		<property name="completeInsurance" type="int"/>
+		<property name="fromDateCompleteInsurance" type="com.artonis.core.base.core.Date"/>
+		<property name="toDateCompleteInsurance" type="com.artonis.core.base.core.Date"/>
+		<property name="description" type="string"/>
+	</class>
+</hibernate-mapping>

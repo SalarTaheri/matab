@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.receipt.model" default-lazy="false">
+	<class name="ReceiptBill" table="fnc3receiptbill">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="serial" type="long"/>
+		<property name="reference" type="long"/>
+		<property name="coffer_Id" type="long"/>
+		<property name="state" type="int"/>
+		<property name="receiptType" type="int"/>
+		<property name="financeYear_Id" type="long"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="ReceiptBillPayer" table="fnc3rbillpayer">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="payerAccountCoding_Id" type="long"/>
+		<property name="payerFloatAccountLevel1_Id" type="long"/>
+		<property name="payerFloatAccountLevel2_Id" type="long"/>
+		<property name="payerFloatAccountLevel3_Id" type="long"/>
+		<property name="payerFloatAccountLevel4_Id" type="long"/>
+		<property name="receiptBill_Id" type="long"/>
+		<property name="payerPrice" type="long"/>
+		<property name="payerDescription" type="string"/>
+		<property name="businessPartnerType" type="int"/>
+		<property name="floatAccount_id" type="long"/>
+		
+	</class>
+	<class name="ReceiptBillCashReceipt" table="fnc3rbillcashreceipt">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="cashReceiptType" type="int"/>
+		<property name="cashReceiptAccountCode_Id" type="long"/>
+		<property name="cashReceiptFloatAccountLevel1_Id" type="long"/>
+		<property name="cashReceiptFloatAccountLevel2_Id" type="long"/>
+		<property name="cashReceiptFloatAccountLevel3_Id" type="long"/>
+		<property name="cashReceiptFloatAccountLevel4_Id" type="int"/>
+		<property name="cashReceiptPrice" type="long"/>
+		<property name="cashReceiptDescription" type="string"/>
+		<property name="receiptBill_Id" type="long"/>
+	</class>
+	<class name="ReceiptBillReceiptCheque" table="fnc3rbillreceiptcheque">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="chequeSerial" type="long" column="serial"/>
+		<property name="bankName" type="string"/>
+		<property name="branchName" type="string"/>
+		<property name="bankAccountName" type="string"/>
+		<property name="maturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="receiptChequeAccountCode_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel1_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel2_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel3_Id" type="long"/>
+		<property name="receiptChequeFloatAccountLevel4_Id" type="long"/>
+		<property name="receiptChequePrice" type="long"/>
+		<property name="receiptChequeDescription" type="string"/>
+		<property name="receiptBill_Id" type="long"/>
+		<property name="lastState" type="int"/>
+		<property name="type" type="int"/>
+	</class>
+	<class name="ReceiptBillBankingBill" table="fnc3receiptbankingbill">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="operationType" type="int"/>
+		<property name="date_" type="com.artonis.core.base.core.Date"/>
+		<property name="receiptBankingBillSerial" type="string"/>
+		<property name="receiptBankingBillState" type="int"/>
+		<property name="receiptBankingBillAccountCoding_Id" type="long"/>
+		<property name="receiptBankingBillFloatAccountLevel1_Id" type="long"/>
+		<property name="receiptBankingBillFloatAccountLevel2_Id" type="long"/>
+		<property name="receiptBankingBillFloatAccountLevel3_Id" type="long"/>
+		<property name="receiptBankingBillFloatAccountLevel4_Id" type="long"/>
+		<property name="receiptBill_Id" type="long"/>
+		<property name="receiptBankingBillPrice" type="long"/>
+		<property name="receiptBankingBillDescription" type="string"/>
+		<property name="receiptBankAccountAccountCoding_Id" type="long"/>
+		<property name="receiptBankAccounFloatAccountLevel1_Id" type="long"/>
+		<property name="receiptBankAccounFloatAccountLevel2_Id" type="long"/>
+		<property name="receiptBankAccounFloatAccountLevel3_Id" type="long"/>
+		<property name="receiptBankAccounFloatAccountLevel4_Id" type="long"/>
+	</class>
+</hibernate-mapping>

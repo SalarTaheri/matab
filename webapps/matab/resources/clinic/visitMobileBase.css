@@ -1,0 +1,32 @@
+.ui-accordion .ui-accordion-icons {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1)));
+    color: white;
+    font-size: 16px !important;
+    padding-left: 2.2em;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    border: 1px solid #d3d3d3/*{borderColorDefault}*/;
+    /* background: #e6e6e6{bgColorDefault} url(images/ui-bg_glass_75_e6e6e6_1x400.png){bgImgUrlDefault} 50%{bgDefaultXPos} 50%{bgDefaultYPos} repeat-x{bgDefaultRepeat}; */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,244,180,1)), color-stop(100%,rgba(251,221,83,1)));
+    font-weight: normal/*{fwDefault}*/;
+    color: #555555/*{fcDefault}*/;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+/*.ui-state-focus,*/
+/*.ui-widget-content .ui-state-focus,*/
+/*.ui-widget-header .ui-state-focus {*/
+{
+    border: 1px solid #999999/*{borderColorHover}*/;
+    /* background: #dadada{bgColorHover} url(images/ui-bg_glass_75_dadada_1x400.png){bgImgUrlHover} 50%{bgHoverXPos} 50%{bgHoverYPos} repeat-x{bgHoverRepeat}; */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,244,180,1)), color-stop(100%,rgba(251,221,83,1)));
+    font-weight: normal/*{fwDefault}*/;
+    color: #212121/*{fcHover}*/;
+}
+.groupCell td{
+    background-color:  yellow;
+}

@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="factorPatientCountPerDoctorGroup" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="532e9750-94c6-425f-8211-83b1b602b3d1">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="625"/>
+	<property name="ireport.y" value="29"/>
+	<style name="style1">
+		<box>
+			<pen lineWidth="1.0" lineStyle="Double"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineStyle="Double" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="style2">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="style3">
+		<box>
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<parameter name="doctorFamily" class="java.lang.String"/>
+	<parameter name="serviceName" class="java.lang.String"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<parameter name="currentDate" class="java.lang.String"/>
+	<parameter name="user" class="java.lang.String"/>
+	<parameter name="companyName" class="java.lang.String"/>
+	<field name="patientCount" class="java.lang.Long"/>
+	<field name="doctor_lastName" class="java.lang.String"/>
+	<field name="group_name" class="java.lang.String"/>
+	<field name="sumTotalCostStr" class="java.lang.String"/>
+	<field name="sumInsuranceCostStr" class="java.lang.String"/>
+	<field name="sumTotalDiscountsStr" class="java.lang.String"/>
+	<field name="sumPaymentableCostStr" class="java.lang.String"/>
+	<field name="sumTotalCost" class="java.lang.Long"/>
+	<field name="sumInsuranceCost" class="java.lang.Long"/>
+	<field name="sumTotalDiscounts" class="java.lang.Long"/>
+	<field name="sumPaymentableCost" class="java.lang.Long"/>
+	<variable name="sumSumTotalCost" class="java.lang.Long" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumTotalCost}]]></variableExpression>
+	</variable>
+	<variable name="sumSumInsuranceCost" class="java.lang.Long" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumInsuranceCost}]]></variableExpression>
+	</variable>
+	<variable name="sumSumTotalDiscounts" class="java.lang.Long" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumTotalDiscounts}]]></variableExpression>
+	</variable>
+	<variable name="sumPaymentableCost" class="java.lang.Long" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumPaymentableCost}]]></variableExpression>
+	</variable>
+	<variable name="allSumTotalCost" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumTotalCost}]]></variableExpression>
+	</variable>
+	<variable name="allSumInsuranceCost" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumInsuranceCost}]]></variableExpression>
+	</variable>
+	<variable name="allSumTotalDiscounts" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumTotalDiscounts}]]></variableExpression>
+	</variable>
+	<variable name="allPaymentableCost" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumPaymentableCost}]]></variableExpression>
+	</variable>
+	<variable name="sumPatientCount" class="java.lang.Long" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{patientCount}]]></variableExpression>
+	</variable>
+	<variable name="allSumPatientCount" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{patientCount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e25be982-4806-453b-a4e4-98e1eba6bac9" x="82" y="0" width="54" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[تاریخ گزارش:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="bfed02f6-5101-46cb-962b-2d518e741303" x="0" y="0" width="82" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{currentDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="032c8c60-286f-4381-b025-f14eba2bd5c1" x="82" y="24" width="22" height="11"/>
+				<textElement>
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[کاربر:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6565db79-a168-4505-9817-b84f2f65a97f" x="0" y="24" width="82" height="11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="998bfc59-dbc9-4973-bdcb-39b5023f5408" x="211" y="12" width="360" height="38"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="dfaaff44-2cc8-4c47-a9e7-68f869655f74" x="201" y="0" width="389" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" size="14"/>
+				</textElement>
+				<text><![CDATA[ گزارش  تجمیعی دریافت صندوق براساس پزشک و سرفصل خدمات]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="477ff4ec-406e-436c-96ba-494beebb6e38" positionType="Float" stretchType="RelativeToTallestObject" x="56" y="35" width="577" height="47"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{doctorFamily}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a38a18d7-5de3-4356-9912-189630ec5320" x="633" y="35" width="54" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[پزشک:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4c7e0084-d98f-47c3-a385-f88331630d59" x="633" y="88" width="97" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[عنوان سرفصل خدمات:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7d0ab257-0ba0-4c22-9542-3ed7881989c4" x="56" y="88" width="577" height="22"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{serviceName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ffc9ad56-1eb0-4e46-9c29-5f4154c8fa88" x="524" y="115" width="51" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[از تاریخ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b7e155fb-80b4-4b1e-8897-f3ec4070e8d0" x="424" y="115" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fromDate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4bf00760-9215-4e1f-9b1a-0891abb709cf" x="326" y="115" width="54" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[تا تاریخ:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="12d197d6-3e49-4cb9-8e10-315d729989ef" x="226" y="115" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{toDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="06293e14-28f0-4cae-86ee-9e9616392f21" style="style2" x="469" y="0" width="153" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[سرفصل خدمات]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e1445b3e-66e5-4807-9978-95c115348cb7" style="style2" x="730" y="0" width="72" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[تعداد بیمار]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54bf9b16-a6b2-4704-9cee-c213f54cdf16" style="style2" x="622" y="0" width="108" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[نام پزشک]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="836b4c5b-26cd-44b0-a7d8-20650c01648c" style="style2" x="350" y="0" width="118" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[مجموع اصل مبلغ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e244ff8-8c41-4e58-a016-4a15e75b6ab0" style="style2" stretchType="RelativeToBandHeight" x="248" y="0" width="102" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[مجموع بیمه]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="03007748-fc73-4e49-bde2-3d7d2ec04716" style="style2" stretchType="RelativeToBandHeight" x="136" y="0" width="112" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<text><![CDATA[مجموع تخفیف]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa26a36c-7fbb-41bf-b588-0b301373a45d" style="style1" mode="Transparent" x="0" y="0" width="136" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[مجموع مبلغ قابل پرداخت]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="1d8f2fc5-bd89-4b59-a87a-9bfb97a1821c" style="style2" mode="Transparent" x="730" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{patientCount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8bec9aec-9d07-41b6-a200-1ee13a382582" style="style2" x="622" y="0" width="108" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doctor_lastName}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a87d2b67-736a-4227-a14c-dd7c69a7ab56" style="style2" x="469" y="0" width="153" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{group_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7368d61b-5d56-4c45-9de0-5e8d2e8be98b" style="style2" x="248" y="0" width="102" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumInsuranceCostStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="dc509efe-14a6-40ab-a87c-d1b08770360b" style="style2" x="136" y="0" width="112" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumTotalDiscountsStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a7c774e6-79b1-4564-806e-f2a1a5c520ef" style="style1" x="0" y="0" width="136" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumPaymentableCostStr}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f3650945-2e72-4467-b6ee-a70465bbfa23" style="style2" x="350" y="0" width="118" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumTotalCostStr}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="127af28e-2a76-49a0-8593-294bab1cdfe9" style="style3" x="0" y="0" width="136" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumPaymentableCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="74b4aeb3-884b-4361-b3c9-68c21ea680b3" style="style3" x="136" y="0" width="112" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSumTotalDiscounts}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="ce899cae-accd-45aa-bc46-8b83db18ad78" style="style3" x="248" y="0" width="102" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSumInsuranceCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="908c1d24-4577-4873-a0b1-9a815ee2471e" style="style3" x="350" y="0" width="118" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumSumTotalCost}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8a98a910-a131-4d19-ba58-7c8d66a66ac9" style="style3" x="730" y="0" width="72" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumPatientCount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement uuid="6db9cc9d-f6f6-49e2-8ca4-5b493ed426ca" x="395" y="16" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="80" splitType="Stretch">
+			<textField pattern="#,##0">
+				<reportElement uuid="e85ae673-a4ce-4823-8961-313b76b59f02" x="305" y="21" width="136" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allPaymentableCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="198c67a7-d14f-4ef7-9967-7f4057e6255f" x="380" y="1" width="83" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allSumInsuranceCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6806c2cb-cbcf-4a0f-ac21-970015381646" x="671" y="1" width="89" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع اصل مبلغ:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="97b9db2a-3da6-4929-922c-33824e175aca" x="463" y="0" width="90" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع مبلغ بیمه:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4476270c-bc4c-4d85-9926-855afdafe2b6" x="441" y="21" width="130" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع مبلغ قابل پرداخت:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e60640c4-20b4-436b-ad38-7812d492d069" x="269" y="1" width="98" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع مبلع تخفیف:]]></text>
+			</staticText>
+			<textField pattern="#,##0">
+				<reportElement uuid="50728eda-12fc-4143-878c-8f66e35906ce" x="169" y="1" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allSumTotalDiscounts}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement uuid="c7f67f2c-3e71-4cfc-91c4-5168862ad8ea" x="555" y="1" width="116" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allSumTotalCost}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="741415e9-2e64-40d9-ada8-e6ab5cefd726" x="671" y="21" width="89" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="B Nazanin" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جمع تعداد بیمار:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2bb1c1dd-3b67-4914-8f96-5581a11e89b5" x="571" y="21" width="100" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="B Nazanin"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{allSumPatientCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b963d8a2-f543-46cf-86bb-e43a44724788" x="395" y="59" width="20" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="B Nazanin" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

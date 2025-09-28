@@ -1,0 +1,16 @@
+<div ng-if="!partial">
+    <div class="form-group" >
+        <div class="col-lg-4 control-label" >
+            {{currentQuestionNumber | NumberPadding:2}} - {{label}}
+        </div>
+        <div class="col-lg-8">
+            <input type="text" class="form-control pasha-datepicker" ng-model="answer[field]">
+        </div>
+    </div>
+</div>
+<div ng-if="partial" class="partial-control" >
+    <div class="partial-label">
+        {{label}}
+    </div>
+    <input dir="ltr" type="text" class="form-control pasha-datepicker" ng-model="answer[field]">
+</div>

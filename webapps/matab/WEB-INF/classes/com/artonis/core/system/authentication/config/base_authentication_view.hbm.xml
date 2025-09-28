@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.core.system.authentication.view" default-lazy="false">
+
+ <class name="UserRoleMenu" table="sys_bas_user_role_menu_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>        
+		 <property name="userName"  type="string"/>
+		 <property name="roleName"  type="string"/>
+		 <property name="superMenu"  type="long"/>
+		 <property name="systemCode"  type="string"/>
+		 <property name="parentSystemCode"  type="string"/>
+		 <property name="menuName"  type="string"/>
+		 <property name="visible"  type="boolean"/>
+		 <property name="area"  type="string"/>
+		 <property name="controller"  type="string"/>
+		 <property name="action"  type="string"/>
+		 <property name="hasChildMenu"  type="boolean"/>
+    </class>
+
+    <class name="UserEmployeeView" table="sys_bas_useremployee_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="userName"  type="string"/>
+        <property name="firstName"  type="string"/>
+        <property name="active"  type="boolean"/>
+        <property name="employee_id"  type="long"/>
+        <property name="lastName"  type="string"/>
+        <property name="password"  type="string"/>
+        <property name="personnelCode"  type="string"/>
+		<property name="fullScreenMode" type="boolean"/>
+		<property name="defaultPageController"  type="string"/>
+    </class>
+
+    <class name="RoleUserView" table="sys_bas_role_user_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name"  type="string"/>
+        <property name="user_id"  type="long"/>
+        <property name="role_id"  type="long"/>
+
+    </class>
+    
+    <class name="RoleButtonView" table="sys_bas_role_btn_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="role_id" type="long"/>
+		<property name="user_id" type="long"/>
+		<property name="button_id" type="string"/>
+		<property name="menuSystemCode" type="string"/>
+	</class>
+    
+    <class name="RoleGridColumnView" table="sys_bas_role_gridColumn_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="roleId" type="long"/>
+		<property name="userId" type="long"/>
+		<property name="gridColumnField" type="string"/>
+		<property name="menuSystemCode" type="string"/>
+	</class>
+
+</hibernate-mapping>

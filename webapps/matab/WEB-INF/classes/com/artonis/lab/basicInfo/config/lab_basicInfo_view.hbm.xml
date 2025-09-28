@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.lab.basicInfo.view" default-lazy="false">
+	<class name="TestInsuranceOrganizationView" table="lab1test_insurance_organization_view">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="insuranceOrganizationId" column="insurance_organization_id" type="long"/>
+		<property name="insuranceOrganizationName" column="insurance_organization_name" type="string"/>
+		<property name="insuranceOrganizationCode" column="insurance_organization_code" type="string"/>
+		<property name="price" column="price" type="long"/>
+	</class>
+	<class name="DoctorView" table="lab1doctor_view">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string"/>
+		<property name="prefix" type="string"/>
+		<property name="code" type="string"/>
+		<property name="specialtyId" column="specialty_id" type="long"/>
+		<property name="specialtyName" column="specialty_name" type="string"/>
+	</class>
+	<class name="TestAutoComplete" table="lab1test_view">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="code" type="string"/>
+		<property name="abbreviatedName" column="abbreviated_name" type="string"/>
+		<property name="fullName" column="full_name" type="string"/>
+		<property name="unit_id" type="long"/>
+		<property name="unitType_id" type="long"/>
+		<property name="responseTime" column="response_time" type="int"/>
+		<property name="hasLmpDefinition" column="has_lmp_definition" type="boolean" />
+<!-- 		<set name="testInsuranceOrganizations" table="lab1test_insurance_organization_franshiz_view" -->
+<!-- 		     inverse="true" lazy="false" fetch="select"> -->
+<!-- 			<key> -->
+<!-- 				<column name="test_id" not-null="true"/> -->
+<!-- 			</key> -->
+<!-- 			<one-to-many class="com.artonis.lab.basicInfo.view.TestInsuranceOrganizationFranshizView"/> -->
+<!-- 		</set> -->
+	</class>
+	<class name="NormalRangeItemView" table="lab1normal_range_item_view">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="normalRangeMin" column="normal_range_min" type="double"/>
+		<property name="normalRangeMax" column="normal_range_max" type="double"/>
+		<property name="warningRangeMin" column="warning_range_min" type="double"/>
+		<property name="warningRangeMax" column="warning_range_max" type="double"/>
+		<property name="possibleRangeMin" column="possible_range_min" type="double"/>
+		<property name="possibleRangeMax" column="possible_range_max" type="double"/>
+		<property name="normalRangeType" column="type" type="int"/>
+		<property name="fromAge" column="from_age" type="int"/>
+		<property name="fromAgeUnit" column="from_age_unit" type="int"/>
+		<property name="toAge" column="to_age" type="int"/>
+		<property name="toAgeUnit" column="to_age_unit" type="int"/>
+		<property name="normalRangeMeasurementUnitId" column="measurement_unit_id" type="long"/>
+		<property name="normalRangeMeasurementUnitName" column="measurement_unit_name" type="string"/>
+		<property name="descriptions" column="descriptions" type="string"/>
+		<property name="normalRangeId" column="normal_range_id" type="long"/>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="active" column="active" type="boolean"/>
+		<property name="name" column="name" type="string"/>
+		<property name="date" column="date" type="com.artonis.core.base.core.Date"/>
+		<property name="expireDate" column="expireDate" type="com.artonis.core.base.core.Date"/>
+		<property name="dateBase" column="date_base" type="int"/>
+		<property name="testResponse" column="test_response" type="int"/>
+		<property name="method" column="method" type="string"/>
+		<property name="lotNumber" column="lot_number" type="string"/>
+	</class>
+	<class name="UnitView" table="lab1unit">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string"/>
+		<property name="printOrder" column="print_order" type="int"/>
+		<set name="testResults" table="lab2test_result_view" inverse="true">
+			<key>
+				<column name="unit_id" not-null="true"/>
+			</key>
+			<one-to-many class="com.artonis.lab.operation.view.TestResultView"/>
+		</set>
+	</class>
+	<class name="PanelItemView" table="lab1panel_item_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="panelId" column="panel_id" type="long"/>
+		<property name="panelName" column="panel_name" type="string"/>
+		<property name="panelCode" column="panel_code" type="string"/>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="testName" column="test_name" type="string"/>
+		<property name="printOrder" column="print_order" type="int"/>
+	</class>
+	
+	<class name="TestInsuranceOrganizationFranshizView" table="lab1test_insurance_organization_franshiz_view">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="insuranceOrganizationId" column="insurance_organization_id" type="long"/>
+		<property name="price" column="price" type="long"/>
+		<property name="franshiz" type="long"/>
+		<property name="franshizPr" type="double"/>
+		<property name="franshizPr_1" type="double"/>
+		<property name="patientShare" type="double"/>
+		<property name="orgShare" type="double"/>
+	</class>
+	
+</hibernate-mapping>

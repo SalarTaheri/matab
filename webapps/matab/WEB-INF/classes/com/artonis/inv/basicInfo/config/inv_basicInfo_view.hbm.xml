@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.basicInfo.view" default-lazy="false">
+	<class name="InventoryEmployeeView" table="inv1inventory_employee_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="inventory_id" type="long"/>
+		<property name="employee_id" type="long"/>
+		<property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="personnelCode" type="string"/>
+	</class>
+	<class name="GoodsPhysicalPlaceView" table="inv1goods_physicalplace_View">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="inventory_id" type="long"/>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="inventoryTypeName" column="inventory_type_name" type="string"/>
+	</class>
+	<class name="MeasureUnitView" table="inv1measureunit_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="measureUnit" type="string"/>
+		<property name="scale" type="int"/>
+	</class>
+	<class name="GoodsGroupView" table="fnc1goodsgroup_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="parent_id" type="long"/>
+		<property name="description" type="string"/>
+    	<property name="hasChild" type="boolean"/>
+    	<property name="parentGoodsGroupName" type="string"/>
+	</class>
+	<class name="InventoryGoodsView" table="inv1inventory_goods_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goods_id" type="long"/>
+		<property name="inventory_id" type="long"/>
+		<property name="goodsName" type="string"/>
+	</class>
+	<class name="GoodsCategoryView" table="inv1GoodsCategory_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="code" type="string"/>
+		<property name="name" type="string"/>
+		<property name="goodsTypeId" column="goods_type_id" type="long"/>
+		<property name="goodsTypeName" column="goods_type_name" type="string"/>
+		<property name="description" type="string"/>
+	</class>
+	<class name="GoodsCategoryAccountingItemView" table="inv1GoodsCategoryAccountingItem_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="accountCodingId" column="accountCoding_id" type="long"/>
+		<property name="goodsCategoryId" column="goodsCategory_id" type="long"/>
+		<property name="documentsTypes" type="string"/>
+		<property name="accountCodingName" column="accountCoding_name" type="string"/>
+	</class>
+	<class name="GoodsSubMeasureUnitView" table="inv1GoodsSubMeasureUnit_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="goodsId" column="goods_id" type="long"/>
+		<property name="measureUnitId" column="measureUnit_id" type="long"/>
+		<property name="measureUnitName" column="measureUnit_name" type="string"/>
+		<property name="convertCoefficient" type="long"/>
+	</class>
+	<class name="SurplusDeficitView" table="inv1surplusDeficit_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+		<property name="type" type="int"/>
+		<property name="accountCodingId" column="accountCoding_id" type="long"/>
+		<property name="accountCodingName" column="accountCoding_name" type="string"/>
+		<property name="descriptions" type="string"/>
+	</class>
+
+	<class name="GoodsTemplateItemView" table="his1goodsTemplateItem_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="goodsTemplate_id" type="long"/>
+		<property name="goods_id" type="long"/>
+		<property name="user_id" type="long"/>
+		<property name="goodsName" type="string"/>
+		<property name="orderNumber" type="int"/>
+		<property name="measureUnit" type="string"/>
+		<property name="measureUnit_id" type="long"/>
+	</class>
+</hibernate-mapping>

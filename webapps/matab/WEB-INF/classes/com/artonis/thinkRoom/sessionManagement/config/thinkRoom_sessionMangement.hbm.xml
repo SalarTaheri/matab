@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.thinkRoom.sessionManagement.model" default-lazy="false">
+	<class name="ThinkRoomSession" table="tnk_base_session">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="start_time" type="java.sql.Time"/>
+        <property name="end_time" type="java.sql.Time"/>
+        <property name="date" type="com.artonis.core.base.core.Date"/>
+        <property name="description" type="string"/>
+        <property name="session_name_id" type="long"/>
+
+	</class>
+    <class name="MemberSession" table="tnk_member_session">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="session_id" type="java.lang.Long"/>
+        <property name="member_id" type="java.lang.Long"/>
+
+    </class>
+    <class name="ThinkRoomSessionName" table="tnk_bas_session_name">
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="name" type="string"/>
+    </class>
+
+</hibernate-mapping>

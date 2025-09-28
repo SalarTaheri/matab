@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" default-dependency-check="none">
+
+	<!-- GoodsService -->
+	<bean id="goodsService" class="com.artonis.inv.core.service.impl.GoodsServiceImpl"> 
+		<property name="dao" ref="goodsDao" /> 
+	</bean>
+	<bean id="goodsDao" class="com.artonis.inv.core.dao.impl.GoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- ConsumptionSlipService -->
+	<bean id="consumptionSlipService" class="com.artonis.inv.core.service.impl.ConsumptionSlipServiceImpl">
+		<property name="dao" ref="consumptionSlipDao" />
+	</bean>
+	<bean id="consumptionSlipDao" class="com.artonis.inv.core.dao.impl.ConsumptionSlipDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- RequestGoodsService -->
+	<bean id="requestGoodsService" class="com.artonis.inv.core.service.impl.RequestGoodsServiceImpl"> 
+		<property name="dao" ref="requestGoodsDao" /> 
+	</bean>
+	<bean id="requestGoodsDao" class="com.artonis.inv.core.dao.impl.RequestGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- ConsumptionSlipGoodsService -->
+	<bean id="consumptionSlipGoodsService" class="com.artonis.inv.core.service.impl.ConsumptionSlipGoodsServiceImpl">
+		<property name="dao" ref="consumptionSlipGoodsDao" />
+	</bean>
+	<bean id="consumptionSlipGoodsDao" class="com.artonis.inv.core.dao.impl.ConsumptionSlipGoodsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- InventoryService -->
+	<bean id="inventoryService" class="com.artonis.inv.core.service.impl.InventoryServiceImpl"> 
+		<property name="dao" ref="inventoryDao" /> 
+	</bean>
+	<bean id="inventoryDao" class="com.artonis.inv.core.dao.impl.InventoryDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- RequestGoodsGoodsService -->
+	<bean id="requestGoodsGoodsService" class="com.artonis.inv.core.service.impl.RequestGoodsGoodsServiceImpl"> 
+		<property name="dao" ref="requestGoodsGoodsDao" /> 
+	</bean>
+	<bean id="requestGoodsGoodsDao" class="com.artonis.inv.core.dao.impl.RequestGoodsGoodsDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- SalesSlipService -->
+	<bean id="salesSlipService" class="com.artonis.inv.core.service.impl.SalesSlipServiceImpl">
+		<property name="dao" ref="salesSlipDao" />
+	</bean>
+	<bean id="salesSlipDao" class="com.artonis.inv.core.dao.impl.SalesSlipDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- SalesSlipGoodsService -->
+	<bean id="salesSlipGoodsService" class="com.artonis.inv.core.service.impl.SalesSlipGoodsServiceImpl">
+		<property name="dao" ref="salesSlipGoodsDao" />
+	</bean>
+	<bean id="salesSlipGoodsDao" class="com.artonis.inv.core.dao.impl.SalesSlipGoodsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+</beans>

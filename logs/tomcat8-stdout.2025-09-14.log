@@ -1,0 +1,307 @@
+
+2025-09-14 15:22:24 Commons Daemon procrun stdout initialized
+20250914 15:22:43 INFO [spring.MyWebApplicationInitializer 40] - ***MyWebApplicationInitializer init****
+20250914 15:22:43 INFO [spring.MyWebApplicationInitializer 156] - log4jReloader for this file:/C:/Program%20Files/Apache%20Software%20Foundation/Tomcat%208.0/webapps/matab/WEB-INF/classes/log4j.properties
+20250914 15:23:06 INFO [dataSource.DataSource 133] - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+setPassword(bW9oYW1tYWQxMDIw)
+20250914 15:23:09 INFO [dataSource.DataSource 133] - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+setPassword(Y2xpbmljc2NhbjEyMzQ=)
+20250914 15:23:30 FATAL [pacs.PACSServerEndPoint 117] - PACS Server of gateway started on port 1234
+20250914 15:35:13 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236365
+1404/06/23
+20250914 15:35:37 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236365
+1404/06/23
+20250914 15:36:22 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:225171
+1404/06/23
+20250914 15:37:04 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:225171
+1404/06/23
+20250914 15:37:25 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:234857
+1404/06/23
+20250914 15:37:52 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:234857
+1404/06/23
+20250914 15:38:09 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:38:15 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:46:42 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:46:55 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:47:12 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:47:30 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:47:34 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:47:58 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:48:16 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:48:34 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:48:51 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:48:56 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:49:12 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:49:30 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:49:44 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:50:01 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:50:18 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:50:36 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:50:50 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:51:10 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:51:38 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:51:56 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:52:16 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:52:33 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:52:48 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 15:52:55 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 16:02:37 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224785
+1404/06/23
+20250914 16:02:42 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224785
+1404/06/23
+20250914 16:04:21 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236660
+1404/06/23
+20250914 16:10:33 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236660
+1404/06/23
+20250914 16:11:06 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236661
+1404/06/23
+20250914 16:11:53 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236661
+1404/06/23
+20250914 16:12:21 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:226842
+1404/06/23
+20250914 16:12:31 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:226842
+1404/06/23
+20250914 16:15:32 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236422
+1404/06/23
+20250914 16:18:28 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236422
+1404/06/23
+20250914 16:18:38 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235927
+1404/06/23
+20250914 16:18:50 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235927
+1404/06/23
+20250914 16:23:51 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224739
+1404/06/23
+20250914 16:23:57 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224739
+1404/06/23
+20250914 16:29:22 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:231042
+1404/06/23
+20250914 16:29:49 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:231042
+1404/06/23
+-1
+-1
+-1
+20250914 16:55:51 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221550
+1404/06/23
+20250914 16:55:55 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221550
+1404/06/23
+20250914 16:56:09 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:225780
+1404/06/23
+20250914 16:56:13 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:225780
+1404/06/23
+20250914 16:59:02 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224911
+1404/06/23
+20250914 16:59:08 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224911
+1404/06/23
+20250914 16:59:13 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224911
+1404/06/23
+20250914 16:59:20 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224911
+1404/06/23
+20250914 17:00:35 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236662
+1404/06/23
+20250914 17:00:53 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236662
+1404/06/23
+-1
+-1
+20250914 17:15:28 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236663
+1404/06/23
+20250914 17:16:08 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236663
+1404/06/23
+20250914 17:16:21 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221021
+1404/06/23
+-1
+-1
+-1
+-1
+20250914 17:53:17 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:220713
+1404/06/23
+20250914 17:54:29 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:220713
+1404/06/23
+20250914 17:59:46 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236664
+1404/06/23
+20250914 18:02:34 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236664
+1404/06/23
+-1
+20250914 18:08:14 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236659
+1404/06/23
+-1
+20250914 18:18:41 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236264
+1404/06/23
+20250914 18:24:46 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221587
+1404/06/23
+20250914 18:25:03 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221587
+1404/06/23
+-1
+-1
+-1
+20250914 18:42:09 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:234064
+1404/06/23
+20250914 18:42:56 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:234064
+1404/06/23
+20250914 18:43:10 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:219092
+1404/06/23
+20250914 18:43:26 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:219092
+1404/06/23
+20250914 18:44:23 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:226754
+1404/06/23
+20250914 18:44:34 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:226754
+1404/06/23
+20250914 18:44:45 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:218970
+1404/06/23
+20250914 18:45:05 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:218970
+1404/06/23
+005012007
+-1
+-1
+-1
+-1
+-1
+-1
+20250914 19:36:00 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:229097
+1404/06/23
+20250914 19:36:54 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:229097
+1404/06/23
+-1
+-1
+-1
+20250914 20:03:34 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236665
+1404/06/23
+20250914 20:03:38 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236665
+1404/06/23
+20250914 20:03:52 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236665
+1404/06/23
+-1
+-1
+20250914 20:27:22 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235590
+1404/06/23
+20250914 20:27:28 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235590
+1404/06/23
+-1
+-1
+20250914 20:37:52 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:225171
+1404/06/23
+20250914 20:38:15 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236365
+1404/06/23
+20250914 20:38:30 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:234857
+1404/06/23
+20250914 20:38:48 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:232926
+1404/06/23
+20250914 20:39:03 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221550
+1404/06/23
+20250914 20:39:18 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236661
+1404/06/23
+Found
+MAC: 10-4a-7d-a6-c3-59
+20250914 20:40:13 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236624
+1404/06/23
+20250914 20:40:29 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224402
+1404/06/23
+20250914 20:40:41 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236651
+1404/06/23
+20250914 20:40:56 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224757
+1404/06/23
+20250914 20:41:01 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236661
+1404/06/23
+20250914 20:41:11 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236175
+1404/06/23
+20250914 20:41:22 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236403
+1404/06/23
+20250914 20:41:24 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236422
+1404/06/23
+20250914 20:41:34 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235500
+1404/06/23
+20250914 20:41:40 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236660
+1404/06/23
+20250914 20:41:52 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235927
+1404/06/23
+20250914 20:41:57 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:219302
+1404/06/23
+20250914 20:42:07 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:220713
+1404/06/23
+20250914 20:42:20 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:219949
+1404/06/23
+20250914 20:42:25 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224739
+1404/06/23
+20250914 20:42:37 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:229724
+1404/06/23
+20250914 20:42:40 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:231042
+1404/06/23
+20250914 20:42:51 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236595
+1404/06/23
+20250914 20:42:54 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:219092
+1404/06/23
+20250914 20:43:03 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:231508
+1404/06/23
+20250914 20:43:10 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:221587
+1404/06/23
+20250914 20:43:24 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:225780
+1404/06/23
+20250914 20:43:41 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:224785
+1404/06/23
+20250914 20:43:57 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:226842
+1404/06/23
+20250914 20:44:12 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236663
+1404/06/23
+-1
+20250914 20:57:06 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236666
+1404/06/23
+-1
+-1
+20250914 21:10:40 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:236666
+1404/06/23
+20250914 21:13:42 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:230523
+1404/06/23
+20250914 21:19:17 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:230225
+1404/06/23
+20250914 21:19:36 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:230225
+1404/06/23
+-1
+-1
+-1
+20250914 21:26:15 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:219945
+1404/06/23
+20250914 21:28:31 INFO [impl.FinanceRegistrationServiceImpl 978] - day accept .patientId:235105
+1404/06/23
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1

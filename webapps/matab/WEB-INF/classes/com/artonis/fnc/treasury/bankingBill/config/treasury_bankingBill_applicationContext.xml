@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- BankingBillService -->
+	<bean id="bankingBillService" class="com.artonis.fnc.treasury.bankingBill.service.impl.BankingBillServiceImpl"> 
+		<property name="dao" ref="bankingBillDao" /> 
+	</bean>
+	<bean id="bankingBillDao" class="com.artonis.fnc.treasury.bankingBill.dao.impl.BankingBillDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- BankingBilReceiverPayerItemService -->
+	<bean id="bankingBilReceiverPayerItemService" class="com.artonis.fnc.treasury.bankingBill.service.impl.BankingBilReceiverPayerItemServiceImpl"> 
+		<property name="dao" ref="bankingBilReceiverPayerItemDao" /> 
+	</bean>
+	<bean id="bankingBilReceiverPayerItemDao" class="com.artonis.fnc.treasury.bankingBill.dao.impl.BankingBilReceiverPayerItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- BankingBillBankAccountItemService -->
+	<bean id="bankingBillBankAccountItemService" class="com.artonis.fnc.treasury.bankingBill.service.impl.BankingBillBankAccountItemServiceImpl"> 
+		<property name="dao" ref="bankingBillBankAccountItemDao" /> 
+	</bean>
+	<bean id="bankingBillBankAccountItemDao" class="com.artonis.fnc.treasury.bankingBill.dao.impl.BankingBillBankAccountItemDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

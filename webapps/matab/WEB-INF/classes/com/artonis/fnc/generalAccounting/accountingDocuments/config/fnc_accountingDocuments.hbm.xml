@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.generalAccounting.accountingDocuments.model" default-lazy="false">
+	<class name="Document" table="fnc2document">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="docNumber" type="long"/>
+		<property name="referenceNumber" type="long"/>
+		<property name="date" type="com.artonis.core.base.core.Date"/>
+		<property name="createDate" type="com.artonis.core.base.core.Date"/>
+		<property name="type" type="int"/>
+		<property name="state" type="int"/>
+		<property name="description" type="string"/>
+		<property name="financeYear_Id" type="long"/>
+	</class>
+	<class name="DocumentItem" table="fnc2documentItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="doc_id" type="long"/>
+		<property name="group_id" type="long"/>
+		<property name="kol_id" type="long"/>
+		<property name="moein_id" type="long"/>
+		<property name="tafsil_id" type="long"/>
+		<property name="tafsil1_id" type="long"/>
+		<property name="amount" type="long"/>
+		<property name="amountType" type="int"/>
+		<property name="articleDescription" type="string"/>
+		<property name="level1_id" type="long"/>
+		<property name="level2_id" type="long"/>
+		<property name="level3_id" type="long"/>
+		<property name="level4_id" type="long"/>
+		<property name="level5_id" type="long"/>
+		<property name="level6_id" type="long"/>
+	</class>
+	<class name="DocumentFloatAccountItem" table="fnc2documentFloatAccountItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="accountArticle_id" type="long"/>
+		<property name="level1_id" type="long"/>
+		<property name="level2_id" type="long"/>
+		<property name="level3_id" type="long"/>
+		<property name="level4_id" type="long"/>
+		<property name="level5_id" type="long"/>
+		<property name="level6_id" type="long"/>
+		<property name="levelInArticle" type="int"/>
+	</class>
+	<class name="AutomaticDocumentConnector" table="fnc2autodocconnector">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="entityNumber" type="int"/>
+		<property name="entity_id" type="long"/>
+		<property name="document_id" type="long"/>
+	</class>
+		<class name="DocumentableModel" table="fnc3documentablemodel">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="realId" type="long"/>
+		<property name="entityName" type="int"/>
+		<property name="entitySerial" type="string"/>
+		<property name="entityPrice" type="long"/>
+		<property name="entityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="description" type="string"/>
+		<property name="entityGroup" type="int"/>
+	</class>
+</hibernate-mapping>

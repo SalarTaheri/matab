@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.fnc.treasury.treasuryDocs.paymentCheque.view" default-lazy="false">
+	<class name="PaymentChequeView" table="fnc3paymentcheque_view">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="bank_Id" type="long"/>
+		<property name="branch_Id" type="long"/>
+		<property name="bankAccount_Id" type="long"/>
+		<property name="chequeBookletNum" type="int"/>
+		<property name="maturityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="accountCoding_Id" type="long"/>
+		<property name="floatAccountLevel1_Id" type="long"/>
+		<property name="floatAccountLevel2_Id" type="long"/>
+		<property name="floatAccountLevel3_Id" type="long"/>
+		<property name="floatAccountLevel4_Id" type="long"/>
+		<property name="price" type="long"/>
+		<property name="description" type="string"/>
+		<property name="paymentBillId" type="long"/>
+		<property name="chequeBookletItem_Id" type="long"/>
+		<property name="type" type="int"/>
+		<property name="billSerial" type="long"/>
+		<property name="chequeBookletNumber" type="long"/>
+		<property name="bankName" type="string"/>
+		<property name="chequePrice" type="long"/>
+		<property name="chequeSerial" type="long"/>
+		<property name="chequeState" type="int"/>
+		<property name="bill_Id" type="long"/>
+		<property name="bankAccountNumber" type="string"/>
+		
+	</class>
+</hibernate-mapping>

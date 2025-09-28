@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.artonis.lab.basicInfo.model" default-lazy="false">
+	<class name="Unit" table="lab1unit">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string"/>
+		<property name="printOrder" column="print_order" type="int"/>
+	</class>
+	<class name="Test" table="lab1test">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="code" type="string"/>
+		<property name="internationalCode1" column="international_code_1" type="string"/>
+		<property name="internationalCode2" column="international_code_2" type="string"/>
+		<property name="nationalCode" column="national_code" type="string"/>
+		<property name="abbreviatedName" column="abbreviated_name" type="string"/>
+		<property name="fullName" column="full_name" type="string"/>
+		<property name="printOrder" column="print_order" type="int"/>
+		<property name="virtualCode" column="virtual_code" type="string"/>
+		<property name="type" column="type" type="int"/>
+		<property name="proportionalValue" column="proportional_value" type="int"/>
+		<property name="professionalPart" column="professional_part" type="int"/>
+		<property name="receptionPage" column="reception_page" type="boolean"/>
+		<property name="hasLmpDefinition" column="has_lmp_definition" type="boolean"/>
+		<property name="responseTime" column="response_time" type="int"/>
+		<property name="outpatientService" column="outpatient_service" type="boolean"/>
+		<property name="nonNormalValuesInInsuranceDiskette" column="non_normal_values_in_insurance_diskette" type="boolean"/>
+		<property name="laboratorySurveillanceSystem" column="laboratory_surveillance_system" type="boolean"/>
+		<property name="qualitative" column="qualitative" type="boolean"/>
+		<property name="textualResponse" column="textual_response" type="boolean"/>
+		<property name="autoInactiveReception" column="auto_inactive_reception" type="boolean"/>
+		<property name="dependsOnThePatientsHistoryUnit" column="depends_on_the_patients_history_unit" type="boolean"/>
+		<property name="onlyWebReception" column="only_web_reception" type="boolean"/>
+		<property name="notShownInReceipt" column="not_shown_in_receipt" type="boolean"/>
+		<property name="needsAuthentication" column="needs_authentication" type="boolean"/>
+		<property name="doneInWeekDays" column="done_in_weekdays" type="boolean"/>
+		<property name="doneSaturday" column="done_saturday" type="boolean"/>
+		<property name="doneSunday" column="done_sunday" type="boolean"/>
+		<property name="doneMonday" column="done_monday" type="boolean"/>
+		<property name="doneTuesday" column="done_tuesday" type="boolean"/>
+		<property name="doneWednesday" column="done_wednesday" type="boolean"/>
+		<property name="doneThursday" column="done_thursday" type="boolean"/>
+		<property name="doneFriday" column="done_friday" type="boolean"/>
+		<property name="parentTestId" column="parent_test_id" type="long"/>
+		<property name="hasChildren" column="has_children" type="boolean"/>
+		<property name="unitId" column="unit_id" type="long"/>
+		<property name="measurementUnitId" column="measurement_unit_id" type="long"/>
+	</class>
+	<class name="MeasurementUnit" table="lab1measurement_unit">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string"/>
+	</class>
+	<class name="TestInsuranceOrganization" table="lab1test_insurance_organization">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="insuranceOrganizationId" column="insurance_organization_id" type="long"/>
+		<property name="price" column="price" type="long"/>
+	</class>
+	<class name="Doctor" table="lab1doctor">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string"/>
+		<property name="prefix" type="string"/>
+		<property name="code" type="string"/>
+		<property name="specialtyId" column="specialty_id" type="long"/>
+	</class>
+	<class name="Specialty" table="lab1specialty">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="name" type="string"/>
+	</class>
+	<class name="NormalRange" table="lab1normal_range">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="active" column="active" type="boolean"/>
+		<property name="name" column="name" type="string"/>
+		<property name="date" column="date" type="com.artonis.core.base.core.Date"/>
+		<property name="expireDate" column="expireDate" type="com.artonis.core.base.core.Date"/>
+		<property name="dateBase" column="date_base" type="int"/>
+		<property name="testResponse" column="test_response" type="int"/>
+		<property name="method" column="method" type="string"/>
+		<property name="lotNumber" column="lot_number" type="string"/>
+	</class>
+	<class name="NormalRangeItem" table="lab1normal_range_item">
+		<id name="id" type="long">
+			<generator class="native"/>
+		</id>
+		<property name="normalRangeMin" column="normal_range_min" type="double"/>
+		<property name="normalRangeMax" column="normal_range_max" type="double"/>
+		<property name="warningRangeMin" column="warning_range_min" type="double"/>
+		<property name="warningRangeMax" column="warning_range_max" type="double"/>
+		<property name="possibleRangeMin" column="possible_range_min" type="double"/>
+		<property name="possibleRangeMax" column="possible_range_max" type="double"/>
+		<property name="type" column="type" type="int"/>
+		<property name="fromAge" column="from_age" type="int"/>
+		<property name="fromAgeUnit" column="from_age_unit" type="int"/>
+		<property name="toAge" column="to_age" type="int"/>
+		<property name="toAgeUnit" column="to_age_unit" type="int"/>
+		<property name="measurementUnitId" column="measurement_unit_id" type="long"/>
+		<property name="descriptions" column="descriptions" type="string"/>
+		<property name="normalRangeId" column="normal_range_id" type="long"/>
+	</class>
+	<class name="Panel" table="lab1panel">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="code" type="string"/>
+	</class>
+	<class name="PanelItem" table="lab1panel_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="panelId" column="panel_id" type="long"/>
+		<property name="testId" column="test_id" type="long"/>
+		<property name="printOrder" column="print_order" type="int"/>
+	</class>
+</hibernate-mapping>

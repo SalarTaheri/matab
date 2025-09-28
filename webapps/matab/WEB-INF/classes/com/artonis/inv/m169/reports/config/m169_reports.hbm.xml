@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.inv.m169.reports.model" default-lazy="false">
+	<class name="PurchaseReport" table="inv_m169_3_purchase">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+		
+	</class>
+	<class name="SaleReport" table="inv_m169_3_sale">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+	</class>
+	<class name="PurchaseContractReport" table="inv_m169_3_purchasecontract">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+	</class>
+	<class name="RefusalReport" table="inv_m169_3_refusal">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="seasonVat_id" type="long"/>
+		<property name="companyPerson_id" type="long"/>
+	</class>
+</hibernate-mapping>

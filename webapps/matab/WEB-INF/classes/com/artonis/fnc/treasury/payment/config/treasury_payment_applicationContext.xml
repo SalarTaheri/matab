@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-lazy-init="false" default-autowire="no" 
+	default-dependency-check="none"> 
+	<!-- PaymentBillService -->
+	<bean id="paymentBillService" class="com.artonis.fnc.treasury.payment.service.impl.PaymentBillServiceImpl"> 
+		<property name="dao" ref="paymentBillDao" /> 
+	</bean>
+	<bean id="paymentBillDao" class="com.artonis.fnc.treasury.payment.dao.impl.PaymentBillDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PaymentBillReceiverService -->
+	<bean id="paymentBillReceiverService" class="com.artonis.fnc.treasury.payment.service.impl.PaymentBillReceiverServiceImpl"> 
+		<property name="dao" ref="paymentBillReceiverDao" /> 
+	</bean>
+	<bean id="paymentBillReceiverDao" class="com.artonis.fnc.treasury.payment.dao.impl.PaymentBillReceiverDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PaymentBillCofferService -->
+	<bean id="paymentBillCofferService" class="com.artonis.fnc.treasury.payment.service.impl.PaymentBillCofferServiceImpl"> 
+		<property name="dao" ref="paymentBillCofferDao" /> 
+	</bean>
+	<bean id="paymentBillCofferDao" class="com.artonis.fnc.treasury.payment.dao.impl.PaymentBillCofferDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PaymentBillPaymentChequeService -->
+	<bean id="paymentBillPaymentChequeService" class="com.artonis.fnc.treasury.payment.service.impl.PaymentBillPaymentChequeServiceImpl"> 
+		<property name="dao" ref="paymentBillPaymentChequeDao" /> 
+	</bean>
+	<bean id="paymentBillPaymentChequeDao" class="com.artonis.fnc.treasury.payment.dao.impl.PaymentBillPaymentChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- paymentBillTransferedCashService -->
+	<bean id="paymentBillTransferedCashService" class="com.artonis.fnc.treasury.payment.service.impl.paymentBillTransferedCashServiceImpl"> 
+		<property name="dao" ref="paymentBillTransferedCashDao" /> 
+	</bean>
+	<bean id="paymentBillTransferedCashDao" class="com.artonis.fnc.treasury.payment.dao.impl.paymentBillTransferedCashDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PaymentBillBankingBillService -->
+	<bean id="paymentBillBankingBillService" class="com.artonis.fnc.treasury.payment.service.impl.PaymentBillBankingBillServiceImpl"> 
+		<property name="dao" ref="paymentBillBankingBillDao" /> 
+	</bean>
+	<bean id="paymentBillBankingBillDao" class="com.artonis.fnc.treasury.payment.dao.impl.PaymentBillBankingBillDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- PaymentBillReceiptChequeService -->
+	<bean id="paymentBillReceiptChequeService" class="com.artonis.fnc.treasury.payment.service.impl.PaymentBillReceiptChequeServiceImpl"> 
+		<property name="dao" ref="paymentBillReceiptChequeDao" /> 
+	</bean>
+	<bean id="paymentBillReceiptChequeDao" class="com.artonis.fnc.treasury.payment.dao.impl.PaymentBillReceiptChequeDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashRequestService -->
+	<bean id="cashRequestService" class="com.artonis.fnc.treasury.payment.service.impl.CashRequestServiceImpl"> 
+		<property name="dao" ref="cashRequestDao" /> 
+	</bean>
+	<bean id="cashRequestDao" class="com.artonis.fnc.treasury.payment.dao.impl.CashRequestDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashPermissionService -->
+	<bean id="cashPermissionService" class="com.artonis.fnc.treasury.payment.service.impl.CashPermissionServiceImpl"> 
+		<property name="dao" ref="cashPermissionDao" /> 
+	</bean>
+	<bean id="cashPermissionDao" class="com.artonis.fnc.treasury.payment.dao.impl.CashPermissionDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashPermissionPayerService -->
+	<bean id="cashPermissionPayerService" class="com.artonis.fnc.treasury.payment.service.impl.CashPermissionPayerServiceImpl"> 
+		<property name="dao" ref="cashPermissionPayerDao" /> 
+	</bean>
+	<bean id="cashPermissionPayerDao" class="com.artonis.fnc.treasury.payment.dao.impl.CashPermissionPayerDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+	<!-- CashPermissionReceiverService -->
+	<bean id="cashPermissionReceiverService" class="com.artonis.fnc.treasury.payment.service.impl.CashPermissionReceiverServiceImpl"> 
+		<property name="dao" ref="cashPermissionReceiverDao" /> 
+	</bean>
+	<bean id="cashPermissionReceiverDao" class="com.artonis.fnc.treasury.payment.dao.impl.CashPermissionReceiverDaoImpl"> 
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> 
+</beans>

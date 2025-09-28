@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.customize.model" default-lazy="false">
+	<class name="UserDrug" table="his2user_drug">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="user_id" type="long"/>
+		<property name="drug_id" type="long"/>
+	</class>
+	<class name="UserLabTest" table="his2user_labtest">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="user_id" type="long"/>
+		<property name="name" type="string"/>
+		<property name="orderNumber" type="int"/>
+	</class>
+    <class name="UserLabTestItem" table="his2user_labtest_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="user_labtest_id" type="long"/>
+		<property name="medicalTest_id" type="long"/>
+		<property name="isNotShow" type="boolean"/>
+	</class>
+    <class name="UserLabTestGroup" table="his2user_labtestgroup">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+        <property name="user_id" type="long"/>
+    </class>
+
+    <class name="UserLabTestGroupItem" table="his2user_labtestgroup_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="medicaltest_id" type="long"/>
+		<property name="user_labtestgroup_id" type="long"/>
+
+    </class>
+
+    <class name="UserDrugGroup" table="his2user_druggroup">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+        <property name="user_id" type="long"/>
+    </class>
+
+    <class name="UserDrugGroupItem" table="his2user_druggroup_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="drug_id" type="long"/>
+		<property name="user_druggroup_id" type="long"/>
+
+    </class>
+	<class name="UserOperation" table="his2user_operation">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="user_id" type="long"/>
+		<property name="orderNumber" type="int"/>
+	</class>
+	<class name="UserImage" table="his2user_image">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="user_id" type="long"/>
+		<property name="orderNumber" type="int"/>
+	</class>
+    <class name="UserOperationItem" table="his2user_operation_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="operation_id" type="long"/>
+		<property name="user_operation_id" type="long"/>
+	</class>
+	<class name="UserImageItem" table="his2user_image_item">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="image_id" type="long"/>
+		<property name="user_image_id" type="long"/>
+	</class>
+	<class name="DiagnosisCustomization" table="his2diagnosisCustomization">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="user_id" type="long"/>
+		<property name="orderNumber" type="int"/>
+	</class>
+    <class name="DiagnosisCustomizationItem" table="his2diagnosisCustomizationItem">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="diagnosisId" type="long"/>
+		<property name="diagnosisCustomizationId" type="long"/>
+	</class>
+</hibernate-mapping>

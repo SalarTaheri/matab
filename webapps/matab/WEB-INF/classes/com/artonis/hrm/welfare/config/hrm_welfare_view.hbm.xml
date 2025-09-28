@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.hrm.welfare.view" default-lazy="false">
+
+    <class name="WelfareFacilityView" table="hrm_wel_welfarefacility_view" >
+        <id name="id" type="long"/>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="sourceWalfare_id" type="long"/>
+        <property name="refund" type="int"/>
+        <property name="fromDate" type="java.sql.Date"/>
+        <property name="toDate" type="java.sql.Date"/>
+        <property name="capacity" type="double"/>
+        <property name="employeeLimit" type="double"/>
+        <property name="employeeLimitType" type="int"/>
+        <property name="employeeLimitTypeDuration" type="int"/>
+        <property name="sourceName" type="string"/>
+        <property name="sourceCode" type="string"/>
+        <property name="state" type="int"/>
+        <property name="type" type="int"/>
+    </class>
+    
+    
+    <class name="EmployeeFacilityRequestView" table="hrm_wel_emp_facility_req_view" >
+        <id name="id" type="long">
+            <generator class="native" />
+        </id>
+        <property name="firstName" type="string"/>
+		<property name="lastName" type="string"/>
+		<property name="personnelCode" type="string"/>
+        <property name="name" type="string"/>
+        <property name="code" type="string"/>
+        <property name="fromDate" type="java.sql.Date"/>
+        <property name="toDate" type="java.sql.Date"/>
+		<property name="registerDate" type="java.sql.Date"/>
+		<property name="state" type="int"/>
+    </class>
+</hibernate-mapping>

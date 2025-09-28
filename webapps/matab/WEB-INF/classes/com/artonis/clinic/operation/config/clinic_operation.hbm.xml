@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2010 7:37:26 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping package="com.artonis.clinic.operation.model" default-lazy="false">
+	<class name="SurgeryRvu" table="his3surgery_rvu">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="surggeryId" type="long"/>
+		<property name="rvuId" type="long"/>
+	</class>
+	<class name="InsuranceDiskette" table="his3insurance_diskette">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="name" type="string"/>
+		<property name="fromdate" type="com.artonis.core.base.core.Date"/>
+		<property name="todate" type="com.artonis.core.base.core.Date"/>
+		<property name="registerdate" type="com.artonis.core.base.core.Date"/>
+		<property name="diskettenumber" type="int"/>
+		<property name="insurance_id" type="long"/>
+	</class>
+	<class name="NursingInfo" table="his3nursingInfo">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="factorId" type="long"/>
+		<property name="visitqueue_id" type="long"/>
+		<property name="weight" type="float"/>
+		<property name="bloodPressure" type="string"/>
+	</class>
+	<class name="InsuranceDiskettePrescribeHeader" table="his3insuranceDiskette_prescribeHeader">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="insuranceDisketteId" type="long"/>
+		<property name="number" type="long"/>
+		<property name="prescriptionDate" type="com.artonis.core.base.core.Date"/>
+		<property name="serviceDate" type="com.artonis.core.base.core.Date"/>
+		<property name="prescriptionValidityDate" type="com.artonis.core.base.core.Date"/>
+		<property name="insuranceType" type="integer"/>
+		<property name="bookletType" type="integer"/>
+		<property name="bookletSerialNumber" type="string"/>
+		<property name="bookletPageNumber" type="int"/>
+		<property name="sex" type="integer"/>
+		<property name="doctorGroup" type="integer"/>
+		<property name="serviceRequesterMedicalCouncilCode" type="string"/>
+		<property name="medicalCouncilCode" type="string"/>
+		<property name="prescriptionPrice" type="long"/>
+		<property name="amountPaidByPatient" type="long"/>
+		<property name="amountPaidByIsurance" type="long"/>
+		<property name="serviceGroupId" type="long"/>
+	</class>
+	<class name="InsuranceDiskettePrescribeBody" table="his3insuranceDiskette_prescribeBody">
+		<id name="id" type="long">
+			<generator class="native" />
+		</id>
+		<property name="headerId" type="long"/>
+		<property name="serviceTypeCode" type="string"/>
+		<property name="serviceCode" type="string"/>
+		<property name="countOfServiceRequest" type="integer"/>
+		<property name="countOfServiceSupply" type="integer"/>
+		<property name="servicePrice" type="long"/>		
+		<property name="amountPaidByPatient" type="long"/>
+		<property name="amountPaidByInsurance" type="long"/>
+		<property name="financeRegistrationId" type="long"/>
+	</class>
+</hibernate-mapping>
