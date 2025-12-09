@@ -1,0 +1,300 @@
+# Matab Webapp Deployment Guide
+
+This guide provides step-by-step instructions for deploying the matab webapp on a Debian-based server.
+
+## Prerequisites
+
+Before deploying matab, ensure you have the following:
+
+- **Operating System**: Debian-based OS (Debian 9+, Ubuntu 18.04+)
+- **Java**: OpenJDK 8 JDK
+- **Application Server**: Tomcat 9 (or compatible Tomcat 8/9)
+- **Version Control**: Git
+- **Database**: SQL Server (based on configuration) or MySQL
+- **JDBC Driver**: Appropriate JDBC driver JAR for your database:
+  - SQL Server: `mssql-jdbc-*.jar`
+  - MySQL: `mysql-connector-java-*.jar`
+
+## Installation Steps
+
+### 1. Install Dependencies
+
+Update your package lists and install required packages:
+
+```bash
+sudo apt update
+sudo apt install -y openjdk-8-jdk tomcat9 git
+```
+
+Verify Java installation:
+
+```bash
+java -version
+# Should show OpenJDK 1.8.x
+```
+
+### 2. Clone the Repository
+
+Clone the matab repository to a temporary location:
+
+```bash
+cd /tmp
+git clone https://github.com/SalarTaheri/matab.git
+cd matab
+```
+
+### 3. Deploy the Webapp
+
+#### Method 1: Deploy Exploded Webapp (Recommended)
+
+Copy the webapp directory to Tomcat's webapps directory:
+
+```bash
+sudo rsync -av webapps/matab/ /var/lib/tomcat9/webapps/matab/
+```
+
+Set appropriate ownership and permissions:
+
+```bash
+sudo chown -R tomcat9:tomcat9 /var/lib/tomcat9/webapps/matab
+sudo chmod -R 755 /var/lib/tomcat9/webapps/matab
+```
+
+#### Method 2: Deploy as WAR File
+
+Alternatively, package the webapp as a WAR file:
+
+```bash
+cd webapps
+zip -r matab.war matab/
+sudo cp matab.war /var/lib/tomcat9/webapps/
+sudo chown tomcat9:tomcat9 /var/lib/tomcat9/webapps/matab.war
+```
+
+Tomcat will automatically extract the WAR file on startup.
+
+### 4. Install JDBC Driver
+
+Place your JDBC driver JAR in Tomcat's lib directory:
+
+```bash
+# For SQL Server
+sudo cp /path/to/mssql-jdbc-*.jar /var/lib/tomcat9/lib/
+
+# OR for MySQL
+sudo cp /path/to/mysql-connector-java-*.jar /var/lib/tomcat9/lib/
+
+# Set appropriate permissions
+sudo chown tomcat9:tomcat9 /var/lib/tomcat9/lib/*.jar
+```
+
+**Alternative**: Place the JDBC driver in the webapp's `WEB-INF/lib` directory:
+
+```bash
+sudo cp /path/to/jdbc-driver.jar /var/lib/tomcat9/webapps/matab/WEB-INF/lib/
+```
+
+### 5. Restart Tomcat
+
+Restart Tomcat to load the application:
+
+```bash
+sudo systemctl restart tomcat9
+```
+
+Check Tomcat status:
+
+```bash
+sudo systemctl status tomcat9
+```
+
+## Configuration
+
+### Database Connection
+
+The matab webapp uses JDBC for database connectivity. Configuration is stored in:
+
+```
+/var/lib/tomcat9/webapps/matab/WEB-INF/classes/config/jdbc.properties
+```
+
+Edit this file to configure your database connection:
+
+```bash
+sudo nano /var/lib/tomcat9/webapps/matab/WEB-INF/classes/config/jdbc.properties
+```
+
+Example configuration for SQL Server:
+
+```properties
+jdbc.db = sqlserver
+jdbc.dialect = com.artonis.core.base.dataSource.SQLServerDialect
+jdbc.driverClassName = com.microsoft.sqlserver.jdbc.SQLServerDriver
+jdbc.url = jdbc:sqlserver://localhost:1433;DatabaseName=matab
+jdbc.username = sa
+jdbc.password = <your_encoded_password>
+jdbc.show_sql = false
+```
+
+**Note**: The password appears to be Base64 encoded in the configuration.
+
+### Context Configuration
+
+For advanced configuration, you can define a context-specific `context.xml`:
+
+1. **Application-specific**: Create or edit:
+   ```
+   /var/lib/tomcat9/webapps/matab/META-INF/context.xml
+   ```
+
+2. **Global Tomcat configuration**: Edit:
+   ```
+   /etc/tomcat9/context.xml
+   ```
+
+Example context.xml with database resource:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource name="jdbc/matab"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="100"
+              maxIdle="30"
+              maxWaitMillis="10000"
+              username="sa"
+              password="your_password"
+              driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+              url="jdbc:sqlserver://localhost:1433;DatabaseName=matab"/>
+</Context>
+```
+
+After configuration changes, restart Tomcat:
+
+```bash
+sudo systemctl restart tomcat9
+```
+
+## Accessing the Application
+
+Once deployed and Tomcat is running, access the matab webapp at:
+
+```
+http://<your-server-ip>:8080/matab/
+```
+
+Or if using localhost:
+
+```
+http://localhost:8080/matab/
+```
+
+## Monitoring and Logs
+
+### View Tomcat Logs
+
+Monitor Tomcat logs in real-time:
+
+```bash
+# Using journalctl (systemd)
+sudo journalctl -u tomcat9 -f
+
+# Using tail on catalina.out
+sudo tail -n 200 /var/log/tomcat9/catalina.out
+
+# Follow catalina.out
+sudo tail -f /var/log/tomcat9/catalina.out
+```
+
+### Additional Log Files
+
+- Application logs: `/var/log/tomcat9/`
+- Access logs: `/var/log/tomcat9/localhost_access_log.*.txt`
+- Error logs: Check `catalina.out` and `localhost.*.log`
+
+## Important Notes
+
+### Work Directory
+
+The `work/` directory in the repository contains generated JSP servlet classes and compiled artifacts. This directory is **not required for deployment** and is auto-generated by Tomcat when JSP pages are accessed. Contents include:
+
+```
+work/Catalina/localhost/matab/org/apache/jsp/
+```
+
+These are Java source and class files generated from JSP tags and pages.
+
+### Meteor Example
+
+The directory `webapps/matab/resources/js/bootstrap-material-design/meteor/example` contains example files for the Meteor framework. This is **not required for the matab webapp deployment** and can be safely excluded if needed.
+
+## Troubleshooting
+
+### Application Not Starting
+
+1. Check Tomcat logs:
+   ```bash
+   sudo journalctl -u tomcat9 -n 100
+   ```
+
+2. Verify permissions:
+   ```bash
+   ls -la /var/lib/tomcat9/webapps/matab
+   ```
+
+3. Ensure JDBC driver is present:
+   ```bash
+   ls -la /var/lib/tomcat9/lib/*.jar
+   ```
+
+### Database Connection Issues
+
+1. Verify database is running and accessible
+2. Check JDBC connection string in `jdbc.properties`
+3. Ensure JDBC driver version is compatible with your database
+4. Review database-specific logs
+
+### Port Already in Use
+
+If port 8080 is already in use, edit Tomcat's server configuration:
+
+```bash
+sudo nano /etc/tomcat9/server.xml
+```
+
+Change the Connector port from 8080 to another port (e.g., 8081).
+
+## Additional Configuration
+
+### System Configuration
+
+Additional system properties can be configured in:
+
+```
+/var/lib/tomcat9/webapps/matab/WEB-INF/classes/systemConfig.properties
+```
+
+This includes settings for file uploads, external service URLs, and application-specific parameters.
+
+### MongoDB Configuration
+
+If using MongoDB features, configure:
+
+```
+/var/lib/tomcat9/webapps/matab/WEB-INF/classes/config/mongodb.properties
+```
+
+## Security Recommendations
+
+1. Change default database passwords
+2. Use strong, unique passwords for all accounts
+3. Enable HTTPS/SSL for production deployments
+4. Restrict database access to localhost if possible
+5. Keep Java and Tomcat updated with security patches
+6. Review and configure Tomcat security settings in `server.xml`
+7. Use a firewall to restrict access to necessary ports only
+
+## Support
+
+For issues specific to the matab application, please refer to the main repository or contact the development team.
